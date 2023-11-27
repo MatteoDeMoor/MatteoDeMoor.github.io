@@ -1,0 +1,202 @@
+/* Reset some default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the page background and text color */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Style the header */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Style the navigation menu */
+nav {
+    background-color: #444;
+    text-align: center;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Style sections */
+section {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Style section headings */
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Style paragraphs */
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Style photos and text alternation */
+.photo-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.photo {
+    position: relative;
+    flex-basis: calc(50% - 10px);
+    margin-bottom: 20px;
+}
+
+.photo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    display: block;
+}
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background-color: rgba(0, 0, 0, 0.7); Remove this line or set it to transparent */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.text {
+    flex-basis: calc(50% - 10px);
+    margin-bottom: 20px;
+}
+
+.text p {
+    margin-top: 10px;
+}
+
+/* Style the about-me section */
+.about-me {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-me .photo {
+    flex-basis: calc(25% - 10px); /* Adjust to the desired size */
+    margin-bottom: 20px;
+}
+
+.about-me .photo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.about-me .text {
+    flex-basis: calc(65% - 10px);
+    margin-bottom: 20px;
+}
+
+.about-me .text p {
+    margin-top: 10px;
+}
+
+/* Style the footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    clear: both;
+}
+
+/* Style links within paragraphs */
+a {
+    color: #0078d4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Responsive design voor fotoreeksen op kleine schermen */
+@media screen and (max-width: 768px) {
+    .photo-row .photo,
+    .photo-row .text,
+    .about-me .photo,
+    .about-me .text {
+        flex-basis: 100%;
+    }
+}
+
+#contact {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#contact h2 {
+    color: #333;
+}
+
+#contact p {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#contact ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#contact ul li {
+    margin-bottom: 10px;
+}
+
+#contact ul ul {
+    margin-top: 10px;
+}
+
+#contact ul ul li {
+    margin-bottom: 5px;
+    margin-left: 20px; /* Added indentation for social media contacts */
+}
