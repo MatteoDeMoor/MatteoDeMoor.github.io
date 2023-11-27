@@ -9,8 +9,6 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
-    /* Mobile viewport scaling */
-    font-size: 16px;
 }
 
 /* Style the header */
@@ -33,8 +31,8 @@ nav ul {
 }
 
 nav li {
-    display: block; /* Change to block for mobile friendliness */
-    margin-bottom: 10px; /* Add spacing between links */
+    display: inline;
+    margin-right: 20px;
 }
 
 nav a {
@@ -42,7 +40,6 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
-    display: block; /* Ensure each link takes the full width */
 }
 
 /* Style sections */
