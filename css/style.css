@@ -89,26 +89,6 @@ p {
     display: block;
 }
 
-.caption {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    width: 100%;
-}
-
-.text {
-    flex-basis: calc(50% - 10px);
-    margin-bottom: 20px;
-}
-
-.text p {
-    margin-top: 10px;
-}
-
 /* Style the about-me section */
 .about-me {
     display: flex;
@@ -132,10 +112,6 @@ p {
 .about-me .text {
     flex-basis: calc(65% - 10px);
     margin-bottom: 20px;
-}
-
-.about-me .text p {
-    margin-top: 10px;
 }
 
 /* Style the footer */
@@ -221,9 +197,5 @@ footer p {
 
     nav a {
         font-size: 18px; /* Increase font size for better readability on smaller screens */
-    }
-
-    .caption {
-        bottom: 10px; /* Adjust the position of the caption on smaller screens */
     }
 }
