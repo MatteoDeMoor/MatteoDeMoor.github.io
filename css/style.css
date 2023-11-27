@@ -9,6 +9,8 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
+    /* Mobile viewport scaling */
+    font-size: 16px;
 }
 
 /* Style the header */
@@ -31,8 +33,8 @@ nav ul {
 }
 
 nav li {
-    display: inline;
-    margin-right: 20px;
+    display: block;
+    margin-bottom: 10px;
 }
 
 nav a {
@@ -40,6 +42,7 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
+    display: block;
 }
 
 /* Style sections */
@@ -91,7 +94,6 @@ p {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    /* background-color: rgba(0, 0, 0, 0.7); Remove this line or set it to transparent */
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -116,7 +118,7 @@ p {
 }
 
 .about-me .photo {
-    flex-basis: calc(25% - 10px); /* Adjust to the desired size */
+    flex-basis: calc(25% - 10px);
     margin-bottom: 20px;
 }
 
@@ -156,7 +158,7 @@ a:hover {
     color: #0056b3;
 }
 
-/* Responsive design voor fotoreeksen op kleine schermen */
+/* Responsive design for photo rows on small screens */
 @media screen and (max-width: 768px) {
     .photo-row .photo,
     .photo-row .text,
@@ -188,6 +190,7 @@ a:hover {
     padding: 0;
 }
 
+/* Style the rest of the contact section */
 #contact ul li {
     margin-bottom: 10px;
 }
@@ -199,4 +202,28 @@ a:hover {
 #contact ul ul li {
     margin-bottom: 5px;
     margin-left: 20px; /* Added indentation for social media contacts */
+}
+
+/* Additional styling for the footer */
+footer p {
+    margin: 0; /* Remove default margin to avoid spacing issues */
+}
+
+/* Adjustments for better mobile responsiveness */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        margin-bottom: 0; /* Remove margin bottom for list items in the navigation */
+    }
+
+    nav a {
+        font-size: 18px; /* Increase font size for better readability on smaller screens */
+    }
+
+    .caption {
+        bottom: 10px; /* Adjust the position of the caption on smaller screens */
+    }
 }
