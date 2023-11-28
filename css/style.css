@@ -199,3 +199,27 @@ footer p {
         font-size: 18px; /* Increase font size for better readability on smaller screens */
     }
 }
+
+.download-button {
+    margin-top: 20px;
+}
+
+.download-button a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.download-button button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-button button:hover {
+    background-color: #333;
+}
+
