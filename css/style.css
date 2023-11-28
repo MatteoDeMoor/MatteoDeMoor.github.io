@@ -227,3 +227,29 @@ footer:hover {
     background-color: #f9f9f9;
     transition: background-color 0.3s ease;
 }
+
+.about-me .photo.first-photo {
+    flex-basis: calc(30% - 10px);
+}
+
+.about-me .text {
+    flex-basis: calc(60% - 10px);
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Additional margin between the photo and the text */
+.about-me .photo {
+    margin-right: 20px;
+}
+
+/* Additional rules to ensure items are displayed side by side */
+.about-me .photo,
+.about-me .text,
+.download-button {
+    box-sizing: border-box;
+}
