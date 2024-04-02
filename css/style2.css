@@ -1,10 +1,10 @@
 /* Aanpassingen aan de grootte en lay-out van afbeeldingen */
 .photo img {
   width: auto; /* Laat de breedte zich automatisch aanpassen */
-  height: 200px; /* Vaste hoogte voor alle afbeeldingen */
+  height: 437.5px; /* Verhoogde vaste hoogte voor alle afbeeldingen, aangepast voor 175% zoom */
   object-fit: cover; /* Bedekt de container volledig zonder de verhouding te verliezen */
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8.75px; /* Aangepast voor 175% zoom */
+  box-shadow: 0 0 8.75px rgba(0, 0, 0, 0.2); /* Aangepast voor 175% zoom */
 }
 
 /* Algemene styling voor .photo-row */
@@ -13,32 +13,32 @@
   justify-content: center; /* Centreert de foto's in de rij */
   flex-wrap: wrap;
   align-items: flex-start; /* Zorgt ervoor dat items aan de bovenkant worden uitgelijnd */
-  margin-bottom: 20px;
-  border: 2px solid rgba(0, 0, 0, 0.15);
-  padding: 15px;
-  border-radius: 8px;
+  margin-bottom: 35px; /* Verhoogde marge, aangepast voor 175% zoom */
+  border: 3.5px solid rgba(0, 0, 0, 0.15); /* Aangepast voor 175% zoom */
+  padding: 35px; /* Verhoogde padding voor meer ruimte, aangepast voor 175% zoom */
+  border-radius: 14px; /* Aangepast voor 175% zoom */
 }
 
 /* Aanpassing voor .photo elementen */
 .photo {
   display: flex;
   justify-content: center;
-  flex: 1 1 calc(25% - 20px); /* Aangepast voor vier foto's naast elkaar met aangepaste basisgrootte */
-  margin: 10px; /* Consistente marge tussen foto's */
+  flex: 1 1 calc(25% - 17.5px); /* Aangepaste flex-basis voor grotere foto's en minder marge tussen foto's, aangepast voor 175% zoom */
+  margin: 26.25px; /* Aangepaste marge tussen foto's voor extra ruimte, aangepast voor 175% zoom */
 }
 
 /* Responsieve aanpassingen */
 @media screen and (max-width: 768px) {
   .photo {
     flex-basis: 50%; /* Op middelgrote schermen twee foto's naast elkaar */
-    margin: 10px 0; /* Aangepaste marges voor een betere weergave op middelgrote schermen */
+    margin: 26.25px 0; /* Aangepaste marges voor een betere weergave op middelgrote schermen, aangepast voor 175% zoom */
   }
 }
 
 @media screen and (max-width: 480px) {
   .photo {
     flex-basis: 100%; /* Op kleinere schermen neemt elke foto de volledige breedte in */
-    margin: 10px 0; /* Aangepaste marges voor een betere weergave op kleinere schermen */
+    margin: 26.25px 0; /* Aangepaste marges voor een betere weergave op kleinere schermen, aangepast voor 175% zoom */
   }
 }
 
@@ -47,10 +47,10 @@
   display: flex;
   flex-direction: column;
   align-items: center; /* Centreert de titel en beschrijving boven en onder de foto's */
-  margin-bottom: 20px;
-  border: 2px solid rgba(0, 0, 0, 0.15);
-  padding: 15px;
-  border-radius: 8px;
+  margin-bottom: 43.75px; /* Extra marge onderaan voor meer ruimte, aangepast voor 175% zoom */
+  border: 3.5px solid rgba(0, 0, 0, 0.15); /* Aangepast voor 175% zoom */
+  padding: 35px; /* Verhoogde padding, aangepast voor 175% zoom */
+  border-radius: 14px; /* Aangepast voor 175% zoom */
 }
 
 .shirt-section p {
