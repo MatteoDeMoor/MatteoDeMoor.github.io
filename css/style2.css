@@ -23,28 +23,22 @@
 .photo {
   display: flex;
   justify-content: center;
-  flex: 1 1 calc(33.33% - 20px); /* Geschikt voor drie foto's naast elkaar met aangepaste basisgrootte */
+  flex: 1 1 calc(25% - 20px); /* Aangepast voor vier foto's naast elkaar met aangepaste basisgrootte */
   margin: 10px; /* Consistente marge tussen foto's */
 }
-
-/* Specifieke stijlen voor .photo-row containers met precies drie .photo kinderen */
-/* Deze regel is niet meer nodig, omdat we een universele marge hebben ingesteld. */
-
-/* Aanpassingen voor .photo-row containers met twee .photo kinderen */
-/* Deze regel is niet meer nodig, omdat we een universele marge hebben ingesteld. */
 
 /* Responsieve aanpassingen */
 @media screen and (max-width: 768px) {
   .photo {
-    flex-basis: 100%; /* Op kleinere schermen neemt elke foto de volledige breedte in */
-    margin: 10px 0; /* Aangepaste marges voor een betere weergave op kleinere schermen */
+    flex-basis: 50%; /* Op middelgrote schermen twee foto's naast elkaar */
+    margin: 10px 0; /* Aangepaste marges voor een betere weergave op middelgrote schermen */
   }
 }
 
 @media screen and (max-width: 480px) {
-  .photo h3, .photo p {
-    text-align: center;
-    padding: 0 10px;
+  .photo {
+    flex-basis: 100%; /* Op kleinere schermen neemt elke foto de volledige breedte in */
+    margin: 10px 0; /* Aangepaste marges voor een betere weergave op kleinere schermen */
   }
 }
 
