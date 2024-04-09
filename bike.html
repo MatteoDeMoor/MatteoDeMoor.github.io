@@ -84,5 +84,11 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Matteo De Moor</p>
-   
+        <p>&copy; <span id="jaar"></span> Matteo De Moor</p>
+        <script>
+            document.getElementById('jaar').textContent = new Date().getFullYear(); // Verkrijg het huidige jaar
+        </script>
+    </footer>
+
+</body>
+</html>

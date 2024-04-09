@@ -82,21 +82,18 @@
             <p>Feel free to reach out to me through one of the following ways</p>
 
             <ul>
-                <li>Email: <a href="mailto:matteo.demoor@student.hogent.be">matteo.demoor@student.hogent.be</a></li>
-                <li>Social Media:
-                    <ul>
-                        <li>Twitter: <a href="https://twitter.com/matteo_moor" target="_blank">@matteo_moor</a></li>
-                        <li>Facebook: <a href="https://www.facebook.com/matteo.demoor.5" target="_blank">Matteo De Moor</a></li>
-                        <li>Instagram: <a href="https://www.instagram.com/matteodemoor/" target="_blank">@matteodemoor</a></li>
-                        <li>LinkedIn: <a href="https://www.linkedin.com/in/matteo-de-moor-543022293/" target="_blank">linkedin.com/in/matteo-de-moor-543022293</a></li>
-                    </ul>
-                </li>
+                <li>E-mail: <a href="mailto:matteo.demoor@student.hogent.be">matteo.demoor@student.hogent.be</a></li>
+                <li>Facebook: <a href="https://www.facebook.com/matteo.demoor.5" target="_blank">Matteo De Moor</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/matteo-de-moor-543022293/" target="_blank">linkedin.com/in/matteo-de-moor-543022293</a></li>
             </ul>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Matteo De Moor</p>
+        <p>&copy; <span id="jaar"></span> Matteo De Moor</p>
+        <script>
+            document.getElementById('jaar').textContent = new Date().getFullYear(); // Verkrijg het huidige jaar
+        </script>
     </footer>
 </body>
 
