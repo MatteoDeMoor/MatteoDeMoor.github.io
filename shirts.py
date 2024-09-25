@@ -1,6 +1,7 @@
 import csv
 
-csv_file_path = './csv/shirts.csv'
+csv_file_path = 'D:/Hogent/Visual Studio Code/Projecten/SiteGithub/MatteoDeMoor.github.io/csv/shirts.csv'
+
 
 # Open the CSV file
 with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
@@ -59,14 +60,15 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
                 <p>Here you can find my unique Club Brugge shirts collection.</p>
     """
     
-    # Loop through each row in the reversed list
+    # Dynamische teller voor shirts van 1 tot 70
+    shirt_counter = 1
+    
+    # Loop door elke rij in de omgekeerde lijst
     for row in rows:
-        shirt_ID = row['ID']
         shirt_team = row['Team']
         shirt_season = row['Seizoen']
         shirt_type = row['Type']
         shirt_size = row['Maat']
-
         shirt_player = row['Speler']
         shirt_number = row['Nummer']
 
@@ -77,7 +79,7 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
         
         # HTML structure for the shirt section
         html_content += f"""
-        <!-- Shirt {shirt_ID} -->
+        <!-- Shirt {shirt_counter} -->
         <div class="shirt-section">
             <h3>{shirt_team} {shirt_season} {shirt_type} shirt - Size: {shirt_size}</h3>
             <div class="photo-row">
@@ -111,6 +113,9 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
         </div>
         </div>
         """
+        
+        # Verhoog de shirt teller
+        shirt_counter += 1
 
     # Close the main content and body
     html_content += """
@@ -121,7 +126,7 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
     """
     
     # Save the generated HTML to a file
-    with open('shirts.html', 'w', encoding='utf-8') as htmlfile:
+    with open('D:/Hogent/Visual Studio Code/Projecten/SiteGithub/MatteoDeMoor.github.io/shirts.html', 'w', encoding='utf-8') as htmlfile:
         htmlfile.write(html_content)
 
 print("HTML file has been generated successfully.")
