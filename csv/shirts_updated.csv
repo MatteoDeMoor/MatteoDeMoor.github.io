@@ -11,7 +11,7 @@ ID,Seizoen,Shirt,Speler,Nummer,Maat,Geschatte_Waarde,Matchworn,Foto1,Foto2,Foto3
 10,2005-2007,Home,Priske,24,XL,70,,Shirt9.1.jpg,Shirt9.2.jpg,,
 11,2006-2007,Away,,,XL,40,,Shirt8.1.jpg,Shirt8.2.jpg,,
 12,2007-2008,Away,Sterchele,23,S,70,,Shirt10.1.jpg,Shirt10.2.jpg,,
-13,2007-2008,Home,Sonck,,3XL,65,,,,,
+13,2007-2008,Home,Sonck,10,3XL,65,,,,,
 14,2008-2009,Third,,,L,40,,Shirt11.1.jpg,Shirt11.2.jpg,,
 15,2008-2009,Away,,,XXL,35,,Shirt12.1.jpg,Shirt12.2.jpg,,
 16,2008-2009,Home,Simaeys,14,L,75,,,,,Squad signed
@@ -43,7 +43,7 @@ ID,Seizoen,Shirt,Speler,Nummer,Maat,Geschatte_Waarde,Matchworn,Foto1,Foto2,Foto3
 42,2016-2017,Home,Vormer,25,XL,70,,Shirt29.1.jpg,Shirt29.2.jpg,,
 43,2016-2017,Home,Izquierdo,11,XL,60,,Shirt30.1.jpg,Shirt30.2.jpg,Shirt30.3.jpg,
 44,2017-2018,GK,,,L,30,,Shirt32.1.jpg,Shirt32.2.jpg,,
-45,2017-2018,Fourth,,,XXL,50,,,,,
+45,2017-2018,Fourth,,,XXL,50,,Shirt31.1.jpg,Shirt31.2.jpg,,
 46,2017-2018,Third,Nakamba,30,XL,80,,Shirt33.1.jpg,Shirt33.2.jpg,,Signed by Nakamba
 47,2017-2018,Away,Dennis,42,L,40,,Shirt34.1.jpg,Shirt34.2.jpg,,
 48,2017-2018,Away,Nakamba,30,XL,70,,Shirt35.1.jpg,Shirt35.2.jpg,,Signed by Nakamba
