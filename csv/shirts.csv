@@ -1,71 +1,93 @@
-Team,Seizoen,Type,Speler,Nummer,Maat,Foto1,Foto2,Foto3
-Belgium,2020,Home,Meunier,15,M,Shirt1.1.jpg,Shirt1.2.jpg
-Club Brugge,1997-1998,Home,,23,XL,Shirt2.1.jpg,Shirt2.2.jpg
-Club Brugge,1999-2000,Home,, ,M,Shirt3.1.jpg,Shirt3.2.jpg,Shirt3.3.jpg
-Club Brugge,2000-2002,Home,, ,XL,Shirt4.1.jpg,Shirt4.2.jpg
-Club Brugge,2002-2004,Home,, ,XL,Shirt5.1.jpg,Shirt5.2.jpg
-Club Brugge,2004-2005,GK,, ,XL,Shirt6.1.jpg,Shirt6.2.jpg
-Club Brugge,2004-2006,Away,Verheyen,7,XXL,Shirt7.1.jpg,Shirt7.2.jpg
-Club Brugge,2006-2007,Away,, ,XL,Shirt8.1.jpg,Shirt8.2.jpg
-Club Brugge,2005-2007,Home,Priske,24,XL,Shirt9.1.jpg,Shirt9.2.jpg
-Club Brugge,2007-2008,Away,Sterchele,23,S,Shirt10.1.jpg,Shirt10.2.jpg
-Club Brugge,2008-2009,Third,, ,L,Shirt11.1.jpg,Shirt11.2.jpg
-Club Brugge,2008-2009,Away,, ,XXL,Shirt12.1.jpg,Shirt12.2.jpg
-Club Brugge,2009-2010,GK 2,Stijnen,1,S,Shirt13.1.jpg,Shirt13.2.jpg
-Club Brugge,2009-2010,Away,, ,S,Shirt14.1.jpg,Shirt14.2.jpg
-Club Brugge,2009-2010,Home,, ,L,Shirt15.1.jpg,Shirt15.2.jpg
-Club Brugge,2010-2011,Away,, ,L,Shirt16.1.jpg,Shirt16.2.jpg
-Club Brugge,2010-2011,Home,Perisic,44,XL,Shirt17.1.jpg,Shirt17.2.jpg,Shirt17.3.jpg
-Club Brugge,2011-2012,Away,, ,S,Shirt18.1.jpg,Shirt18.2.jpg
-Club Brugge,2012-2013,GK,Jorgacevic,39,L,Shirt19.1.jpg,Shirt19.2.jpg
-Club Brugge,2012-2013,Away,Hoefkens,4,L,Shirt20.1.jpg,Shirt20.2.jpg,Shirt20.3.jpg
-Club Brugge,2012-2013,Home,Trickovski,17,L,Shirt21.1.jpg,Shirt21.2.jpg
-Club Brugge,2013-2014,Away,, ,L,Shirt22.1.jpg,Shirt22.2.jpg
-Club Brugge,2013-2014,Away,, ,L,Shirt23.1.jpg,Shirt23.2.jpg
-Club Brugge,2013-2014,Away,Sobota,17,L,Shirt24.1.jpg,Shirt24.2.jpg
-Club Brugge,2013-2014,Home,De Sutter,9,L,Shirt25.1.jpg,Shirt25.2.jpg
-Club Brugge,2014-2015,Home,De Fauw,2,L,Shirt26.1.jpg,Shirt26.2.jpg
-Club Brugge,2014-2015,Home, ,12,XL,Shirt70.1.jpg,Shirt70.2.jpg,Shirt70.3.jpg
-Club Brugge,2014-2015,Home,Storm,42,M,Shirt27.1.jpg,Shirt27.2.jpg
-Club Brugge,2016-2017,Third,Vormer,25,XL,Shirt28.1.jpg,Shirt28.2.jpg
-Club Brugge,2016-2017,Home,Vormer,25,XL,Shirt29.1.jpg,Shirt29.2.jpg
-Club Brugge,2016-2017,Home,Izquierdo,11,XL,Shirt30.1.jpg,Shirt30.2.jpg,Shirt30.3.jpg
-Club Brugge,2017-2018,Special,, ,XXL,Shirt31.1.jpg,Shirt31.2.jpg
-Club Brugge,2017-2018,GK,, ,L,Shirt32.1.jpg,Shirt32.2.jpg
-Club Brugge,2017-2018,Third,Nakamba,30,XL,Shirt33.1.jpg,Shirt33.2.jpg
-Club Brugge,2017-2018,Away,Dennis,42,L,Shirt34.1.jpg,Shirt34.2.jpg
-Club Brugge,2017-2018,Away,Nakamba,30,XL,Shirt35.1.jpg,Shirt35.2.jpg
-Club Brugge,2017-2018,Home,Vanaken,20,XXL,Shirt36.1.jpg,Shirt36.2.jpg
-Club Brugge,2018-2019,Third,, ,M,Shirt37.1.jpg,Shirt37.2.jpg
-Club Brugge,2018-2019,Third,Vormer (kader),,XXL,Shirt38.1.jpg,Shirt38.2.jpg
-Club Brugge,2018-2019,Third,Diatta,11,XXXL,Shirt39.1.jpg,Shirt39.2.jpg
-Club Brugge,2018-2019,Away,Vossen,9,XL,Shirt40.1.jpg,Shirt40.2.jpg
-Club Brugge,2018-2019,Home,Amrabat,6,M,Shirt41.1.jpg,Shirt41.2.jpg
-Club Brugge,2019-2020,Third,, ,S,Shirt42.1.jpg,Shirt42.2.jpg
-Club Brugge,2019-2020,Away,, ,M,Shirt43.1.jpg,Shirt43.2.jpg
-Club Brugge,2019-2020,Home,, ,L,Shirt44.1.jpg,Shirt44.2.jpg
-Club Brugge,2019-2020,Home,Sobol,2,XXL,Shirt45.1.jpg,Shirt45.2.jpg,Shirt45.3.jpg
-Club Brugge,2020-2021,GK 1,, ,L,Shirt46.1.jpg,Shirt46.2.jpg
-Club Brugge,2020-2021,Third,, ,XXL,Shirt47.1.jpg,Shirt47.2.jpg
-Club Brugge,2020-2021,Third,, ,S,Shirt48.1.jpg,Shirt48.2.jpg,Shirt48.3.jpg
-Club Brugge,2020-2021,Away,, ,M,Shirt49.1.jpg,Shirt49.2.jpg
-Club Brugge,2020-2021,Home,, ,S,Shirt50.1.jpg,Shirt50.2.jpg,Shirt50.3.jpg
-Club Brugge,2021-2022,GK,Mignolet,22,XL,Shirt51.1.jpg,Shirt51.2.jpg
-Club Brugge,2021-2022,Third,Vormer,25,L,Shirt52.1.jpg,Shirt52.2.jpg
-Club Brugge,2021-2022,Third,, ,M,Shirt53.1.jpg,Shirt53.2.jpg
-Club Brugge,2021-2022,Away,, ,XXL,Shirt54.1.jpg,Shirt54.2.jpg
-Club Brugge,2021-2022,Away,, ,XXL,Shirt55.1.jpg,Shirt55.2.jpg
-Club Brugge,2021-2022,Home,Buchanan,17,XL,Shirt56.1.jpg,Shirt56.2.jpg
-Club Brugge,2021-2022,Home,Hendry,5,XXL,Shirt57.1.jpg,Shirt57.2.jpg
-Club Brugge,2021-2022,Home,, ,M,Shirt58.1.jpg,Shirt58.2.jpg
-Club Brugge,2022-2023,GK 2,, ,M,Shirt59.1.jpg,Shirt59.2.jpg
-Club Brugge,2022-2023,GK 1,, ,XXL,Shirt60.1.jpg,Shirt60.2.jpg
-Club Brugge,2022-2023,Third,Jutgla,9,XL,Shirt61.1.jpg,Shirt61.2.jpg
-Club Brugge,2022-2023,Away,, ,L,Shirt62.1.jpg,Shirt62.2.jpg
-Club Brugge,2022-2023,Home,Vanaken,20,XL,Shirt63.1.jpg,Shirt63.2.jpg
-Club Brugge,2022-2023,Home,Rits,26,XL,Shirt64.1.jpg,Shirt64.2.jpg,Shirt64.3.jpg
-Club Brugge,2023-2024,Third,, ,XL,Shirt65.1.jpg,Shirt65.2.jpg
-Club Brugge,2023-2024,Away,Jutgla,9,S,Shirt66.1.jpg,Shirt66.2.jpg
-Club Brugge,2023-2024,Away,Mechele,44,XL,Shirt67.1.jpg,Shirt67.2.jpg
-Club Brugge,2023-2024,Home,Vanaken,20,XXL,Shirt68.1.jpg,Shirt68.2.jpg
-Club Brugge,2023-2024,Home,Vetlesen,10,XXL,Shirt69.1.jpg,Shirt69.2.jpg
+Seizoen,Shirt,Speler,Nummer,Maat,Geschatte_Waarde,Handtekeningen,Matchworn,Foto1,Foto2,Foto3
+1995-1996,Home youth,,4,XL,60,,,,,
+1997-1998,Home,,23,XL,80,,,Shirt2.1.jpg,Shirt2.2.jpg,
+1998-1999,Home,,,XL,60,,,,,
+1999-2000,Home,,,M,80,,,Shirt3.1.jpg,Shirt3.2.jpg,Shirt3.3.jpg
+2000-2002,Away,,,XXL,60,,,,,
+2000-2002,Home,,,XL,50,,,Shirt4.1.jpg,Shirt4.2.jpg,
+2002-2004,Home,,,XL,60,,,Shirt5.1.jpg,Shirt5.2.jpg,
+2004-2005,GK,,,XL,30,,,Shirt6.1.jpg,Shirt6.2.jpg,
+2004-2006,Away,Verheyen,7,XXL,50,,,Shirt7.1.jpg,Shirt7.2.jpg,
+2005-2007,Home,Priske,24,XL,70,,,Shirt9.1.jpg,Shirt9.2.jpg,
+2006-2007,Away,,,XL,40,,,Shirt8.1.jpg,Shirt8.2.jpg,
+2007-2008,Away,Sterchele,23,S,70,,,Shirt10.1.jpg,Shirt10.2.jpg,
+2007-2008,Home,Sonck,,3XL,65,,,,,
+2008-2009,Third,,,L,40,,,Shirt11.1.jpg,Shirt11.2.jpg,
+2008-2009,Away,,,XXL,35,,,Shirt12.1.jpg,Shirt12.2.jpg,
+2008-2009,Home,Simaeys,14,L,75,hele ploeg,,,
+2009-2010,GK 2,Stijnen,1,S,25,,,Shirt13.1.jpg,Shirt13.2.jpg,
+2009-2010,Away,,,S,40,,,Shirt14.1.jpg,Shirt14.2.jpg,
+2009-2010,Home,,,L,40,,,Shirt15.1.jpg,Shirt15.2.jpg,
+2010-2011,Away,,,L,40,,,Shirt16.1.jpg,Shirt16.2.jpg,
+2010-2011,Home,Perisic,44,XL,60,,,Shirt17.1.jpg,Shirt17.2.jpg,Shirt17.3.jpg
+2010-2011,Home,Akpala,15,3XL,50,,,,,
+2011-2012,Away,,,S,30,,,Shirt18.1.jpg,Shirt18.2.jpg,
+2012-2013,GK,Jorgacevic,39,L,40,,,Shirt19.1.jpg,Shirt19.2.jpg,
+2012-2013,Away,Hoefkens,4,L,55,,,Shirt20.1.jpg,Shirt20.2.jpg,Shirt20.3.jpg
+2012-2013,Home,,,XL,45,,,,,
+2013-2014,Third,,,XL,40,,,,,
+2013-2014,Third,,,L,45,,,,,
+2013-2014,Third,Castillo,30,XXl,45,,,,,
+2013-2014,Away,Sobota,17,L,50,,,Shirt24.1.jpg,Shirt24.2.jpg,
+2013-2014,Home,De Sutter,9,XL,50,,,,,
+2013-2014,Home,De Sutter,9,L,70,De Sutter,,Shirt25.1.jpg,Shirt25.2.jpg,
+2014-2015,Away,,,L,40,,,,,
+2014-2015,Home,De Fauw,2,L,80,,,Shirt26.1.jpg,Shirt26.2.jpg,
+2014-2015,Home,,12,XL,70,hele ploeg,,Shirt70.1.jpg,Shirt70.2.jpg,Shirt70.3.jpg
+2014-2015,Home,Storm,42,M,70,,,Shirt27.1.jpg,Shirt27.2.jpg,
+2015-2016,Away,Cools,21,L,60,,,,,
+2016-2017,GK,,,XL,35,,,,,
+2016-2017,Third,Vormer,25,XL,65,,,Shirt28.1.jpg,Shirt28.2.jpg,
+2016-2017,Away,Simons,3,XXL,60,,,,,
+2016-2017,Home,Simons,3,XXL,60,,,,,
+2016-2017,Home,Vormer,25,XL,70,,,Shirt29.1.jpg,Shirt29.2.jpg,
+2016-2017,Home,Izquierdo,11,XL,60,,,Shirt30.1.jpg,Shirt30.2.jpg,Shirt30.3.jpg
+2017-2018,GK,,,L,30,,,Shirt32.1.jpg,Shirt32.2.jpg,
+2017-2018,Fourth,,,XXL,50,,,,,
+2017-2018,Third,Nakamba,30,XL,80,Nakamba,,Shirt33.1.jpg,Shirt33.2.jpg,
+2017-2018,Away,Dennis,42,L,40,,,Shirt34.1.jpg,Shirt34.2.jpg,
+2017-2018,Away,Nakamba,30,XL,70,Nakamba,,Shirt35.1.jpg,Shirt35.2.jpg,
+2017-2018,Home,,,3XL,20,,,,,
+2017-2018,Home,Simons,3,3XL,,,,,
+2017-2018,Home,Vanaken,20,XXL,40,,,Shirt36.1.jpg,Shirt36.2.jpg,
+2018-2019,Third,,,5XL,30,,,,,
+2018-2019,Third,,,3XL,40,,,,,
+2018-2019,Third,Vormer (kader),,XXL,100,Vormer,,Shirt38.1.jpg,Shirt38.2.jpg,
+2018-2019,Third,Dennis,42,M,40,,,,,
+2018-2019,Third,Diatta,11,3XL,40,,,,,
+2018-2019,Away,Vormer,25,XXL,60,,,,,
+2018-2019,Away,Openda,80,L,50,,,,,
+2018-2019,Away,Vossen,9,XL,60,,,Shirt40.1.jpg,Shirt40.2.jpg,
+2018-2019,Home,Amrabat,6,M,50,,,Shirt41.1.jpg,Shirt41.2.jpg,
+2019-2020,Third,,,3XL,40,,,,,
+2019-2020,Third,De Ketelaere,90,M,50,,,,,
+2019-2020,Away,,,M,35,,,Shirt43.1.jpg,Shirt43.2.jpg,
+2019-2020,Away,De Ketelaere,90,XL,50,,,,,
+2019-2020,Home,Sobol,2,XXL,50,,,Shirt45.1.jpg,Shirt45.2.jpg,Shirt45.3.jpg
+2020-2021,GK 1,,,L,35,,,Shirt46.1.jpg,Shirt46.2.jpg,
+2020-2021,Third,,,XXL,35,,,Shirt47.1.jpg,Shirt47.2.jpg,
+2020-2021,Away,Denswil,24,L,50,,,,,
+2020-2021,Away,,,,M,100,Lambert, Lang, De ketelaere, Mignolet, Odoi, Skov Olsen, Lammens, Mata, Buchanan, Balanta, Sobol, Otasowie,,Shirt49.1.jpg,Shirt49.2.jpg,
+2020-2021,Home,,,,S,70,De Ketelaere,,Shirt50.1.jpg,Shirt50.2.jpg,Shirt50.3.jpg
+2021-2022,GK,Mignolet,22,XL,50,,,Shirt51.1.jpg,Shirt51.2.jpg,
+2021-2022,Third,Vormer,25,L,60,,,Shirt52.1.jpg,Shirt52.2.jpg,
+2021-2022,Away,,,,XXL,100,Nusa, Bursik, Jutgla, Thiago, Mechele, Spileers, De Cuyper, Barbera, Meijer, Jackers, Homma, Vetlesen, Shinton, Mignolet, Talbi, Onyedika, Balanta, Ordonez,,Shirt54.1.jpg,Shirt54.2.jpg,
+2021-2022,Home,Buchanan,17,XL,50,,,Shirt56.1.jpg,Shirt56.2.jpg,
+2021-2022,Home,Hendry,5,XXL,40,,,Shirt57.1.jpg,Shirt57.2.jpg,
+2021-2022,Home,,,,M,150,De Ketelaere, Rits, Hoefkens, Jutgla, Skov Olsen, Sowah, Audoor, Meijer, Vanaken, Vormer, Sylla, Nusa, Mbamba, Shinton, Okereke, Nsoki, Balanta, Lammens, Izquierdo, Mata, Buchanan, Mechele, Lang, Sobol, Dost, Schreuder, Mignolet, Ricca, Sandra,Shirt58.1.jpg,Shirt58.2.jpg,
+2022-2023,GK 2,,,M,30,,,Shirt59.1.jpg,Shirt59.2.jpg,
+2022-2023,GK 1,,,XXL,60,Mignolet,,Shirt60.1.jpg,Shirt60.2.jpg,
+2022-2023,Third,Nielsen,27,L,60,,,,,
+2022-2023,Third,Jutgla,9,XL,60,,,Shirt61.1.jpg,Shirt61.2.jpg,
+2022-2023,Away,Ordonez,4,L,45,,,,,
+2022-2023,Away,Sylla,94,L,45,,,,,
+2022-2023,Home,Spileers,27,L,45,,,,,
+2022-2023,Home,Rits,26,XL,90,hele ploeg,,Shirt64.1.jpg,Shirt64.2.jpg,Shirt64.3.jpg
+2023-2024,Fourth,,,L,80,,,,,
+2023-2024,Third,,,XL,110,Vetlesen, Skoras, Hayen, Seys, Mignolet, De Corte, Onyedika, Nielsen, De Cuyper, Meijer, Et Taïbi, Nilsson, Nusa, Talbi, Spileers, Jackers, Vermant, Boyata, Mechele, Tzolis, Zinckernagel,,Shirt65.1.jpg,Shirt65.2.jpg,
+2023-2024,Away,Mechele,44,XL,60,,,Shirt67.1.jpg,Shirt67.2.jpg,
+2023-2024,Home,Vanaken,20,XXL,60,,,Shirt68.1.jpg,Shirt68.2.jpg,
+2023-2024,Home,Vetlesen,10,XXL,60,,,Shirt69.1.jpg,Shirt69.2.jpg,
+2023-2024,Home,Zinckernagel,77,M,130,Zinckernagel,Matchworn,,,
+2024-2025,Home,Talbi,68,M,180,Talbi,Matchworn,,,
+2024-2025,Home,,,,M,120,hele ploeg,,,

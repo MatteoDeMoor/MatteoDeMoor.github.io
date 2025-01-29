@@ -1,7 +1,6 @@
 import csv
 
-csv_file_path = 'D:/Hogent/Visual Studio Code/Projecten/SiteGithub/MatteoDeMoor.github.io/csv/shirts.csv'
-
+csv_file_path = 'D:/Hogent/Visual Studio Code/Projecten/SiteGithub/MatteoDeMoor.github.io/csv/shirts_updated.csv'
 
 # Open the CSV file
 with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
@@ -60,14 +59,14 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
                 <p>Here you can find my unique Club Brugge shirts collection.</p>
     """
     
-    # Dynamische teller voor shirts van 1 tot 70
+    # Dynamische teller voor shirts
     shirt_counter = 1
     
-    # Loop door elke rij in de omgekeerde lijst
+    # Loop door elke rij
     for row in rows:
-        shirt_team = row['Team']
+        shirt_team = "Club Brugge"
         shirt_season = row['Seizoen']
-        shirt_type = row['Type']
+        shirt_type = row['Shirt']
         shirt_size = row['Maat']
         shirt_player = row['Speler']
         shirt_number = row['Nummer']
@@ -75,26 +74,33 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
         # Update image paths to reference the 'shirtImages' folder
         image1 = f"./shirtImages/{row['Foto1']}" if row['Foto1'] else ""
         image2 = f"./shirtImages/{row['Foto2']}" if row['Foto2'] else ""
-        image3 = f"./shirtImages/{row['Foto3']}" if row['Foto3'] else ""  # Optional image
+        image3 = f"./shirtImages/{row['Foto3']}" if row['Foto3'] else ""
         
         # HTML structure for the shirt section
         html_content += f"""
         <!-- Shirt {shirt_counter} -->
         <div class="shirt-section">
-            <h3>{shirt_team} {shirt_season} {shirt_type} shirt - Size: {shirt_size}</h3>
+            <h3>{shirt_team} {shirt_season} {shirt_type} - Size: {shirt_size}</h3>
             <div class="photo-row">
+        """
+        
+        # Eerste foto (als die bestaat)
+        if image1:
+            html_content += f"""
                 <div class="photo">
                     <img src="{image1}" alt="{shirt_team} {shirt_season} {shirt_type} shirt" loading="lazy">
                 </div>
-        """
-        
-        # Only add the second and third images if they exist
+            """
+
+        # Tweede foto
         if image2:
             html_content += f"""
                 <div class="photo">
                     <img src="{image2}" alt="{shirt_team} {shirt_season} {shirt_type} shirt" loading="lazy">
                 </div>
             """
+
+        # Derde foto
         if image3:
             html_content += f"""
                 <div class="photo">
@@ -102,22 +108,22 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
                 </div>
             """
         
-        # Add the player's name and number if they exist, centered below the photos
+        # Speler + nummer (mits ingevuld)
         if shirt_player and shirt_number.strip():
             html_content += f"""
             <div class="player-info">Player: {shirt_player} - Number: {shirt_number}</div>
             """
-        
-        # Close the shirt section
+
+        # Sluit tags
         html_content += """
-        </div>
+            </div>
         </div>
         """
         
-        # Verhoog de shirt teller
+        # Verhoog de teller
         shirt_counter += 1
 
-    # Close the main content and body
+    # Sluit de HTML
     html_content += """
             </section>
         </main>
@@ -125,7 +131,7 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
     </html>
     """
     
-    # Save the generated HTML to a file
+    # Schrijf de HTML naar een bestand
     with open('D:/Hogent/Visual Studio Code/Projecten/SiteGithub/MatteoDeMoor.github.io/shirts.html', 'w', encoding='utf-8') as htmlfile:
         htmlfile.write(html_content)
 
