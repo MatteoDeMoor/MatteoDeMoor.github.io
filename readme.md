@@ -7,7 +7,7 @@ This repository contains the source code for my personal website, showcasing my 
 - HTML
 - CSS
 - Python
-- Hosting: [Github Pages]
+- Hosting: Github Pages
 
 ## Usage
 To watch the website go to: [(https://matteodemoor.github.io/)]
