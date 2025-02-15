@@ -1,18 +1,16 @@
 import csv
 
-csv_file_path = 'D:/Hogent/Visual Studio Code/Projecten/SiteGithub/MatteoDeMoor.github.io/csv/shirts_updated.csv'
+csv_file_path = 'D:/Hogent/Visual Studio Code/Projecten/SiteGithub/MatteoDeMoor.github.io/csv/Shirts.csv'
 
-# Open the CSV file
+# Open de CSV file
 with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
     reader = csv.DictReader(csvfile)
     
-    # Collect all rows in a list
+    # Verzamel alle rijen in een lijst en draai deze om (van onder naar boven)
     rows = list(reader)
-    
-    # Reverse the rows list to go through the CSV from bottom to top
     rows.reverse()
 
-    # Start the HTML content
+    # Begin de HTML-inhoud
     html_content = """
     <!DOCTYPE html>
     <html lang="en">
@@ -24,25 +22,35 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
         <link rel="icon" href="./images/ai2.png" type="image/x-icon">
         <title>Shirt Collection - Matteo De Moor</title>
         <style>
-            /* Additional CSS to center player info */
-            .player-info {
+            /* CSS voor een nette presentatie */
+            .player-info, .extra-info {
                 text-align: center;
                 margin-top: 10px;
                 font-weight: bold;
+            }
+            .shirt-section {
+                margin-bottom: 40px;
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 20px;
             }
             .photo-row {
                 display: flex;
                 justify-content: center;
                 gap: 20px;
+                flex-wrap: wrap;
             }
             .photo {
                 max-width: 300px;
+            }
+            .shirt-details {
+                text-align: center;
+                margin-top: 10px;
             }
         </style>
     </head>
     <body>
         <header>
-            <h1>Shirt collection</h1>
+            <h1>Shirt Collection</h1>
         </header>
 
         <nav>
@@ -58,33 +66,39 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
                 <h2>My personal shirt collection</h2>
                 <p>Here you can find my unique Club Brugge shirts collection.</p>
     """
-    
-    # Dynamische teller voor shirts
+
+    # Teller voor shirts
     shirt_counter = 1
-    
-    # Loop door elke rij
+
+    # Loop door elke rij in de CSV
     for row in rows:
-        shirt_team = "Club Brugge"
+        shirt_team = "Club Brugge"  # Deze waarde blijft hardcoded
         shirt_season = row['Seizoen']
         shirt_type = row['Shirt']
         shirt_size = row['Maat']
         shirt_player = row['Speler']
         shirt_number = row['Nummer']
 
-        # Update image paths to reference the 'shirtImages' folder
+        # Extra gegevens (indien ingevuld)
+        shirt_value = row['Waarde']
+        shirt_extra = row['Extra']
+        shirt_future = row['Toekomst']
+        shirt_signatures = row['Handtekeningen']
+
+        # Stel paden samen voor de foto's (indien aanwezig)
         image1 = f"./shirtImages/{row['Foto1']}" if row['Foto1'] else ""
         image2 = f"./shirtImages/{row['Foto2']}" if row['Foto2'] else ""
         image3 = f"./shirtImages/{row['Foto3']}" if row['Foto3'] else ""
         
-        # HTML structure for the shirt section
+        # Begin de HTML voor deze shirtsectie
         html_content += f"""
-        <!-- Shirt {shirt_counter} -->
+        <!-- Shirt {shirt_counter} (ID: {row['ID']}) -->
         <div class="shirt-section">
             <h3>{shirt_team} {shirt_season} {shirt_type} - Size: {shirt_size}</h3>
             <div class="photo-row">
         """
         
-        # Eerste foto (als die bestaat)
+        # Eerste foto
         if image1:
             html_content += f"""
                 <div class="photo">
@@ -108,22 +122,35 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
                 </div>
             """
         
-        # Speler + nummer (mits ingevuld)
+        html_content += "</div>"  # sluit de photo-row
+
+        # Toon spelerinformatie (indien ingevuld)
         if shirt_player and shirt_number.strip():
             html_content += f"""
             <div class="player-info">Player: {shirt_player} - Number: {shirt_number}</div>
             """
 
-        # Sluit tags
+        # Voeg de extra details toe indien beschikbaar
+        # html_content += '<div class="shirt-details">'
+        # if shirt_value:
+        #     html_content += f"<p>Value: {shirt_value}</p>"
+        # if shirt_extra:
+        #     html_content += f"<p>Extra: {shirt_extra}</p>"
+        # if shirt_future:
+        #     html_content += f"<p>Future: {shirt_future}</p>"
+        # if shirt_signatures:
+        #     html_content += f"<p>Signatures: {shirt_signatures}</p>"
+        # html_content += "</div>"
+
+        # Sluit de shirtsectie
         html_content += """
-            </div>
         </div>
         """
         
         # Verhoog de teller
         shirt_counter += 1
 
-    # Sluit de HTML
+    # Sluit de HTML-inhoud af
     html_content += """
             </section>
         </main>
