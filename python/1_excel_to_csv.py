@@ -31,3 +31,5 @@ output_path = os.path.join(output_dir, 'Shirts.csv')
 
 # Sla de DataFrame op als CSV
 df.to_csv(output_path, index=False)
+
+print("The excel file has been succesfully converted to a CSV file.")
