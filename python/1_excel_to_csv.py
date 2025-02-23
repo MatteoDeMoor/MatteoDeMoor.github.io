@@ -9,11 +9,9 @@ df = pd.read_excel(
 # Filter de DataFrame zodat alleen rijen met een numerieke 'ID' behouden blijven
 df = df[pd.to_numeric(df['ID'], errors='coerce').notna()]
 
-# Converteer de kolom 'Waarde': als het een geheel getal is, maak er een int van
+# Verwijder de kolom 'Waarde' als deze bestaat
 if 'Waarde' in df.columns:
-    df['Waarde'] = df['Waarde'].apply(
-        lambda x: int(x) if pd.notnull(x) and float(x).is_integer() else x
-    )
+    df.drop('Waarde', axis=1, inplace=True)
 
 # Converteer de kolom 'Nummer':
 if 'Nummer' in df.columns:

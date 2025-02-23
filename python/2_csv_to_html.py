@@ -72,15 +72,12 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
 
     # Loop door elke rij in de CSV
     for row in rows:
-        shirt_team = "Club Brugge"  # Deze waarde blijft hardcoded
+        shirt_team = "Club Brugge"  # hardcoded
         shirt_season = row['Seizoen']
         shirt_type = row['Shirt']
         shirt_size = row['Maat']
         shirt_player = row['Speler']
         shirt_number = row['Nummer']
-
-        # Extra gegevens (indien ingevuld)
-        shirt_value = row['Waarde']
         shirt_extra = row['Extra']
         shirt_future = row['Toekomst']
         shirt_signatures = row['Handtekeningen']
