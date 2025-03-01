@@ -127,18 +127,6 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
             <div class="player-info">Player: {shirt_player} - Number: {shirt_number}</div>
             """
 
-        # Voeg de extra details toe indien beschikbaar
-        # html_content += '<div class="shirt-details">'
-        # if shirt_value:
-        #     html_content += f"<p>Value: {shirt_value}</p>"
-        # if shirt_extra:
-        #     html_content += f"<p>Extra: {shirt_extra}</p>"
-        # if shirt_future:
-        #     html_content += f"<p>Future: {shirt_future}</p>"
-        # if shirt_signatures:
-        #     html_content += f"<p>Signatures: {shirt_signatures}</p>"
-        # html_content += "</div>"
-
         # Sluit de shirtsectie
         html_content += """
         </div>
