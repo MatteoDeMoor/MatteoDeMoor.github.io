@@ -123,8 +123,9 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
 
         # Toon spelerinformatie (indien ingevuld)
         if shirt_player and shirt_number.strip():
+            extra_text = " - Matchworn" if shirt_extra == "Matchworn" else ""
             html_content += f"""
-            <div class="player-info">Player: {shirt_player} - Number: {shirt_number}</div>
+            <div class="player-info">Player: {shirt_player} - Number: {shirt_number}{extra_text}</div>
             """
 
         # Sluit de shirtsectie
