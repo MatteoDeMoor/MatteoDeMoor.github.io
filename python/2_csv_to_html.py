@@ -57,7 +57,6 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
             <ul>
                 <li><a href="index.html">Homepage</a></li>
                 <li><a href="shirts.html">Shirts</a></li>
-                <li><a href="bike.html">Bike</a></li>
             </ul>
         </nav>
 

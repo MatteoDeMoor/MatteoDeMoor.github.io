@@ -1,374 +1,238 @@
-/* Reset some default styles */
-body, h1, h2, p, ul, li {
+/* RESET */
+* {
     margin: 0;
     padding: 0;
-}
-
-/* Fonts and general styling */
-body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-/* Header styling */
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
-
-/* Navigation styling */
-nav {
-    background-color: #444;
-    text-align: center;
-    padding: 10px;
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-nav li {
-    display: block;
-    margin-right: 15px;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    display: block;
-}
-
-/* Section styling */
-section {
-    padding: 20px;
-    background-color: #fff;
-    margin: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-/* Photo and text alternation */
-.photo-row,
-.about-me {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.photo,
-.about-me .photo {
-    position: relative;
-    flex-basis: calc(50% - 10px);
-    margin-bottom: 20px;
-}
-
-.photo img,
-.about-me .photo img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    margin: 0 auto;
-    display: block;
-}
-
-.about-me .text {
-    flex-basis: calc(65% - 10px);
-    margin-bottom: 20px;
-}
-
-/* Footer styling */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    clear: both;
-}
-
-/* Links styling */
-a {
-    color: #0078d4;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #0056b3;
-}
-
-/* Responsive design */
-@media screen and (max-width: 768px) {
-    .photo-row .photo,
-    .photo-row .text,
-    .about-me .photo,
-    .about-me .text {
-        flex-basis: 100%;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav li {
-        margin-bottom: 10px;
-    }
-
-    nav a {
-        font-size: 18px;
-    }
-}
-
-/* Contact section styling */
-#contact {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-#contact h2 {
-    color: #333;
-}
-
-#contact p {
-    color: #555;
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-#contact ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#contact ul li {
-    margin-bottom: 10px;
-}
-
-#contact ul ul {
-    margin-top: 10px;
-}
-
-#contact ul ul li {
-    margin-bottom: 5px;
-    margin-left: 20px;
-}
-
-/* Additional styling for the footer */
-footer p {
-    margin: 0;
-}
-
-/* Download button styling */
-.download-button {
-    margin-top: 20px;
-}
-
-.download-button a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-}
-
-.download-button button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.download-button button:hover {
-    background-color: #333;
-}
-
-/* Hover effects */
-nav a:hover,
-.photo img:hover,
-section:hover,
-#contact ul li a:hover,
-footer:hover,
-.download-button button:hover {
-    color: #333;
-}
-
-.photo img:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
-}
-
-section:hover,
-footer:hover {
-    background-color: #f9f9f9;
-    transition: background-color 0.3s ease;
-}
-
-.about-me .photo.first-photo {
-    flex-basis: calc(30% - 10px);
-}
-
-.about-me .text {
-    flex-basis: calc(60% - 10px);
-    margin-left: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-/* Additional margin between the photo and the text */
-.about-me .photo {
-    margin-right: 20px;
-}
-
-/* Additional rules to ensure items are displayed side by side */
-.about-me .photo,
-.about-me .text,
-.download-button {
     box-sizing: border-box;
 }
 
-.button {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    border: none;
-    background: none;
-    color: #0f1923;
-    cursor: pointer;
-    position: relative;
-    padding: 8px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+/* Basishtml */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fef9f6;
+    color: #111;
+    min-height: 100vh;
+}
+
+/* Eenvoudige fade-in classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* BOVENSTE BALK (HEADER) */
+.top-bar {
+    width: 100%;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top-bar-left {
+    font-size: 1.2rem;
     font-weight: bold;
-    font-size: 14px;
-    transition: all .15s ease;
-  }
-  
-  .button::before,
-  .button::after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: 0;
-    left: 0;
-    height: calc(50% - 5px);
-    border: 1px solid #7D8082;
-    transition: all .15s ease;
-  }
-  
-  .button::before {
-    top: 0;
-    border-bottom-width: 0;
-  }
-  
-  .button::after {
-    bottom: 0;
-    border-top-width: 0;
-  }
-  
-  .button:active,
-  .button:focus {
-    outline: none;
-  }
-  
-  .button:active::before,
-  .button:active::after {
-    right: 3px;
-    left: 3px;
-  }
-  
-  .button:active::before {
-    top: 3px;
-  }
-  
-  .button:active::after {
-    bottom: 3px;
-  }
-  
-  .button_lg {
+}
+.top-bar-right .nav-link {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    background: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: #111;
+    transition: background 0.3s ease;
+}
+.top-bar-right .nav-link:hover {
+    /* Lichtblauwe hover */
+    background: #d4ebff;
+}
+
+/* MAIN CONTENT (Flex-container) */
+.main-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Dit zorgt dat de content (boven de footer) vrijwel fullscreen is */
+    min-height: calc(100vh - 120px);
+    gap: 40px; /* ruimte tussen .intro-left en .intro-right */
+}
+
+/* LINKERKOLOM */
+.intro-left {
+    flex: 1 1 300px;
+    max-width: 400px;
+}
+.intro-left h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.intro-left p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+.download-cv {
+    margin-bottom: 20px;
+}
+.download-cv a {
+    text-decoration: none;
+    color: #0078d4;
+    font-weight: bold;
+}
+.download-cv a:hover {
+    text-decoration: underline;
+}
+
+/* Social icons */
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+.social-icons a {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+.social-icons img {
+    width: 100%;
+    height: auto;
+}
+
+/* RECHTERKOLOM */
+.intro-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 300px;
+    max-width: 400px;
+}
+
+/* Foto + shadow shape */
+.photo-wrapper {
     position: relative;
-    display: block;
-    padding: 10px 20px;
-    color: #fff;
-    background-color: #0f1923;
-    overflow: hidden;
-    box-shadow: inset 0px 0px 0px 1px transparent;
-  }
-  
-  .button_lg::before {
-    content: '';
-    display: block;
+    width: 300px;  /* Groter formaat */
+    height: 300px; /* Groter formaat */
+    margin-bottom: 20px;
+}
+.shadow-shape {
+    background-color: #000;
+    width: 180px;  
+    height: 240px;
+    border-radius: 50%;
     position: absolute;
-    top: 0;
+    left: 22%;
+    top: 22%;
+    z-index: 1;
+    opacity: 0.8;
+}
+.profile-photo {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    z-index: 2;
     left: 0;
-    width: 2px;
-    height: 2px;
-    background-color: #0f1923;
-  }
-  
-  .button_lg::after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 4px;
-    height: 4px;
-    background-color: #0f1923;
-    transition: all .2s ease;
-  }
-  
-  .button_sl {
-    display: block;
-    position: absolute;
     top: 0;
-    bottom: -1px;
-    left: -8px;
-    width: 0;
-    background-color: #ff4655;
-    transform: skew(-15deg);
-    transition: all .2s ease;
-  }
-  
-  .button_text {
-    position: relative;
-  }
-  
-  .button:hover {
-    color: #0f1923;
-  }
-  
-  .button:hover .button_sl {
-    width: calc(100% + 15px);
-  }
-  
-  .button:hover .button_lg::after {
+}
+
+/* Naam bij de foto */
+.name-text {
+    text-align: center;
+}
+.name-text h1 {
+    font-size: 2.5rem; /* Groter formaat naam */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+.subtext {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* FOOTER */
+.site-footer {
+    text-align: center;
+    width: 100%;
+    padding: 15px 0;
     background-color: #fff;
-  }
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+.site-footer p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* RESPONSIVE DESIGN: tablets en kleine laptops */
+@media (max-width: 900px) {
+    .main-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      min-height: auto; /* Zorgt ervoor dat het niet geforceerd groot is op kleine schermen */
+    }
+
+    .intro-left, 
+    .intro-right {
+      max-width: 100%;
+    }
+
+    .photo-wrapper {
+      margin: 0 0 20px 0;
+    }
+
+    .name-text {
+      text-align: center;
+    }
+}
+
+/* EXTRA MEDIA QUERY: smalle telefoons */
+@media (max-width: 600px) {
+    /* Pas de foto en shadow-shape iets verder aan */
+    .photo-wrapper {
+        width: 220px;
+        height: 220px;
+    }
+    .shadow-shape {
+        width: 130px;
+        height: 170px;
+        left: 22%;
+        top: 22%;
+    }
+    .profile-photo {
+        width: 220px;
+        height: 220px;
+    }
+
+    /* Maak de naam iets kleiner om te voorkomen dat het te groot wordt */
+    .name-text h1 {
+        font-size: 2rem;
+    }
+
+    /* Tekstkolom iets meer padding */
+    .intro-left {
+      padding: 0 10px;
+    }
+    .intro-right {
+      padding: 0 10px;
+    }
+
+    /* Eventueel de top-bar items stapelen */
+    .top-bar {
+      flex-wrap: wrap;
+    }
+    .top-bar-right {
+      margin-top: 10px;
+    }
+}

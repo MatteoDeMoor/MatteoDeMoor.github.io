@@ -1,105 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="./images/ai2.png" type="image/x-icon">
-
-    <title>Matteo De Moor</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matteo De Moor</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <header>
-        <h1>Welcome to my personal website</h1>
-    </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Homepage</a></li>
-            <li><a href="shirts.html">Shirts</a></li>
-            <li><a href="bike.html">Bike</a></li>
-        </ul>
-    </nav>
+  <!-- Bovenste balk (header) -->
+  <header class="top-bar fade-in">
+    <div class="top-bar-left">Matteo De Moor</div>
+    <div class="top-bar-right">
+      <a href="shirts.html" class="nav-link">See my shirt collection</a>
+    </div>
+  </header>
 
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
+  <!-- Hoofdsectie met foto en naam -->
+  <main class="main-content">
+    <!-- Linkerkant: Intro/tekst -->
+    <section class="intro-left fade-in">
+      <h3>I'm a final-year Applied Informatics student</h3>
+      <p>In the field of Data Science & AI</p>
+      <br><!-- Extra lege regel -->
 
-            <article class="about-me">
-                <figure class="photo first-photo">
-                    <img src="images/Matteo2.jpg" alt="Matteo De Moor Photo 14">
-                    <figcaption></figcaption>
-                </figure>
-                <div class="text">
-                    <p>
-                        Hello, I'm Matteo De Moor and this is my personal website where you can get to know me better!
-                        Thank you for visiting! Feel free to explore more about me, and if you find my profile intriguing, 
-                        I invite you to download my CV below.
-                    </p>
-                    
-                    <div class="download-button">
-                        <a href="./file/CV_MatteoDeMoor.pdf" download>
-                            <button class="button">
-                                <span class="button_lg">
-                                    <span class="button_sl"></span>
-                                    <span class="button_text">Download Now</span>
-                                </span>
-                            </button>
-                        </a>
-                    </div>
-                </div>
-            </article>
-        </section>
+      <!-- Korte info over je stage (1 zin) -->
+      <p>
+        Currently interning at Club Brugge as a Football Data Scientist, focusing on analyzing football data to measure and evaluate player performance.
+      </p>
 
-        <section id="biography">
-            <h2>Biography</h2>
-            <p>
-                Hello, I'm Matteo De Moor, and I'm in my final year of Applied Informatics. 
-                I have a strong interest in technology and innovation and am always curious about the latest digital developments. 
-                Informatics fascinates me because new possibilities keep emerging, and I love exploring them.
-            </p>
-            <br>
-            <p>
-                My studies focus on the exciting world of Artificial Intelligence (AI). 
-                I explore machine learning, data analysis, and smart systems, driven by a passion to understand how AI can shape the future of technology. 
-                The challenges and opportunities in this field keep me curious and motivated to contribute to the next wave of innovation.
-            </p>
-            <br>
-            <p>
-                Outside of the digital world, I have a strong interest in staying active and living a healthy lifestyle. 
-                Fitness is more than just a routine for me because it’s a passion that balances my studies. 
-                Regular exercise helps clear my mind and strengthens qualities like discipline and resilience 
-                which are valuable in both my academic and personal life.
-            </p>
-            <br>
-            <p>
-                I am a big sports fan, both when it comes to playing and watching. 
-                Football is definitely my favorite sport, and there’s no doubt that Club Brugge is my number one team. 
-                My passion for the club goes beyond just watching their matches, as I’ve also built a collection 
-                of Club Brugge shirts over the years. 
-                Supporting them is more than just a hobby for me, it’s something I truly enjoy and follow closely.
-            </p>
-        </section>
+      <!-- Downloadlink voor je CV -->
+      <div class="download-cv">
+        <a href="file/CV_MatteoDeMoor.pdf" download>Download my CV here!</a>
+      </div>
+      
+      <!-- Social icons / links -->
+      <div class="social-icons">
+        <!-- Email -->
+        <a href="mailto:matteo.de.moor@skynet.be"
+           aria-label="Email"
+           target="_blank">
+          <img src="images/mail.svg" alt="Email icon">
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/matteo-de-moor/"
+           aria-label="LinkedIn"
+           target="_blank">
+          <img src="images/linkedin.svg" alt="LinkedIn icon">
+        </a>
+        <!-- GitHub -->
+        <a href="https://github.com/MatteoDeMoor"
+           aria-label="GitHub"
+           target="_blank">
+          <img src="images/github.svg" alt="GitHub icon">
+        </a>
+      </div>
+    </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Feel free to reach out to me through one of the following ways</p>
+    <!-- Rechterkant: Cirkelvormige foto met “shadow shape” en naam -->
+    <section class="intro-right fade-in">
+      <div class="photo-wrapper">
+        <div class="shadow-shape"></div>
+        <img src="images/Matteo2.jpg" alt="Matteo De Moor" class="profile-photo">
+      </div>
+      <div class="name-text">
+        <h1>Matteo<br>De Moor</h1>
+        <!-- Oneliner onder je naam -->
+        <p class="subtext">Turning data into insights, one model at a time.</p>
+      </div>
+    </section>
+  </main>
 
-            <ul>
-                <li>E-mail: <a href="mailto:matteo.demoor@student.hogent.be">matteo.demoor@student.hogent.be</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/matteo-de-moor/" target="_blank">linkedin.com/in/matteo-de-moor-543022293</a></li>
-            </ul>
-        </section>
-    </main>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; <span id="jaar"></span> Matteo De Moor</p>
+  </footer>
 
-    <footer>
-        <p>&copy; <span id="jaar"></span> Matteo De Moor</p>
-        <script>
-            document.getElementById('jaar').textContent = new Date().getFullYear(); // Verkrijg het huidige jaar
-        </script>
-    </footer>
+  <!-- JavaScript voor fade-in animaties en jaartal -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Dynamisch jaartal
+      document.getElementById('jaar').textContent = new Date().getFullYear();
+
+      // Fade-in elementen laten verschijnen
+      const fadeElements = document.querySelectorAll('.fade-in');
+      fadeElements.forEach((el, idx) => {
+        setTimeout(() => {
+          el.classList.add('visible');
+        }, 200 * idx);
+      });
+    });
+  </script>
 </body>
-
 </html>
