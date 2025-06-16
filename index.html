@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- Bovenste balk (header) -->
+  <!-- Top bar (header) -->
   <header class="top-bar fade-in">
     <div class="top-bar-left">Matteo De Moor</div>
     <div class="top-bar-right">
@@ -16,20 +16,20 @@
     </div>
   </header>
 
-  <!-- Hoofdsectie met foto en naam -->
+  <!-- Main section with photo and name -->
   <main class="main-content">
-    <!-- Linkerkant: Intro/tekst -->
+    <!-- Left side: Intro/text -->
     <section class="intro-left fade-in">
       <h3>I'm a final-year Applied Informatics student</h3>
       <p>In the field of Data Science & AI</p>
-      <br><!-- Extra lege regel -->
+      <br><!-- Extra blank line -->
 
-      <!-- Korte info over je stage (1 zin) -->
+      <!-- Short info about your internship (1 sentence) -->
       <p>
-        Currently interning at Club Brugge as a Football Data Scientist, focusing on analyzing football data to measure and evaluate player performance.
+      I recently completed an internship at Club Brugge as a Football Data Scientist, where I analyzed football data to measure and evaluate player performance. I am now actively seeking a full-time position.
       </p>
 
-      <!-- Downloadlink voor je CV -->
+      <!-- Download link for your CV -->
       <div class="download-cv">
         <a href="file/CV_MatteoDeMoor.pdf" download>Download my CV here!</a>
       </div>
@@ -57,7 +57,7 @@
       </div>
     </section>
 
-    <!-- Rechterkant: Cirkelvormige foto met “shadow shape” en naam -->
+    <!-- Right side: Circular photo with "shadow shape" and name -->
     <section class="intro-right fade-in">
       <div class="photo-wrapper">
         <div class="shadow-shape"></div>
@@ -65,7 +65,7 @@
       </div>
       <div class="name-text">
         <h1>Matteo<br>De Moor</h1>
-        <!-- Oneliner onder je naam -->
+        <!-- One-liner under your name -->
         <p class="subtext">Turning data into insights, one model at a time.</p>
       </div>
     </section>
@@ -76,13 +76,13 @@
     <p>&copy; <span id="jaar"></span> Matteo De Moor</p>
   </footer>
 
-  <!-- JavaScript voor fade-in animaties en jaartal -->
+  <!-- JavaScript for fade-in animations and year -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Dynamisch jaartal
+      // Dynamically set the year
       document.getElementById('jaar').textContent = new Date().getFullYear();
 
-      // Fade-in elementen laten verschijnen
+      // Trigger fade-in on elements
       const fadeElements = document.querySelectorAll('.fade-in');
       fadeElements.forEach((el, idx) => {
         setTimeout(() => {

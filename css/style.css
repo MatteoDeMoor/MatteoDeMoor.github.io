@@ -1,238 +1,224 @@
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Basishtml */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #fef9f6;
-    color: #111;
-    min-height: 100vh;
+body{
+  font-family: Arial, sans-serif;
+  background-color: #fef9f6;
+  color: #111;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
 }
 
-/* Eenvoudige fade-in classes */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+.fade-in{
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* BOVENSTE BALK (HEADER) */
-.top-bar {
-    width: 100%;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.top-bar-left {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-.top-bar-right .nav-link {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
-    background: #fff;
-    padding: 8px 16px;
-    border-radius: 4px;
-    color: #111;
-    transition: background 0.3s ease;
-}
-.top-bar-right .nav-link:hover {
-    /* Lichtblauwe hover */
-    background: #d4ebff;
+.fade-in.visible{
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* MAIN CONTENT (Flex-container) */
-.main-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    padding: 50px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    /* Dit zorgt dat de content (boven de footer) vrijwel fullscreen is */
-    min-height: calc(100vh - 120px);
-    gap: 40px; /* ruimte tussen .intro-left en .intro-right */
+.top-bar{
+  width: 100%;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-bar-left{
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.top-bar-right .nav-link{
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  background: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: #111;
+  transition: background 0.3s ease;
+}
+.top-bar-right .nav-link:hover{
+  background: #d4ebff;
 }
 
-/* LINKERKOLOM */
-.intro-left {
-    flex: 1 1 300px;
-    max-width: 400px;
-}
-.intro-left h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-.intro-left p {
-    font-size: 1rem;
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-.download-cv {
-    margin-bottom: 20px;
-}
-.download-cv a {
-    text-decoration: none;
-    color: #0078d4;
-    font-weight: bold;
-}
-.download-cv a:hover {
-    text-decoration: underline;
+.main-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+
+  flex: 1 0 auto;
+  min-height: 0;
 }
 
-/* Social icons */
-.social-icons {
-    display: flex;
-    gap: 10px;
+.intro-left{
+  flex: 1 1 300px;
+  max-width: 400px;
 }
-.social-icons a {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
+.intro-left h3{
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
-.social-icons img {
-    width: 100%;
-    height: auto;
+.intro-left p{
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
 }
 
-/* RECHTERKOLOM */
-.intro-right {
-    display: flex;
+.download-cv{
+  margin-bottom: 20px;
+}
+.download-cv a{
+  text-decoration: none;
+  color: #0078d4;
+  font-weight: bold;
+}
+.download-cv a:hover{
+  text-decoration: underline;
+}
+
+.social-icons{
+  display: flex;
+  gap: 10px;
+}
+.social-icons a{
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+.social-icons img{
+  width: 100%;
+  height: auto;
+}
+
+.intro-right{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.photo-wrapper{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+.shadow-shape{
+  background-color: #000;
+  width: 180px;
+  height: 240px;
+  border-radius: 50%;
+  position: absolute;
+  left: 22%;
+  top: 22%;
+  z-index: 1;
+  opacity: 0.8;
+}
+.profile-photo{
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  z-index: 2;
+  left: 0;
+  top: 0;
+}
+
+.name-text{
+  text-align: center;
+}
+.name-text h1{
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.subtext{
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.site-footer{
+  text-align: center;
+  width: 100%;
+  padding: 15px 0;
+  background-color: #fff;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+
+  flex-shrink: 0;
+}
+.site-footer p{
+  font-size: 0.9rem;
+  color: #666;
+}
+
+@media (max-width: 900px){
+  .main-content{
     flex-direction: column;
     align-items: center;
-    flex: 1 1 300px;
-    max-width: 400px;
+    gap: 20px;
+  }
+
+  .intro-left,
+  .intro-right{
+    max-width: 100%;
+  }
+
+  .photo-wrapper{
+    margin: 0 0 20px 0;
+  }
+
+  .name-text{
+    text-align: center;
+  }
 }
 
-/* Foto + shadow shape */
-.photo-wrapper {
-    position: relative;
-    width: 300px;  /* Groter formaat */
-    height: 300px; /* Groter formaat */
-    margin-bottom: 20px;
-}
-.shadow-shape {
-    background-color: #000;
-    width: 180px;  
-    height: 240px;
-    border-radius: 50%;
-    position: absolute;
+@media (max-width: 600px){
+  .photo-wrapper{
+    width: 220px;
+    height: 220px;
+  }
+  .shadow-shape{
+    width: 130px;
+    height: 170px;
     left: 22%;
     top: 22%;
-    z-index: 1;
-    opacity: 0.8;
-}
-.profile-photo {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #fff;
-    z-index: 2;
-    left: 0;
-    top: 0;
-}
+  }
+  .profile-photo{
+    width: 220px;
+    height: 220px;
+  }
 
-/* Naam bij de foto */
-.name-text {
-    text-align: center;
-}
-.name-text h1 {
-    font-size: 2.5rem; /* Groter formaat naam */
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 8px;
-}
-.subtext {
-    font-size: 0.9rem;
-    color: #666;
-}
+  .name-text h1{
+    font-size: 2rem;
+  }
 
-/* FOOTER */
-.site-footer {
-    text-align: center;
-    width: 100%;
-    padding: 15px 0;
-    background-color: #fff;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-}
-.site-footer p {
-    font-size: 0.9rem;
-    color: #666;
-}
+  .intro-left,
+  .intro-right{
+    padding: 0 10px;
+  }
 
-/* RESPONSIVE DESIGN: tablets en kleine laptops */
-@media (max-width: 900px) {
-    .main-content {
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      min-height: auto; /* Zorgt ervoor dat het niet geforceerd groot is op kleine schermen */
-    }
-
-    .intro-left, 
-    .intro-right {
-      max-width: 100%;
-    }
-
-    .photo-wrapper {
-      margin: 0 0 20px 0;
-    }
-
-    .name-text {
-      text-align: center;
-    }
-}
-
-/* EXTRA MEDIA QUERY: smalle telefoons */
-@media (max-width: 600px) {
-    /* Pas de foto en shadow-shape iets verder aan */
-    .photo-wrapper {
-        width: 220px;
-        height: 220px;
-    }
-    .shadow-shape {
-        width: 130px;
-        height: 170px;
-        left: 22%;
-        top: 22%;
-    }
-    .profile-photo {
-        width: 220px;
-        height: 220px;
-    }
-
-    /* Maak de naam iets kleiner om te voorkomen dat het te groot wordt */
-    .name-text h1 {
-        font-size: 2rem;
-    }
-
-    /* Tekstkolom iets meer padding */
-    .intro-left {
-      padding: 0 10px;
-    }
-    .intro-right {
-      padding: 0 10px;
-    }
-
-    /* Eventueel de top-bar items stapelen */
-    .top-bar {
-      flex-wrap: wrap;
-    }
-    .top-bar-right {
-      margin-top: 10px;
-    }
+  .top-bar{
+    flex-wrap: wrap;
+  }
+  .top-bar-right{
+    margin-top: 10px;
+  }
 }

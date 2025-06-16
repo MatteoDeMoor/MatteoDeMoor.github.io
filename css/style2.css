@@ -1,11 +1,9 @@
 
-/* Reset some default styles */
 body, h1, h2, p, ul, li {
   margin: 0;
   padding: 0;
 }
 
-/* Fonts and general styling */
 body {
   font-family: Arial, sans-serif;
   font-size: 16px;
@@ -13,7 +11,6 @@ body {
   color: #333;
 }
 
-/* Header styling */
 header {
   background-color: #333;
   color: #fff;
@@ -21,7 +18,6 @@ header {
   padding: 20px;
 }
 
-/* Navigation styling */
 nav {
   background-color: #444;
   text-align: center;
@@ -48,7 +44,6 @@ nav a {
   display: block;
 }
 
-/* Section styling */
 section {
   padding: 20px;
   background-color: #fff;
@@ -67,7 +62,6 @@ p {
   line-height: 1.5;
 }
 
-/* Photo and text alternation */
 .photo-row,
 .about-me {
   display: flex;
@@ -97,7 +91,6 @@ p {
   margin-bottom: 20px;
 }
 
-/* Footer styling */
 footer {
   background-color: #333;
   color: #fff;
@@ -106,7 +99,6 @@ footer {
   clear: both;
 }
 
-/* Links styling */
 a {
   color: #0078d4;
   text-decoration: none;
@@ -117,7 +109,6 @@ a:hover {
   color: #0056b3;
 }
 
-/* Responsive design */
 @media screen and (max-width: 768px) {
   .photo-row .photo,
   .photo-row .text,
@@ -140,7 +131,6 @@ a:hover {
   }
 }
 
-/* Contact section styling */
 #contact {
   background-color: #f9f9f9;
   padding: 20px;
@@ -176,12 +166,10 @@ a:hover {
   margin-left: 20px;
 }
 
-/* Additional styling for the footer */
 footer p {
   margin: 0;
 }
 
-/* Download button styling */
 .download-button {
   margin-top: 20px;
 }
@@ -208,7 +196,6 @@ footer p {
   background-color: #333;
 }
 
-/* Hover effects */
 nav a:hover,
 .photo img:hover,
 section:hover,
@@ -243,12 +230,10 @@ footer:hover {
   text-align: center;
 }
 
-/* Additional margin between the photo and the text */
 .about-me .photo {
   margin-right: 20px;
 }
 
-/* Additional rules to ensure items are displayed side by side */
 .about-me .photo,
 .about-me .text,
 .download-button {
@@ -374,59 +359,54 @@ footer:hover {
   background-color: #fff;
 }
 
-/* Aanpassingen aan de grootte en lay-out van afbeeldingen */
 .photo img {
-  width: auto; /* Laat de breedte zich automatisch aanpassen */
-  height: 437.5px; /* Verhoogde vaste hoogte voor alle afbeeldingen, aangepast voor 175% zoom */
-  object-fit: cover; /* Bedekt de container volledig zonder de verhouding te verliezen */
-  border-radius: 8.75px; /* Aangepast voor 175% zoom */
-  box-shadow: 0 0 8.75px rgba(0, 0, 0, 0.2); /* Aangepast voor 175% zoom */
+  width: auto;
+  height: 437.5px;
+  object-fit: cover;
+  border-radius: 8.75px;
+  box-shadow: 0 0 8.75px rgba(0, 0, 0, 0.2);
 }
 
-/* Algemene styling voor .photo-row */
 .photo-row {
   display: flex;
-  justify-content: center; /* Centreert de foto's in de rij */
+  justify-content: center;
   flex-wrap: wrap;
-  align-items: flex-start; /* Zorgt ervoor dat items aan de bovenkant worden uitgelijnd */
-  margin-bottom: 35px; /* Verhoogde marge, aangepast voor 175% zoom */
-  border: 3.5px solid rgba(0, 0, 0, 0.15); /* Aangepast voor 175% zoom */
-  padding: 35px; /* Verhoogde padding voor meer ruimte, aangepast voor 175% zoom */
-  border-radius: 14px; /* Aangepast voor 175% zoom */
+  align-items: flex-start;
+  margin-bottom: 35px;
+  border: 3.5px solid rgba(0, 0, 0, 0.15);
+  padding: 35px;
+  border-radius: 14px;
 }
 
-/* Aanpassing voor .photo elementen */
 .photo {
   display: flex;
   justify-content: center;
-  flex: 1 1 calc(25% - 17.5px); /* Aangepaste flex-basis voor grotere foto's en minder marge tussen foto's, aangepast voor 175% zoom */
-  margin: 26.25px; /* Aangepaste marge tussen foto's voor extra ruimte, aangepast voor 175% zoom */
+  flex: 1 1 calc(25% - 17.5px);
+  margin: 26.25px;
 }
 
-/* Responsieve aanpassingen */
 @media screen and (max-width: 768px) {
   .photo {
-    flex-basis: 50%; /* Op middelgrote schermen twee foto's naast elkaar */
-    margin: 26.25px 0; /* Aangepaste marges voor een betere weergave op middelgrote schermen, aangepast voor 175% zoom */
+    flex-basis: 50%;
+    margin: 26.25px 0;
   }
 }
 
 @media screen and (max-width: 480px) {
   .photo {
-    flex-basis: 100%; /* Op kleinere schermen neemt elke foto de volledige breedte in */
-    margin: 26.25px 0; /* Aangepaste marges voor een betere weergave op kleinere schermen, aangepast voor 175% zoom */
+    flex-basis: 100%;
+    margin: 26.25px 0;
   }
 }
 
-/* Stijl voor de shirt sectie */
 .shirt-section {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centreert de titel en beschrijving boven en onder de foto's */
-  margin-bottom: 43.75px; /* Extra marge onderaan voor meer ruimte, aangepast voor 175% zoom */
-  border: 3.5px solid rgba(0, 0, 0, 0.15); /* Aangepast voor 175% zoom */
-  padding: 35px; /* Verhoogde padding, aangepast voor 175% zoom */
-  border-radius: 14px; /* Aangepast voor 175% zoom */
+  align-items: center;
+  margin-bottom: 43.75px;
+  border: 3.5px solid rgba(0, 0, 0, 0.15);
+  padding: 35px;
+  border-radius: 14px;
 }
 
 .shirt-section p {

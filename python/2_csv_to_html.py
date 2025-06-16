@@ -2,15 +2,15 @@ import csv
 
 csv_file_path = 'D:/Hogent/Visual Studio Code/Projecten/SiteGithub/MatteoDeMoor.github.io/csv/Shirts.csv'
 
-# Open de CSV file
+# Open the CSV file
 with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
     reader = csv.DictReader(csvfile)
     
-    # Verzamel alle rijen in een lijst en draai deze om (van onder naar boven)
+    # Collect all rows into a list and reverse them (so newest appear first)
     rows = list(reader)
     rows.reverse()
 
-    # Begin de HTML-inhoud
+    # Start the HTML content
     html_content = """
     <!DOCTYPE html>
     <html lang="en">
@@ -22,7 +22,7 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
         <link rel="icon" href="./images/ai2.png" type="image/x-icon">
         <title>Shirt Collection - Matteo De Moor</title>
         <style>
-            /* CSS voor een nette presentatie */
+            /* CSS for a clean presentation */
             .player-info, .extra-info {
                 text-align: center;
                 margin-top: 10px;
@@ -66,27 +66,27 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
                 <p>Here you can find my unique Club Brugge shirts collection.</p>
     """
 
-    # Teller voor shirts
+    # Counter for shirts
     shirt_counter = 1
 
-    # Loop door elke rij in de CSV
+    # Loop through each row in the CSV
     for row in rows:
-        shirt_team = "Club Brugge"  # hardcoded
-        shirt_season = row['Seizoen']
-        shirt_type = row['Shirt']
-        shirt_size = row['Maat']
-        shirt_player = row['Speler']
-        shirt_number = row['Nummer']
-        shirt_extra = row['Extra']
-        shirt_future = row['Toekomst']
+        shirt_team       = "Club Brugge"  # hardcoded
+        shirt_season     = row['Seizoen']
+        shirt_type       = row['Shirt']
+        shirt_size       = row['Maat']
+        shirt_player     = row['Speler']
+        shirt_number     = row['Nummer']
+        shirt_extra      = row['Extra']
+        shirt_future     = row['Toekomst']
         shirt_signatures = row['Handtekeningen']
 
-        # Stel paden samen voor de foto's (indien aanwezig)
+        # Construct paths for the photos (if present)
         image1 = f"./shirtImages/{row['Foto1']}" if row['Foto1'] else ""
         image2 = f"./shirtImages/{row['Foto2']}" if row['Foto2'] else ""
         image3 = f"./shirtImages/{row['Foto3']}" if row['Foto3'] else ""
         
-        # Begin de HTML voor deze shirtsectie
+        # Start HTML for this shirt section
         html_content += f"""
         <!-- Shirt {shirt_counter} (ID: {row['ID']}) -->
         <div class="shirt-section">
@@ -94,7 +94,7 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
             <div class="photo-row">
         """
         
-        # Eerste foto
+        # First photo
         if image1:
             html_content += f"""
                 <div class="photo">
@@ -102,7 +102,7 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
                 </div>
             """
 
-        # Tweede foto
+        # Second photo
         if image2:
             html_content += f"""
                 <div class="photo">
@@ -110,7 +110,7 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
                 </div>
             """
 
-        # Derde foto
+        # Third photo
         if image3:
             html_content += f"""
                 <div class="photo">
@@ -118,24 +118,24 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
                 </div>
             """
         
-        html_content += "</div>"  # sluit de photo-row
+        html_content += "</div>"  # close .photo-row
 
-        # Toon spelerinformatie (indien ingevuld)
+        # Display player information (if provided)
         if shirt_player and shirt_number.strip():
             extra_text = " - Matchworn" if shirt_extra == "Matchworn" else ""
             html_content += f"""
             <div class="player-info">Player: {shirt_player} - Number: {shirt_number}{extra_text}</div>
             """
 
-        # Sluit de shirtsectie
+        # Close the shirt section
         html_content += """
         </div>
         """
         
-        # Verhoog de teller
+        # Increment the counter
         shirt_counter += 1
 
-    # Sluit de HTML-inhoud af
+    # Close the HTML content
     html_content += """
             </section>
         </main>
@@ -143,7 +143,7 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
     </html>
     """
     
-    # Schrijf de HTML naar een bestand
+    # Write the HTML to a file
     with open('D:/Hogent/Visual Studio Code/Projecten/SiteGithub/MatteoDeMoor.github.io/shirts.html', 'w', encoding='utf-8') as htmlfile:
         htmlfile.write(html_content)
 
