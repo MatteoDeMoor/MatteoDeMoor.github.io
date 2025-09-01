@@ -4,7 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Matteo De Moor</title>
+  <meta name="description" content="Matteo De Moor – final-year Applied Informatics student specialized in Data Science & AI. Portfolio, projects, and football data work." />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Matteo De Moor – Portfolio" />
+  <meta property="og:description" content="Turning data into insights. Final-year Applied Informatics student focused on Data Science & AI." />
+  <meta property="og:image" content="images/Matteo.jpg" />
+  <meta property="og:url" content="https://matteodemoor.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="images/ai2.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
 
@@ -39,19 +52,19 @@
         <!-- Email -->
         <a href="mailto:matteo.de.moor@skynet.be"
            aria-label="Email"
-           target="_blank">
+           target="_blank" rel="noopener noreferrer">
           <img src="images/mail.svg" alt="Email icon">
         </a>
         <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/matteo-de-moor/"
            aria-label="LinkedIn"
-           target="_blank">
+           target="_blank" rel="noopener noreferrer">
           <img src="images/linkedin.svg" alt="LinkedIn icon">
         </a>
         <!-- GitHub -->
         <a href="https://github.com/MatteoDeMoor"
            aria-label="GitHub"
-           target="_blank">
+           target="_blank" rel="noopener noreferrer">
           <img src="images/github.svg" alt="GitHub icon">
         </a>
       </div>
@@ -76,20 +89,6 @@
     <p>&copy; <span id="jaar"></span> Matteo De Moor</p>
   </footer>
 
-  <!-- JavaScript for fade-in animations and year -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Dynamically set the year
-      document.getElementById('jaar').textContent = new Date().getFullYear();
-
-      // Trigger fade-in on elements
-      const fadeElements = document.querySelectorAll('.fade-in');
-      fadeElements.forEach((el, idx) => {
-        setTimeout(() => {
-          el.classList.add('visible');
-        }, 200 * idx);
-      });
-    });
-  </script>
+  <!-- JS loaded via js/main.js -->
 </body>
 </html>
