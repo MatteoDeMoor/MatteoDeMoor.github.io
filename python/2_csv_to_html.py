@@ -1,6 +1,8 @@
 import csv
+from pathlib import Path
 
-csv_file_path = 'D:/Hogent/Visual Studio Code/Projecten/SiteGithub/MatteoDeMoor.github.io/csv/Shirts.csv'
+base_dir = Path(__file__).resolve().parents[1]
+csv_file_path = base_dir / 'csv' / 'Shirts.csv'
 
 # Open the CSV file
 with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
@@ -17,53 +19,32 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shirt Collection - Matteo De Moor</title>
+        <meta name="description" content="Browse Matteo De Moor’s unique Club Brugge football shirt collection with photos, seasons, sizes, and players." />
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/style2.css">
         <link rel="icon" href="./images/ai2.png" type="image/x-icon">
-        <title>Shirt Collection - Matteo De Moor</title>
-        <style>
-            /* CSS for a clean presentation */
-            .player-info, .extra-info {
-                text-align: center;
-                margin-top: 10px;
-                font-weight: bold;
-            }
-            .shirt-section {
-                margin-bottom: 40px;
-                border-bottom: 1px solid #ccc;
-                padding-bottom: 20px;
-            }
-            .photo-row {
-                display: flex;
-                justify-content: center;
-                gap: 20px;
-                flex-wrap: wrap;
-            }
-            .photo {
-                max-width: 300px;
-            }
-            .shirt-details {
-                text-align: center;
-                margin-top: 10px;
-            }
-        </style>
+        <script src="js/shirts.js" defer></script>
     </head>
     <body>
-        <header>
-            <h1>Shirt Collection</h1>
+        <header class="top-bar">
+            <div class="top-bar-left"><a href="index.html" class="nav-link" style="background:none;padding:0">Matteo De Moor</a></div>
+            <div class="top-bar-right">
+              <a href="shirts.html" class="nav-link">Shirt Collection</a>
+            </div>
         </header>
-
-        <nav>
-            <ul>
-                <li><a href="index.html">Homepage</a></li>
-                <li><a href="shirts.html">Shirts</a></li>
-            </ul>
-        </nav>
 
         <main>
             <section>
                 <h2>My personal shirt collection</h2>
                 <p>Here you can find my unique Club Brugge shirts collection.</p>
+                <div class="filter-bar" aria-label="Filter shirts">
+                  <input type="text" id="filter-season" placeholder="Season (e.g., 2024-2025)" aria-label="Filter by season" />
+                  <input type="text" id="filter-type" placeholder="Type (Home/Away/Third/GK)" aria-label="Filter by type" />
+                  <input type="text" id="filter-size" placeholder="Size (e.g., M, XL)" aria-label="Filter by size" />
+                  <input type="text" id="filter-player" placeholder="Player (e.g., Vanaken)" aria-label="Filter by player" />
+                  <button id="filter-clear" class="button"><span class="button_lg"><span class="button_sl"></span><span class="button_text">Clear</span></span></button>
+                </div>
     """
 
     # Counter for shirts
@@ -144,7 +125,8 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
     """
     
     # Write the HTML to a file
-    with open('D:/Hogent/Visual Studio Code/Projecten/SiteGithub/MatteoDeMoor.github.io/shirts.html', 'w', encoding='utf-8') as htmlfile:
+    output_path = base_dir / 'shirts.html'
+    with open(output_path, 'w', encoding='utf-8') as htmlfile:
         htmlfile.write(html_content)
 
 print("HTML file has been generated successfully.")

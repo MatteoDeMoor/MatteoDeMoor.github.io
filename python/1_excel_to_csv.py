@@ -1,10 +1,12 @@
 import pandas as pd
 import os
+from pathlib import Path
+
+base_dir = Path(__file__).resolve().parents[1]
+excel_path = base_dir / 'excel' / 'Club_Shirts.xlsx'
 
 # Read the Excel file into a DataFrame
-df = pd.read_excel(
-    r'D:\Hogent\Visual Studio Code\Projecten\SiteGithub\MatteoDeMoor.github.io\excel\Club_Shirts.xlsx'
-)
+df = pd.read_excel(excel_path)
 
 # Keep only rows where 'ID' is numeric
 df = df[pd.to_numeric(df['ID'], errors='coerce').notna()]
@@ -21,11 +23,11 @@ if 'Nummer' in df.columns:
     df.loc[df['Nummer'] == 'nan', 'Nummer'] = ''
 
 # Define the output directory and create it if it doesn't exist
-output_dir = r'D:\Hogent\Visual Studio Code\Projecten\SiteGithub\MatteoDeMoor.github.io\csv'
+output_dir = base_dir / 'csv'
 os.makedirs(output_dir, exist_ok=True)
 
 # Define the full path for the CSV file
-output_path = os.path.join(output_dir, 'Shirts.csv')
+output_path = output_dir / 'Shirts.csv'
 
 # Save the DataFrame as a CSV (without the index column)
 df.to_csv(output_path, index=False)
