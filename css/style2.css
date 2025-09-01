@@ -11,38 +11,7 @@ body {
   color: #333;
 }
 
-header {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
-
-nav {
-  background-color: #444;
-  text-align: center;
-  padding: 10px;
-}
-
-nav ul {
-  list-style-type: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-nav li {
-  display: block;
-  margin-right: 15px;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  display: block;
-}
+/* Using top-bar from style.css for header/nav on shirts page */
 
 section {
   padding: 20px;
@@ -50,6 +19,48 @@ section {
   margin: 20px;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Filter bar */
+.filter-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px 16px;
+  align-items: end;
+  border: 1px solid #e5e7eb;
+  background: #fafafa;
+  padding: 14px;
+  border-radius: 8px;
+  margin: 14px 0 6px;
+}
+
+.filter-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #cfd8e3;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 0.95rem;
+}
+
+.filter-group select[multiple] {
+  min-height: 120px;
+}
+
+.filter-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-top: 4px;
 }
 
 h2 {
@@ -69,6 +80,10 @@ p {
   justify-content: space-between;
 }
 
+.photo-row {
+  gap: 14px;
+}
+
 .photo,
 .about-me .photo {
   position: relative;
@@ -78,9 +93,9 @@ p {
 
 .photo img,
 .about-me .photo img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  border-radius: 5px;
+  border-radius: 6px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   margin: 0 auto;
   display: block;
@@ -99,6 +114,26 @@ footer {
   clear: both;
 }
 
+/* Shirt card tweaks */
+.shirt-section {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fff;
+  margin: 16px 20px;
+}
+
+.shirt-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.player-info {
+  margin-top: 6px;
+  color: #444;
+  font-size: 0.95rem;
+}
+
 a {
   color: #0078d4;
   text-decoration: none;
@@ -115,6 +150,10 @@ a:hover {
   .about-me .photo,
   .about-me .text {
       flex-basis: 100%;
+  }
+
+  .filter-bar {
+    grid-template-columns: 1fr;
   }
 
   nav ul {
@@ -360,11 +399,11 @@ footer:hover {
 }
 
 .photo img {
-  width: auto;
-  height: 437.5px;
+  width: 100%;
+  height: auto;
   object-fit: cover;
-  border-radius: 8.75px;
-  box-shadow: 0 0 8.75px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
 .photo-row {
@@ -381,21 +420,22 @@ footer:hover {
 .photo {
   display: flex;
   justify-content: center;
-  flex: 1 1 calc(25% - 17.5px);
-  margin: 26.25px;
+  flex: 1 1 280px;
+  max-width: 320px;
+  margin: 20px;
 }
 
 @media screen and (max-width: 768px) {
   .photo {
-    flex-basis: 50%;
-    margin: 26.25px 0;
+    flex-basis: 100%;
+    margin: 20px 0;
   }
 }
 
 @media screen and (max-width: 480px) {
   .photo {
     flex-basis: 100%;
-    margin: 26.25px 0;
+    margin: 16px 0;
   }
 }
 
@@ -411,4 +451,58 @@ footer:hover {
 
 .shirt-section p {
   text-align: center;
+}
+
+/* Player/extra info (moved from inline) */
+.player-info, .extra-info {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.shirt-details { text-align: center; margin-top: 10px; }
+
+/* Filter bar */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 16px 0 8px 0;
+}
+.filter-bar input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Lightbox modal */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.lightbox-overlay.open { display: flex; }
+.lightbox-content { position: relative; max-width: 90vw; max-height: 90vh; }
+.lightbox-img { max-width: 100%; max-height: 90vh; border-radius: 8px; }
+.lightbox-close, .lightbox-prev, .lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.lightbox-close { top: 5%; right: 2%; transform: none; }
+.lightbox-prev { left: -50px; }
+.lightbox-next { right: -50px; }
+
+@media (max-width: 600px){
+  .lightbox-prev { left: 10px; }
+  .lightbox-next { right: 10px; }
 }
