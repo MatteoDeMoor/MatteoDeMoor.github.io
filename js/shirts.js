@@ -100,16 +100,14 @@ function setupFiltering() {
   }
 
   if (playerSel) {
-    const addAll = document.createElement('option');
-    addAll.value = '';
-    addAll.textContent = 'All players';
-    playerSel.appendChild(addAll);
-    Array.from(playersMap.entries()).sort((a,b)=>byAlpha(a[1], b[1])).forEach(([key,label]) => {
-      const opt = document.createElement('option');
-      opt.value = key; // lower-case key
-      opt.textContent = label; // display label
-      playerSel.appendChild(opt);
-    });
+    Array.from(playersMap.entries())
+      .sort((a,b)=>byAlpha(a[1], b[1]))
+      .forEach(([key,label]) => {
+        const opt = document.createElement('option');
+        opt.value = key; // lower-case key
+        opt.textContent = label; // display label
+        playerSel.appendChild(opt);
+      });
   }
 
   function getMultiSelectedValues(selectEl) {
@@ -120,13 +118,13 @@ function setupFiltering() {
     const seasonsSelected = seasonSel ? getMultiSelectedValues(seasonSel) : [];
     const typeValue = (typeSel?.value || '').toLowerCase();
     const sizeValue = (sizeSel?.value || '').toUpperCase();
-    const playerValue = (playerSel?.value || '').toLowerCase();
+    const playersSelected = playerSel ? getMultiSelectedValues(playerSel) : [];
 
     sections.forEach(sec => {
       const okSeason = seasonsSelected.length === 0 || seasonsSelected.includes(sec.dataset.season || '');
       const okType = !typeValue || (sec.dataset.typeBase || '') === typeValue;
       const okSize = !sizeValue || (sec.dataset.size || '') === sizeValue;
-      const okPlayer = !playerValue || (sec.dataset.player || '') === playerValue;
+      const okPlayer = playersSelected.length === 0 || playersSelected.includes(sec.dataset.player || '');
       sec.style.display = (okSeason && okType && okSize && okPlayer) ? '' : 'none';
     });
   }
@@ -140,7 +138,7 @@ function setupFiltering() {
     if (seasonSel) Array.from(seasonSel.options).forEach(o => (o.selected = false));
     if (typeSel) typeSel.value = '';
     if (sizeSel) sizeSel.value = '';
-    if (playerSel) playerSel.value = '';
+    if (playerSel) Array.from(playerSel.options).forEach(o => (o.selected = false));
     applyFilter();
   });
 
