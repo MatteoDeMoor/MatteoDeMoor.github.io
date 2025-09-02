@@ -73,39 +73,6 @@ p {
   line-height: 1.5;
 }
 
-.photo-row,
-.about-me {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.photo-row {
-  gap: 14px;
-}
-
-.photo,
-.about-me .photo {
-  position: relative;
-  flex-basis: calc(50% - 10px);
-  margin-bottom: 20px;
-}
-
-.photo img,
-.about-me .photo img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  margin: 0 auto;
-  display: block;
-}
-
-.about-me .text {
-  flex-basis: calc(65% - 10px);
-  margin-bottom: 20px;
-}
-
 footer {
   background-color: #333;
   color: #fff;
@@ -115,23 +82,9 @@ footer {
 }
 
 /* Shirt card tweaks */
-.shirt-section {
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  padding: 16px;
-  background: #fff;
-  margin: 16px 20px;
-}
-
 .shirt-section h3 {
   font-size: 18px;
   margin-bottom: 10px;
-}
-
-.player-info {
-  margin-top: 6px;
-  color: #444;
-  font-size: 0.95rem;
 }
 
 a {
@@ -458,21 +411,10 @@ footer:hover {
   text-align: center;
   margin-top: 10px;
   font-weight: bold;
+  color: #444;
+  font-size: 0.95rem;
 }
 .shirt-details { text-align: center; margin-top: 10px; }
-
-/* Filter bar */
-.filter-bar {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin: 16px 0 8px 0;
-}
-.filter-bar input {
-  padding: 8px 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
 
 /* Lightbox modal */
 .lightbox-overlay {
