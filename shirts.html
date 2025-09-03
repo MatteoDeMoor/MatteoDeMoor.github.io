@@ -12,9 +12,10 @@
         <script src="js/shirts.js" defer></script>
     </head>
     <body>
-        <header class="top-bar fade-in">
+        <header class="top-bar">
             <div class="top-bar-left"><a href="index.html">Matteo De Moor</a></div>
             <div class="top-bar-right">
+              <a href="index.html" class="nav-link">Home</a>
               <a href="shirts.html" class="nav-link">Shirt Collection</a>
             </div>
         </header>
@@ -26,22 +27,22 @@
                 <div class="filter-bar" aria-label="Filter shirts">
                   <div class="filter-group">
                     <label for="filter-season">Season</label>
-                    <select id="filter-season" multiple size="4" aria-label="Filter by season"></select>
+                    <select id="filter-season" multiple size="5" aria-label="Filter by season"></select>
                   </div>
                   <div class="filter-group">
                     <label for="filter-type">Type</label>
-                    <select id="filter-type" aria-label="Filter by type"></select>
+                    <select id="filter-type" multiple size="5" aria-label="Filter by type"></select>
                   </div>
                   <div class="filter-group">
                     <label for="filter-size">Size</label>
-                    <select id="filter-size" aria-label="Filter by size"></select>
+                    <select id="filter-size" multiple size="5" aria-label="Filter by size"></select>
                   </div>
                   <div class="filter-group">
                     <label for="filter-player">Player</label>
-                    <select id="filter-player" multiple size="6" aria-label="Filter by player"></select>
+                    <select id="filter-player" multiple size="5" aria-label="Filter by player"></select>
                   </div>
                   <div class="filter-actions">
-                    <button id="filter-clear" class="button"><span class="button_lg"><span class="button_sl"></span><span class="button_text">Clear</span></span></button>
+                    <button id="filter-clear">Clear</button>
                   </div>
                 </div>
     

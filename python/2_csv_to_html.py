@@ -2,7 +2,7 @@ import csv
 from pathlib import Path
 
 base_dir = Path(__file__).resolve().parents[1]
-csv_file_path = base_dir / 'csv' / 'Shirts.csv'
+csv_file_path = base_dir / 'csv' / 'shirts.csv'
 
 # Open the CSV file
 with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
@@ -28,8 +28,9 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
     </head>
     <body>
         <header class="top-bar">
-            <div class="top-bar-left"><a href="index.html" class="nav-link" style="background:none;padding:0">Matteo De Moor</a></div>
+            <div class="top-bar-left"><a href="index.html">Matteo De Moor</a></div>
             <div class="top-bar-right">
+              <a href="index.html" class="nav-link">Home</a>
               <a href="shirts.html" class="nav-link">Shirt Collection</a>
             </div>
         </header>
@@ -39,11 +40,25 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
                 <h2>My personal shirt collection</h2>
                 <p>Here you can find my unique Club Brugge shirts collection.</p>
                 <div class="filter-bar" aria-label="Filter shirts">
-                  <input type="text" id="filter-season" placeholder="Season (e.g., 2024-2025)" aria-label="Filter by season" />
-                  <input type="text" id="filter-type" placeholder="Type (Home/Away/Third/GK)" aria-label="Filter by type" />
-                  <input type="text" id="filter-size" placeholder="Size (e.g., M, XL)" aria-label="Filter by size" />
-                  <input type="text" id="filter-player" placeholder="Player (e.g., Vanaken)" aria-label="Filter by player" />
-                  <button id="filter-clear" class="button"><span class="button_lg"><span class="button_sl"></span><span class="button_text">Clear</span></span></button>
+                  <div class="filter-group">
+                    <label for="filter-season">Season</label>
+                    <select id="filter-season" multiple size="5" aria-label="Filter by season"></select>
+                  </div>
+                  <div class="filter-group">
+                    <label for="filter-type">Type</label>
+                    <select id="filter-type" multiple size="5" aria-label="Filter by type"></select>
+                  </div>
+                  <div class="filter-group">
+                    <label for="filter-size">Size</label>
+                    <select id="filter-size" multiple size="5" aria-label="Filter by size"></select>
+                  </div>
+                  <div class="filter-group">
+                    <label for="filter-player">Player</label>
+                    <select id="filter-player" multiple size="5" aria-label="Filter by player"></select>
+                  </div>
+                  <div class="filter-actions">
+                    <button id="filter-clear">Clear</button>
+                  </div>
                 </div>
     """
 
