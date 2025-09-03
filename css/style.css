@@ -27,25 +27,16 @@ body{
 .top-bar{
   width: 100%;
   padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background: #fff;
   box-shadow: 0 1px 6px rgba(0,0,0,0.06);
 }
-.top-bar-left{
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-.top-bar-left a{
-  text-decoration: none;
-  color: inherit;
-}
-.top-bar-right{
+.top-bar nav{
   display: flex;
+  justify-content: center;
   gap: 10px;
+  margin: 0 auto;
 }
-.top-bar-right .nav-link{
+.top-bar nav a{
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
@@ -55,7 +46,7 @@ body{
   color: #111;
   transition: background 0.3s ease;
 }
-.top-bar-right .nav-link:hover{
+.top-bar nav a:hover{
   background: #d4ebff;
 }
 
@@ -225,10 +216,8 @@ body{
     padding: 0 10px;
   }
 
-  .top-bar{
+  .top-bar nav{
     flex-wrap: wrap;
-  }
-  .top-bar-right{
     margin-top: 10px;
   }
 }
