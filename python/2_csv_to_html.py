@@ -2,7 +2,7 @@ import csv
 from pathlib import Path
 
 base_dir = Path(__file__).resolve().parents[1]
-csv_file_path = base_dir / 'csv' / 'Shirts.csv'
+csv_file_path = base_dir / 'csv' / 'shirts.csv'
 
 # Open the CSV file
 with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
@@ -27,6 +27,7 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
         <script src="js/shirts.js" defer></script>
     </head>
     <body>
+        <header class="top-bar">
         <header class="top-bar fade-in">
             <div class="top-bar-left"><a href="index.html">Matteo De Moor</a></div>
             <div class="top-bar-right">

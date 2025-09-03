@@ -106,6 +106,16 @@ function setupFiltering() {
     return Array.from(selectEl?.selectedOptions || []).map(o => o.value).filter(Boolean);
   }
 
+  function enableMultiSelectWithoutCtrl(selectEl) {
+    if (!selectEl) return;
+    selectEl.addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      const option = e.target;
+      option.selected = !option.selected;
+      selectEl.dispatchEvent(new Event('change'));
+    });
+  }
+
   function applyFilter() {
     const seasonsSelected = seasonSel ? getMultiSelectedValues(seasonSel) : [];
     const typesSelected = typeSel ? getMultiSelectedValues(typeSel).map(v => v.toLowerCase()) : [];
@@ -122,8 +132,8 @@ function setupFiltering() {
   }
 
   [seasonSel, typeSel, sizeSel, playerSel].forEach(sel => {
-    if (!sel) return;
-    sel.addEventListener('change', applyFilter);
+    enableMultiSelectWithoutCtrl(sel);
+    sel?.addEventListener('change', applyFilter);
   });
 
   clearBtn?.addEventListener('click', () => {
