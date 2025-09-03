@@ -74,23 +74,15 @@ function setupFiltering() {
   }
 
   if (typeSel) {
-    const addAll = document.createElement('option');
-    addAll.value = '';
-    addAll.textContent = 'All types';
-    typeSel.appendChild(addAll);
     Array.from(typesBase).sort(byAlpha).forEach(t => {
       const opt = document.createElement('option');
-      opt.value = t; // already normalized (home/away/third/fourth/gk)
+      opt.value = t; // normalized
       opt.textContent = t.charAt(0).toUpperCase() + t.slice(1);
       typeSel.appendChild(opt);
     });
   }
 
   if (sizeSel) {
-    const addAll = document.createElement('option');
-    addAll.value = '';
-    addAll.textContent = 'All sizes';
-    sizeSel.appendChild(addAll);
     sortSizes(sizes).forEach(z => {
       const opt = document.createElement('option');
       opt.value = z;
@@ -116,14 +108,14 @@ function setupFiltering() {
 
   function applyFilter() {
     const seasonsSelected = seasonSel ? getMultiSelectedValues(seasonSel) : [];
-    const typeValue = (typeSel?.value || '').toLowerCase();
-    const sizeValue = (sizeSel?.value || '').toUpperCase();
+    const typesSelected = typeSel ? getMultiSelectedValues(typeSel).map(v => v.toLowerCase()) : [];
+    const sizesSelected = sizeSel ? getMultiSelectedValues(sizeSel).map(v => v.toUpperCase()) : [];
     const playersSelected = playerSel ? getMultiSelectedValues(playerSel) : [];
 
     sections.forEach(sec => {
       const okSeason = seasonsSelected.length === 0 || seasonsSelected.includes(sec.dataset.season || '');
-      const okType = !typeValue || (sec.dataset.typeBase || '') === typeValue;
-      const okSize = !sizeValue || (sec.dataset.size || '') === sizeValue;
+      const okType = typesSelected.length === 0 || typesSelected.includes(sec.dataset.typeBase || '');
+      const okSize = sizesSelected.length === 0 || sizesSelected.includes(sec.dataset.size || '');
       const okPlayer = playersSelected.length === 0 || playersSelected.includes(sec.dataset.player || '');
       sec.style.display = (okSeason && okType && okSize && okPlayer) ? '' : 'none';
     });
@@ -135,10 +127,9 @@ function setupFiltering() {
   });
 
   clearBtn?.addEventListener('click', () => {
-    if (seasonSel) Array.from(seasonSel.options).forEach(o => (o.selected = false));
-    if (typeSel) typeSel.value = '';
-    if (sizeSel) sizeSel.value = '';
-    if (playerSel) Array.from(playerSel.options).forEach(o => (o.selected = false));
+    [seasonSel, typeSel, sizeSel, playerSel].forEach(sel => {
+      if (sel) Array.from(sel.options).forEach(o => (o.selected = false));
+    });
     applyFilter();
   });
 
