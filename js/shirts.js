@@ -74,10 +74,13 @@ function setupFiltering() {
   }
 
   if (typeSel) {
-    Array.from(typesBase).sort(byAlpha).forEach(t => {
+    const TYPE_ORDER = ['home','away','third','fourth','gk'];
+    const LABELS = { home: 'Home', away: 'Away', third: 'Third', fourth: 'Fourth', gk: 'Goalkeeper' };
+    TYPE_ORDER.forEach(t => {
+      if (!typesBase.has(t)) return;
       const opt = document.createElement('option');
-      opt.value = t; // normalized
-      opt.textContent = t.charAt(0).toUpperCase() + t.slice(1);
+      opt.value = t; // normalized base value
+      opt.textContent = LABELS[t] || (t.charAt(0).toUpperCase() + t.slice(1));
       typeSel.appendChild(opt);
     });
   }
@@ -104,6 +107,21 @@ function setupFiltering() {
 
   function getMultiSelectedValues(selectEl) {
     return Array.from(selectEl?.selectedOptions || []).map(o => o.value).filter(Boolean);
+  }
+
+  function updateCounts() {
+    const map = new Map([
+      [seasonSel, document.querySelector('label[for="filter-season"]')],
+      [typeSel, document.querySelector('label[for="filter-type"]')],
+      [sizeSel, document.querySelector('label[for="filter-size"]')],
+      [playerSel, document.querySelector('label[for="filter-player"]')],
+    ]);
+    map.forEach((labelEl, sel) => {
+      if (!labelEl || !sel) return;
+      const base = labelEl.textContent.split(' (')[0];
+      const count = getMultiSelectedValues(sel).length;
+      labelEl.textContent = count ? `${base} (${count} selected)` : base;
+    });
   }
 
   function enableMultiSelectWithoutCtrl(selectEl) {
@@ -142,7 +160,7 @@ function setupFiltering() {
 
   [seasonSel, typeSel, sizeSel, playerSel].forEach(sel => {
     enableMultiSelectWithoutCtrl(sel);
-    sel?.addEventListener('change', applyFilter);
+    sel?.addEventListener('change', () => { applyFilter(); updateCounts(); });
   });
 
   clearBtn?.addEventListener('click', () => {
@@ -150,10 +168,12 @@ function setupFiltering() {
       if (sel) Array.from(sel.options).forEach(o => (o.selected = false));
     });
     applyFilter();
+    updateCounts();
   });
 
   // Initial apply to respect any default selections
   applyFilter();
+  updateCounts();
 }
 
 function setupLightbox() {
