@@ -108,12 +108,14 @@ function setupFiltering() {
 
   function enableMultiSelectWithoutCtrl(selectEl) {
     if (!selectEl) return;
-    selectEl.addEventListener('mousedown', (e) => {
+    const toggle = (e) => {
       e.preventDefault();
       const option = e.target;
       option.selected = !option.selected;
       selectEl.dispatchEvent(new Event('change'));
-    });
+    };
+    selectEl.addEventListener('mousedown', toggle);
+    selectEl.addEventListener('touchstart', toggle, { passive: false });
   }
 
   function applyFilter() {

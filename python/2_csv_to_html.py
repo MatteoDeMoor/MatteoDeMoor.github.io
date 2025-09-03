@@ -28,12 +28,10 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
     </head>
     <body>
         <header class="top-bar">
-        <header class="top-bar fade-in">
-            <div class="top-bar-left"><a href="index.html">Matteo De Moor</a></div>
-            <div class="top-bar-right">
-              <a href="index.html" class="nav-link">Home</a>
-              <a href="shirts.html" class="nav-link">Shirt Collection</a>
-            </div>
+          <nav>
+            <a href="index.html">Homepage</a>
+            <a href="shirts.html">Shirt Collection</a>
+          </nav>
         </header>
 
         <main>
