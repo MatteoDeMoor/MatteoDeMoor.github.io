@@ -108,14 +108,21 @@ function setupFiltering() {
 
   function enableMultiSelectWithoutCtrl(selectEl) {
     if (!selectEl) return;
+
+    // On touch devices the native picker already handles multi-select
+    // interactions. Intercepting the touch events prevents the menu
+    // from opening, so skip the custom logic on such devices.
+    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (isTouch) return;
+
     const toggle = (e) => {
       e.preventDefault();
       const option = e.target;
       option.selected = !option.selected;
       selectEl.dispatchEvent(new Event('change'));
     };
+
     selectEl.addEventListener('mousedown', toggle);
-    selectEl.addEventListener('touchstart', toggle, { passive: false });
   }
 
   function applyFilter() {
