@@ -29,7 +29,7 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handt
 28,2012-2013,Away,L,4,Hoefkens,,Shirt20.1.jpg,Shirt20.2.jpg,Shirt20.3.jpg,x,,
 29,2012-2013,Home,XL,,,,Shirt91.1.jpg,Shirt91.2.jpg,,,,
 30,2013-2014,Third,XL,,,,Shirt92.1.jpg,Shirt92.2.jpg,,,Verkoop,
-31,2013-2014,Third,L,,,,Shirt93.1.jpg,Shirt93.2.jpg,,,Verkoop,
+31,2013-2014,Third,L,,,,Shirt93.1.jpg,Shirt93.2.jpg,,,,
 32,2013-2014,Third,XXL,30,Castillo,,Shirt94.1.jpg,Shirt94.2.jpg,,,,
 33,2013-2014,Away,L,17,Sobota,,Shirt24.1.jpg,Shirt24.2.jpg,,x,,
 34,2013-2014,Home,XL,9,De Sutter,,Shirt95.1.jpg,Shirt95.2.jpg,,,,
@@ -60,7 +60,7 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handt
 59,2018-2019,Third,3XL,11,Diatta,,Shirt62.1.jpg,Shirt62.2.jpg,,,,
 60,2018-2019,Away,XXL,25,Vormer,,Shirt1.1.jpg,Shirt1.2.jpg,,,,
 61,2018-2019,Away,L,80,Openda,,Shirt87.1.jpg,Shirt87.2.jpg,,x,,
-62,2018-2019,Away,XL,9,Vossen,,Shirt40.1.jpg,Shirt40.2.jpg,,,,Vossen
+62,2018-2019,Away,XL,9,Vossen,,Shirt40.1.jpg,Shirt40.2.jpg,Shirt40.3.jpg,,,Vossen
 63,2018-2019,Home,M,6,Amrabat,,Shirt41.1.jpg,Shirt41.2.jpg,,,,
 64,2019-2020,Third,3XL,,,,Shirt86.1.jpg,Shirt86.2.jpg,,,Verkoop,
 65,2019-2020,Third,M,90,De Ketelaere,,Shirt85.1.jpg,Shirt85.2.jpg,,,,
@@ -76,7 +76,7 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handt
 75,2021-2022,Third,L,25,Vormer,,Shirt52.1.jpg,Shirt52.2.jpg,,x,,
 76,2021-2022,Away,XXL,,,,Shirt54.1.jpg,Shirt54.2.jpg,,,,"Nusa, Bursik, Jutgla, Thiago, Mechele, Spileers, De Cuyper, Barbera, Meijer, Jackers, Homma, Vetlesen, Shinton, Mignolet, Talbi, Onyedika, Balanta, Ordonez "
 77,2021-2022,Home,XL,17,Buchanan,,Shirt56.1.jpg,Shirt56.2.jpg,,x,,
-78,2021-2022,Home,XXL,20,Vanaken,,,,,,,
+78,2021-2022,Home,XXL,20,Vanaken,,Shirt48.1.jpg,Shirt48.2.jpg,,,,
 79,2021-2022,Home,M,,,,Shirt58.1.jpg,Shirt58.2.jpg,,,,"De Ketelaere, Rits, Hoefkens, Jutgla, Skov Olsen, Sowah, Audoor, Meijer, Vanaken, Vormer, Sylla, Nusa, Mbamba, Shinton, Okereke, Nsoki, Balanta, Lammens, Izquierdo, Mata, Buchanan, Mechele, Lang, Sobol, Dost, Schreuder, Mignolet, Ricca, Sandra"
 80,2022-2023,GK 2,M,,,,Shirt59.1.jpg,Shirt59.2.jpg,,,,
 81,2022-2023,GK 1,XXL,,,,Shirt60.1.jpg,Shirt60.2.jpg,,,,Mignolet
@@ -90,10 +90,10 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handt
 89,2023-2024,Fourth,L,,,,Shirt78.1.jpg,Shirt78.2.jpg,,x,,
 90,2023-2024,Third,XL,,,,Shirt65.1.jpg,Shirt65.2.jpg,,x,,"Vetlesen, Skoras, Hayen, Seys, Mignolet, De Corte, Onyedika, Nielsen, De Cuyper, Meijer, Et Taïbi, Nilsson, Nusa, Talbi, Spileers, Jackers, Vermant, Boyata, Mechele, Tzolis, Zinckernagel"
 91,2023-2024,Away,XL,44,Mechele,,Shirt61.1.jpg,Shirt61.2.jpg,,,,Mechele
-92,2023-2024,Home,M,27,Nielsen,,Shirt102.1.jpg,Shirt102.2.jpg,,,Verkoop,Nielsen
+92,2023-2024,Home,M,27,Nielsen,,Shirt102.1.jpg,Shirt102.2.jpg,,,,Nielsen
 93,2023-2024,Home,XXL,20,Vanaken,,Shirt43.1.jpg,Shirt43.2.jpg,,,,Vanaken
 94,2023-2024,Home,M,77,Zinckernagel,Matchworn,Shirt77.1.jpg,Shirt77.2.jpg,Shirt77.3.jpg,x,,Zinckernagel
-96,2024-2025,Third,XL,,,,,,,,,
+96,2024-2025,Third,XL,,,,Shirt98.1.jpg,Shirt98.2.jpg,,,,
 95,2024-2025,Third,XL,8,Tzolis,,Shirt66.1.jpg,Shirt66.2.jpg,,x,,Tzolis
 97,2024-2025,Away,XL,30,Jashari,,Shirt101.1.jpg,Shirt101.2.jpg,Shirt101.3.jpg,,,Jashari
 98,2024-2025,Away,XL,20,Vanaken,,Shirt5.1.jpg,Shirt5.2.jpg,Shirt5.3.jpg,,,Vanaken

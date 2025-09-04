@@ -24,6 +24,7 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/style2.css">
         <link rel="icon" href="./images/ai2.png" type="image/x-icon">
+        <script src="js/main.js" defer></script>
         <script src="js/shirts.js" defer></script>
     </head>
     <body>
