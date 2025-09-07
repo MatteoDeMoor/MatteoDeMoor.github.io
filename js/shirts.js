@@ -4,7 +4,8 @@ function inferAttributes(section) {
   const playerText = section.querySelector('.player-info')?.textContent || '';
   const seasonMatch = title.match(/(\d{4}-\d{4})/);
   const typeMatch = title.match(/Home|Away|Third|Fourth|GK ?\d?/i);
-  const sizeMatch = title.match(/Size:\s*([A-Z]{1,3})/i);
+  // Capture full size tokens like XS, S, M, L, XL, XXL, XXXL, XXXXL, ...
+  const sizeMatch = title.match(/Size:\s*([A-Z]{1,5})/i);
   const playerMatch = playerText.match(/Player:\s*([^\-]+)/i);
 
   if (seasonMatch) section.dataset.season = seasonMatch[1];
@@ -26,14 +27,23 @@ function inferAttributes(section) {
 function byAlpha(a, b) { return a.localeCompare(b, undefined, { sensitivity: 'base' }); }
 
 function sortSizes(arr) {
-  const order = ['XS','S','M','L','XL','XXL','XXXL'];
+  function rankSize(s) {
+    const z = (s || '').toUpperCase();
+    if (z === 'XS') return 0;
+    if (z === 'S') return 1;
+    if (z === 'M') return 2;
+    if (z === 'L') return 3;
+    const m = z.match(/^X+L$/);
+    if (m) return 3 + (z.length - 1); // 'XL' -> 4, 'XXL' -> 5, etc.
+    return Number.POSITIVE_INFINITY; // unknown formats sort after known
+  }
   return Array.from(arr).sort((a,b) => {
-    const ia = order.indexOf(a);
-    const ib = order.indexOf(b);
-    if (ia === -1 && ib === -1) return byAlpha(a,b);
-    if (ia === -1) return 1;
-    if (ib === -1) return -1;
-    return ia - ib;
+    const ra = rankSize(a);
+    const rb = rankSize(b);
+    if (Number.isFinite(ra) && Number.isFinite(rb)) return ra - rb;
+    if (Number.isFinite(ra)) return -1;
+    if (Number.isFinite(rb)) return 1;
+    return byAlpha(a,b);
   });
 }
 

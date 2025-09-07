@@ -12,7 +12,7 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handt
 11,2005-2007,Home,XL,24,Priske,,Shirt9.1.jpg,Shirt9.2.jpg,,,,
 12,2006-2007,Away,XL,,,,Shirt8.1.jpg,Shirt8.2.jpg,,,,
 13,2007-2008,Away,S,23,Sterchele,,Shirt10.1.jpg,Shirt10.2.jpg,,,,
-14,2007-2008,Home,3XL,10,Sonck,,Shirt74.1.jpg,Shirt74.2.jpg,,,,
+14,2007-2008,Home,XXXL,10,Sonck,,Shirt74.1.jpg,Shirt74.2.jpg,,,,
 15,2008-2009,Third,L,,,,Shirt11.1.jpg,Shirt11.2.jpg,,x,,
 16,2008-2009,Away,XXL,,,,Shirt12.1.jpg,Shirt12.2.jpg,,,,
 17,2008-2009,Home,L,14,Simaeys,,Shirt75.1.jpg,Shirt75.2.jpg,,,,Squad signed
@@ -22,7 +22,7 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handt
 21,2009-2010,Home,L,,,,Shirt15.1.jpg,Shirt15.2.jpg,,x,,
 22,2010-2011,Away,L,,,,Shirt16.1.jpg,Shirt16.2.jpg,,,,
 23,2010-2011,Home,XL,44,Perisic,,Shirt17.1.jpg,Shirt17.2.jpg,Shirt17.3.jpg,x,,
-24,2010-2011,Home,3XL,15,Akpala,,Shirt90.1.jpg,Shirt90.2.jpg,,,,
+24,2010-2011,Home,XXXL,15,Akpala,,Shirt90.1.jpg,Shirt90.2.jpg,,,,
 25,2011-2012,Away,S,,,,Shirt18.1.jpg,Shirt18.2.jpg,,,Verkoop,
 26,2011-2012,Away,L,,,,Shirt4.1.jpg,Shirt4.2.jpg,,,,
 27,2012-2013,GK,L,39,Jorgacevic,,Shirt19.1.jpg,Shirt19.2.jpg,,,,
@@ -50,19 +50,19 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handt
 49,2017-2018,Third,XL,30,Nakamba,,Shirt33.1.jpg,Shirt33.2.jpg,,x,,Nakamba
 50,2017-2018,Away,L,42,Dennis,,Shirt34.1.jpg,Shirt34.2.jpg,,x,,
 51,2017-2018,Away,XL,30,Nakamba,,Shirt35.1.jpg,Shirt35.2.jpg,,,,Nakamba
-52,2017-2018,Home,3XL,,,,Shirt42.1.jpg,Shirt42.2.jpg,,,,
+52,2017-2018,Home,XXXL,,,,Shirt42.1.jpg,Shirt42.2.jpg,,,,
 53,2017-2018,Home,XL,12,Jupiler,,Shirt0.1.jpg,Shirt0.2.jpg,,,,
-54,2017-2018,Home,3XL,3,Simons,,Shirt44.1.jpg,Shirt44.2.jpg,,,,
+54,2017-2018,Home,XXXL,3,Simons,,Shirt44.1.jpg,Shirt44.2.jpg,,,,
 55,2017-2018,Home,XXL,20,Vanaken,,Shirt36.1.jpg,Shirt36.2.jpg,,,,
-56,2018-2019,Third,3XL,,,,Shirt53.1.jpg,Shirt53.2.jpg,,,,
+56,2018-2019,Third,XXXL,,,,Shirt53.1.jpg,Shirt53.2.jpg,,,,
 57,2018-2019,Third,XXL,,Vormer,Ingekaderd,Shirt38.1.jpg,Shirt38.2.jpg,,,,Vormer
 58,2018-2019,Third,M,42,Dennis,,Shirt55.1.jpg,Shirt55.2.jpg,,,,
-59,2018-2019,Third,3XL,11,Diatta,,Shirt62.1.jpg,Shirt62.2.jpg,,,,
+59,2018-2019,Third,XXXL,11,Diatta,,Shirt62.1.jpg,Shirt62.2.jpg,,,,
 60,2018-2019,Away,XXL,25,Vormer,,Shirt1.1.jpg,Shirt1.2.jpg,,,,
 61,2018-2019,Away,L,80,Openda,,Shirt87.1.jpg,Shirt87.2.jpg,,x,,
 62,2018-2019,Away,XL,9,Vossen,,Shirt40.1.jpg,Shirt40.2.jpg,Shirt40.3.jpg,,,Vossen
 63,2018-2019,Home,M,6,Amrabat,,Shirt41.1.jpg,Shirt41.2.jpg,,,,
-64,2019-2020,Third,3XL,,,,Shirt86.1.jpg,Shirt86.2.jpg,,,Verkoop,
+64,2019-2020,Third,XXXL,,,,Shirt86.1.jpg,Shirt86.2.jpg,,,Verkoop,
 65,2019-2020,Third,M,90,De Ketelaere,,Shirt85.1.jpg,Shirt85.2.jpg,,,,
 66,2019-2020,Away,M,,,,Shirt82.1.jpg,Shirt82.2.jpg,,,,"Siquet, Osuji, Campbell, Sabbe, Onyedika, Jashari, Skoras, Nilsson, Vermant"
 67,2019-2020,Away,XL,90,De Ketelaere,,Shirt84.1.jpg,Shirt84.2.jpg,,x,,
