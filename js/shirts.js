@@ -7,6 +7,7 @@ function inferAttributes(section) {
   // Capture full size tokens like XS, S, M, L, XL, XXL, XXXL, XXXXL, ...
   const sizeMatch = title.match(/Size:\s*([A-Z]{1,5})/i);
   const playerMatch = playerText.match(/Player:\s*([^\-]+)/i);
+  const isMatchworn = /match[\s-]*worn/i.test(playerText);
 
   if (seasonMatch) {
     const label = seasonMatch[1];
@@ -32,6 +33,7 @@ function inferAttributes(section) {
     section.dataset.player = label.toLowerCase();
     section.dataset.playerLabel = label; // preserve original casing for UI
   }
+  section.dataset.matchworn = isMatchworn ? 'yes' : 'no';
 }
 
 function byAlpha(a, b) { return a.localeCompare(b, undefined, { sensitivity: 'base' }); }
@@ -79,6 +81,7 @@ function setupFiltering() {
   const typeSel = document.getElementById('filter-type');
   const sizeSel = document.getElementById('filter-size');
   const playerSel = document.getElementById('filter-player');
+  const matchwornSel = document.getElementById('filter-matchworn');
   const clearBtn = document.getElementById('filter-clear');
   const sections = Array.from(document.querySelectorAll('.shirt-section'));
 
@@ -90,6 +93,7 @@ function setupFiltering() {
   const typesBase = new Set();
   const sizes = new Set();
   const playersMap = new Map(); // key: lower, val: label
+  const matchwornValues = new Set();
 
   sections.forEach(sec => {
     if (sec.dataset.seasons) {
@@ -100,6 +104,7 @@ function setupFiltering() {
     if (sec.dataset.typeBase) typesBase.add(sec.dataset.typeBase);
     if (sec.dataset.size) sizes.add(sec.dataset.size);
     if (sec.dataset.player) playersMap.set(sec.dataset.player, sec.dataset.playerLabel || sec.dataset.player);
+    if (sec.dataset.matchworn) matchwornValues.add(sec.dataset.matchworn);
   });
 
   // Populate selects
@@ -146,6 +151,16 @@ function setupFiltering() {
       });
   }
 
+  if (matchwornSel) {
+    ['yes', 'no'].forEach(value => {
+      if (!matchwornValues.has(value)) return;
+      const opt = document.createElement('option');
+      opt.value = value;
+      opt.textContent = value === 'yes' ? 'Yes' : 'No';
+      matchwornSel.appendChild(opt);
+    });
+  }
+
   function getMultiSelectedValues(selectEl) {
     return Array.from(selectEl?.selectedOptions || []).map(o => o.value).filter(Boolean);
   }
@@ -156,6 +171,7 @@ function setupFiltering() {
       [typeSel, document.querySelector('label[for="filter-type"]')],
       [sizeSel, document.querySelector('label[for="filter-size"]')],
       [playerSel, document.querySelector('label[for="filter-player"]')],
+      [matchwornSel, document.querySelector('label[for="filter-matchworn"]')],
     ]);
     map.forEach((labelEl, sel) => {
       if (!labelEl || !sel) return;
@@ -189,6 +205,7 @@ function setupFiltering() {
     const typesSelected = typeSel ? getMultiSelectedValues(typeSel).map(v => v.toLowerCase()) : [];
     const sizesSelected = sizeSel ? getMultiSelectedValues(sizeSel).map(v => v.toUpperCase()) : [];
     const playersSelected = playerSel ? getMultiSelectedValues(playerSel) : [];
+    const matchwornSelected = matchwornSel ? getMultiSelectedValues(matchwornSel).map(v => v.toLowerCase()) : [];
 
     sections.forEach(sec => {
       const seasonValues = sec.dataset.seasons
@@ -198,17 +215,18 @@ function setupFiltering() {
       const okType = typesSelected.length === 0 || typesSelected.includes(sec.dataset.typeBase || '');
       const okSize = sizesSelected.length === 0 || sizesSelected.includes(sec.dataset.size || '');
       const okPlayer = playersSelected.length === 0 || playersSelected.includes(sec.dataset.player || '');
-      sec.style.display = (okSeason && okType && okSize && okPlayer) ? '' : 'none';
+      const okMatchworn = matchwornSelected.length === 0 || matchwornSelected.includes(sec.dataset.matchworn || '');
+      sec.style.display = (okSeason && okType && okSize && okPlayer && okMatchworn) ? '' : 'none';
     });
   }
 
-  [seasonSel, typeSel, sizeSel, playerSel].forEach(sel => {
+  [seasonSel, typeSel, sizeSel, playerSel, matchwornSel].forEach(sel => {
     enableMultiSelectWithoutCtrl(sel);
     sel?.addEventListener('change', () => { applyFilter(); updateCounts(); });
   });
 
   clearBtn?.addEventListener('click', () => {
-    [seasonSel, typeSel, sizeSel, playerSel].forEach(sel => {
+    [seasonSel, typeSel, sizeSel, playerSel, matchwornSel].forEach(sel => {
       if (sel) Array.from(sel.options).forEach(o => (o.selected = false));
     });
     applyFilter();
