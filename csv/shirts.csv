@@ -16,7 +16,7 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handt
 15,2008-2009,Third,L,,,,Shirt11.1.jpg,Shirt11.2.jpg,,x,,
 16,2008-2009,Away,XXL,,,,Shirt12.1.jpg,Shirt12.2.jpg,,,,
 17,2008-2008,Home,XXXL,22,Karel Geraerts,,,,,,,
-18,2008-2009,Home,L,14,Jeroen Simaeys,,Shirt75.1.jpg,Shirt75.2.jpg,,,,Squad signed
+18,2008-2009,Home,L,14,Jeroen Simaeys,Signed,Shirt75.1.jpg,Shirt75.2.jpg,,,,Squad signed
 19,2009-2010,GK 2,S,1,Stijn Stijnen,,Shirt13.1.jpg,Shirt13.2.jpg,,,,
 20,2009-2010,Away,S,,,,Shirt14.1.jpg,Shirt14.2.jpg,,,,
 21,2009-2010,Home,M,,,,Shirt67.1.jpg,Shirt67.2.jpg,,,,
@@ -34,10 +34,10 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handt
 33,2013-2014,Third,XXL,30,Nicolás Castillo,,Shirt94.1.jpg,Shirt94.2.jpg,,,,
 34,2013-2014,Away,L,17,Waldemar Sobota,,Shirt24.1.jpg,Shirt24.2.jpg,,x,,
 35,2013-2014,Home,XL,9,Tom De Sutter,,Shirt95.1.jpg,Shirt95.2.jpg,,,,
-36,2013-2014,Home,L,9,Tom De Sutter,,Shirt25.1.jpg,Shirt25.2.jpg,,,,De Sutter
+36,2013-2014,Home,L,9,Tom De Sutter,Signed,Shirt25.1.jpg,Shirt25.2.jpg,,,,De Sutter
 37,2014-2015,Away,L,,,,Shirt96.1.jpg,Shirt96.2.jpg,,,,
 38,2014-2015,Home,L,2,Davy De Fauw,,Shirt26.1.jpg,Shirt26.2.jpg,,,,
-39,2014-2015,Home,XL,12,,,Shirt70.1.jpg,Shirt70.2.jpg,Shirt70.3.jpg,,,Squad signed
+39,2014-2015,Home,XL,12,,Signed,Shirt70.1.jpg,Shirt70.2.jpg,Shirt70.3.jpg,,,Squad signed
 40,2014-2015,Home,M,42,Nikola Storm,,Shirt97.1.jpg,Shirt97.2.jpg,,x,,
 41,2015-2016,Away,L,21,Dion Cools,,Shirt21.1.jpg,Shirt21.2.jpg,,x,,
 42,2016-2017,GK 2,XL,,,,Shirt22.1.jpg,Shirt22.2.jpg,,,,
@@ -56,7 +56,7 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handt
 55,2017-2018,Home,XXXL,3,Timmy Simons,,Shirt44.1.jpg,Shirt44.2.jpg,,,,
 56,2017-2018,Home,XXL,20,Hans Vanaken,,Shirt36.1.jpg,Shirt36.2.jpg,,,,
 57,2018-2019,Third,XXXL,,,,Shirt53.1.jpg,Shirt53.2.jpg,,,,
-58,2018-2019,Third,XXL,,Ruud Vormer,Ingekaderd,Shirt38.1.jpg,Shirt38.2.jpg,,,,Vormer
+58,2018-2019,Third,XXL,,Ruud Vormer,Framed,Shirt38.1.jpg,Shirt38.2.jpg,,,,Vormer
 59,2018-2019,Third,M,42,Emmanuel Dennis Bonaventure,,Shirt55.1.jpg,Shirt55.2.jpg,,,,
 60,2018-2019,Third,XXXL,11,Krépin Diatta,,Shirt62.1.jpg,Shirt62.2.jpg,,,,
 61,2018-2019,Away,XXL,25,Ruud Vormer,,Shirt1.1.jpg,Shirt1.2.jpg,,,,
@@ -65,44 +65,44 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handt
 64,2018-2019,Home,M,6,Sofyan Amrabat,,Shirt41.1.jpg,Shirt41.2.jpg,,,,
 65,2019-2020,Third,XXXL,,,,Shirt86.1.jpg,Shirt86.2.jpg,,,Verkoop,
 66,2019-2020,Third,M,90,Charles De Ketelaere,,Shirt85.1.jpg,Shirt85.2.jpg,,,,
-67,2019-2020,Away,M,,,,Shirt82.1.jpg,Shirt82.2.jpg,,,,"Siquet, Osuji, Campbell, Sabbe, Onyedika, Jashari, Skoras, Nilsson, Vermant"
+67,2019-2020,Away,M,,,Signed,Shirt82.1.jpg,Shirt82.2.jpg,,,,"Siquet, Osuji, Campbell, Sabbe, Onyedika, Jashari, Skoras, Nilsson, Vermant"
 68,2019-2020,Away,XL,90,Charles De Ketelaere,,Shirt84.1.jpg,Shirt84.2.jpg,,x,,
 69,2019-2020,Home,XXL,2,Eduard Sobol,,Shirt45.1.jpg,Shirt45.2.jpg,Shirt45.3.jpg,,,
 70,2020-2021,GK 1,L,,,,Shirt46.1.jpg,Shirt46.2.jpg,,,,
-71,2020-2021,Third,XXL,,,,Shirt57.1.jpg,Shirt57.2.jpg,Shirt57.3.jpg,,,"Vanaken, Vetlesen, Vermant, Nillsson, Siquet, De Cuyper, Hayen, Talbi, Romero, Onyedika, Odoi, Meijer, Seys, Ordonez, Audoor, Jashari"
+71,2020-2021,Third,XXL,,,Signed,Shirt57.1.jpg,Shirt57.2.jpg,Shirt57.3.jpg,,,"Vanaken, Vetlesen, Vermant, Nillsson, Siquet, De Cuyper, Hayen, Talbi, Romero, Onyedika, Odoi, Meijer, Seys, Ordonez, Audoor, Jashari"
 72,2020-2021,Away,L,24,Stefano Denswil,,Shirt83.1.jpg,Shirt83.2.jpg,,,,
-73,2020-2021,Away,M,,,,Shirt49.1.jpg,Shirt49.2.jpg,,,,"Lambert, Lang, De ketelaere, Mignolet, Odoi, Skov Olsen, Lammens, Mata, Buchanan, Balanta, Sobol, Otasowie"
+73,2020-2021,Away,M,,,Signed,Shirt49.1.jpg,Shirt49.2.jpg,,,,"Lambert, Lang, De ketelaere, Mignolet, Odoi, Skov Olsen, Lammens, Mata, Buchanan, Balanta, Sobol, Otasowie"
 74,2020-2021,Home,XXL,25,Ruud Vormer,,,,,,,
 75,2020-2021,Home,XXL,77,Clinton Mata,,,,,,,
-76,2020-2021,Home,S,,,,Shirt50.1.jpg,Shirt50.2.jpg,Shirt50.3.jpg,,,De Ketelaere
-77,2021-2022,GK 1,XL,22,Simon Mignolet,,Shirt39.1.jpg,Shirt39.2.jpg,,,,Mignolet
+76,2020-2021,Home,S,,,Signed,Shirt50.1.jpg,Shirt50.2.jpg,Shirt50.3.jpg,,,De Ketelaere
+77,2021-2022,GK 1,XL,22,Simon Mignolet,Signed,Shirt39.1.jpg,Shirt39.2.jpg,,,,Mignolet
 78,2021-2022,Third,L,25,Ruud Vormer,,Shirt52.1.jpg,Shirt52.2.jpg,,x,,
 79,2021-2022,Away youth,M,15,,,,,,,,
-80,2021-2022,Away,XXL,,,,Shirt54.1.jpg,Shirt54.2.jpg,,,,"Nusa, Bursik, Jutgla, Thiago, Mechele, Spileers, De Cuyper, Barbera, Meijer, Jackers, Homma, Vetlesen, Shinton, Mignolet, Talbi, Onyedika, Balanta, Ordonez "
+80,2021-2022,Away,XXL,,,Signed,Shirt54.1.jpg,Shirt54.2.jpg,,,,"Nusa, Bursik, Jutgla, Thiago, Mechele, Spileers, De Cuyper, Barbera, Meijer, Jackers, Homma, Vetlesen, Shinton, Mignolet, Talbi, Onyedika, Balanta, Ordonez "
 81,2021-2022,Home,XL,17,Tajon Buchanan,,Shirt56.1.jpg,Shirt56.2.jpg,,x,,
 82,2021-2022,Home,XXL,20,Hans Vanaken,,Shirt48.1.jpg,Shirt48.2.jpg,,,,
-83,2021-2022,Home,M,,,,Shirt58.1.jpg,Shirt58.2.jpg,,,,"De Ketelaere, Rits, Hoefkens, Jutgla, Skov Olsen, Sowah, Audoor, Meijer, Vanaken, Vormer, Sylla, Nusa, Mbamba, Shinton, Okereke, Nsoki, Balanta, Lammens, Izquierdo, Mata, Buchanan, Mechele, Lang, Sobol, Dost, Schreuder, Mignolet, Ricca, Sandra"
+83,2021-2022,Home,M,,,Signed,Shirt58.1.jpg,Shirt58.2.jpg,,,,"De Ketelaere, Rits, Hoefkens, Jutgla, Skov Olsen, Sowah, Audoor, Meijer, Vanaken, Vormer, Sylla, Nusa, Mbamba, Shinton, Okereke, Nsoki, Balanta, Lammens, Izquierdo, Mata, Buchanan, Mechele, Lang, Sobol, Dost, Schreuder, Mignolet, Ricca, Sandra"
 84,2022-2023,GK 2,M,,,,Shirt59.1.jpg,Shirt59.2.jpg,,,,
-85,2022-2023,GK 1,XXL,,,,Shirt60.1.jpg,Shirt60.2.jpg,,,,Mignolet
-86,2022-2023,Third,L,27,Casper Nielsen,,Shirt99.1.jpg,Shirt99.2.jpg,,,,Nielsen
-87,2022-2023,Third,XL,9,Ferran Jutglà Blanch,,Shirt81.1.jpg,Shirt81.2.jpg,,,,Jutgla
-88,2022-2023,Away,L,4,Joel Ordóñez,,Shirt63.1.jpg,Shirt63.2.jpg,Shirt63.3.jpg,x,,Ordonez
+85,2022-2023,GK 1,XXL,,,Signed,Shirt60.1.jpg,Shirt60.2.jpg,,,,Mignolet
+86,2022-2023,Third,L,27,Casper Nielsen,Signed,Shirt99.1.jpg,Shirt99.2.jpg,,,,Nielsen
+87,2022-2023,Third,XL,9,Ferran Jutglà Blanch,Signed,Shirt81.1.jpg,Shirt81.2.jpg,,,,Jutgla
+88,2022-2023,Away,L,4,Joel Ordóñez,Signed,Shirt63.1.jpg,Shirt63.2.jpg,Shirt63.3.jpg,x,,Ordonez
 89,2022-2023,Away,L,94,Abakar Sylla,,Shirt80.1.jpg,Shirt80.2.jpg,,,,
-90,2022-2023,Home,L,27,Jorne Spileers,,Shirt79.1.jpg,Shirt79.2.jpg,Shirt79.3.jpg,,,Spileers
-91,2022-2023,Home,XL,26,Mats Rits,,Shirt64.1.jpg,Shirt64.2.jpg,Shirt64.3.jpg,,,Squad signed
+90,2022-2023,Home,L,27,Jorne Spileers,Signed,Shirt79.1.jpg,Shirt79.2.jpg,Shirt79.3.jpg,,,Spileers
+91,2022-2023,Home,XL,26,Mats Rits,Signed,Shirt64.1.jpg,Shirt64.2.jpg,Shirt64.3.jpg,,,Squad signed
 92,2023-2024,GK 3,XL,,,,Shirt68.1.jpg,Shirt68.2.jpg,,,,
 93,2023-2024,Fourth,L,,,,Shirt78.1.jpg,Shirt78.2.jpg,,x,,
-94,2023-2024,Third,XL,,,,Shirt65.1.jpg,Shirt65.2.jpg,,x,,"Vetlesen, Skoras, Hayen, Seys, Mignolet, De Corte, Onyedika, Nielsen, De Cuyper, Meijer, Et Taïbi, Nilsson, Nusa, Talbi, Spileers, Jackers, Vermant, Boyata, Mechele, Tzolis, Zinckernagel"
-95,2023-2024,Away,XL,44,Brandon Mechele,,Shirt61.1.jpg,Shirt61.2.jpg,,,,Mechele
-96,2023-2024,Home,M,27,Casper Nielsen,,Shirt102.1.jpg,Shirt102.2.jpg,,,,Nielsen
-97,2023-2024,Home,XXL,20,Hans Vanaken,,Shirt43.1.jpg,Shirt43.2.jpg,,,,Vanaken
+94,2023-2024,Third,XL,,,Signed,Shirt65.1.jpg,Shirt65.2.jpg,,x,,"Vetlesen, Skoras, Hayen, Seys, Mignolet, De Corte, Onyedika, Nielsen, De Cuyper, Meijer, Et Taïbi, Nilsson, Nusa, Talbi, Spileers, Jackers, Vermant, Boyata, Mechele, Tzolis, Zinckernagel"
+95,2023-2024,Away,XL,44,Brandon Mechele,Signed,Shirt61.1.jpg,Shirt61.2.jpg,,,,Mechele
+96,2023-2024,Home,M,27,Casper Nielsen,Signed,Shirt102.1.jpg,Shirt102.2.jpg,,,,Nielsen
+97,2023-2024,Home,XXL,20,Hans Vanaken,Signed,Shirt43.1.jpg,Shirt43.2.jpg,,,,Vanaken
 98,2023-2024,Home,M,77,Philip Zinckernagel,Matchworn,Shirt77.1.jpg,Shirt77.2.jpg,Shirt77.3.jpg,x,,Zinckernagel
 99,2024-2025,GK 1,2XL,22,Simon Mignolet,,,,,,,
 100,2024-2025,Third,XL,,,,Shirt98.1.jpg,Shirt98.2.jpg,,,,
-101,2024-2025,Third,XL,8,Christos Tzolis,,Shirt66.1.jpg,Shirt66.2.jpg,,x,,Tzolis
-102,2024-2025,Away,XL,30,Ardon Jashari,,Shirt101.1.jpg,Shirt101.2.jpg,Shirt101.3.jpg,,,Jashari
-103,2024-2025,Away,XL,20,Hans Vanaken,,Shirt5.1.jpg,Shirt5.2.jpg,Shirt5.3.jpg,,,Vanaken
-104,2024-2025,Home,S,44,Brandon Mechele,,Shirt100.1.jpg,Shirt100.2.jpg,,,,Mechele
+101,2024-2025,Third,XL,8,Christos Tzolis,Signed,Shirt66.1.jpg,Shirt66.2.jpg,,x,,Tzolis
+102,2024-2025,Away,XL,30,Ardon Jashari,Signed,Shirt101.1.jpg,Shirt101.2.jpg,Shirt101.3.jpg,,,Jashari
+103,2024-2025,Away,XL,20,Hans Vanaken,Signed,Shirt5.1.jpg,Shirt5.2.jpg,Shirt5.3.jpg,,,Vanaken
+104,2024-2025,Home,S,44,Brandon Mechele,Signed,Shirt100.1.jpg,Shirt100.2.jpg,,,,Mechele
 105,2024-2025,Home,M,68,Chemsdine Talbi,Matchworn,Shirt76.1.jpg,Shirt76.2.jpg,Shirt76.3.jpg,x,,Talbi
-106,2024-2025,Home,M,,,,Shirt69.1.jpg,Shirt69.2.jpg,,,,Squad signed
-107,2024-2025,Home,XXL,8,Christos Tzolis,,Shirt47.1.jpg,Shirt47.2.jpg,,,,Tzolis
+106,2024-2025,Home,M,,,Signed,Shirt69.1.jpg,Shirt69.2.jpg,,,,Squad signed
+107,2024-2025,Home,XXL,8,Christos Tzolis,Signed,Shirt47.1.jpg,Shirt47.2.jpg,,,,Tzolis
