@@ -3,16 +3,26 @@ function inferAttributes(section) {
   const title = section.querySelector('h3')?.textContent || '';
   const playerText = section.querySelector('.player-info')?.textContent || '';
   const seasonMatch = title.match(/(\d{4}-\d{4})/);
-  const typeMatch = title.match(/Home|Away|Third|Fourth|GK ?\d?/i);
+  const typeMatch = title.match(/Home|Away|Third|Fourth|GK ?\d?|Goalkeeper/i);
   // Capture full size tokens like XS, S, M, L, XL, XXL, XXXL, XXXXL, ...
   const sizeMatch = title.match(/Size:\s*([A-Z]{1,5})/i);
   const playerMatch = playerText.match(/Player:\s*([^\-]+)/i);
 
-  if (seasonMatch) section.dataset.season = seasonMatch[1];
+  if (seasonMatch) {
+    const label = seasonMatch[1];
+    const expanded = expandSeasonLabel(label);
+    section.dataset.seasonLabel = label;
+    if (expanded.length) {
+      section.dataset.seasons = expanded.join('|');
+      section.dataset.season = expanded[0];
+    } else {
+      section.dataset.season = label;
+    }
+  }
   if (typeMatch) {
     const raw = (typeMatch[0] || '').toLowerCase();
-    // Normalize GK 1/2/3 -> gk; others keep as-is
-    const base = /gk/.test(raw) ? 'gk' : raw;
+    // Normalize GK/Goalkeeper variants to a single "gk" bucket; others keep as-is
+    const base = /(gk|goalkeeper)/.test(raw) ? 'gk' : raw;
     section.dataset.type = raw;
     section.dataset.typeBase = base;
   }
@@ -25,6 +35,23 @@ function inferAttributes(section) {
 }
 
 function byAlpha(a, b) { return a.localeCompare(b, undefined, { sensitivity: 'base' }); }
+
+function expandSeasonLabel(label) {
+  if (!label) return [];
+  const parts = label.split('-');
+  if (parts.length !== 2) return [label];
+  const start = parseInt(parts[0], 10);
+  const end = parseInt(parts[1], 10);
+  if (!Number.isFinite(start) || !Number.isFinite(end) || end <= start) {
+    return [label];
+  }
+  const seasons = [];
+  for (let year = start; year < end; year += 1) {
+    const next = String(year + 1).padStart(4, '0');
+    seasons.push(`${year}-${next}`);
+  }
+  return seasons.length ? seasons : [label];
+}
 
 function sortSizes(arr) {
   function rankSize(s) {
@@ -65,7 +92,11 @@ function setupFiltering() {
   const playersMap = new Map(); // key: lower, val: label
 
   sections.forEach(sec => {
-    if (sec.dataset.season) seasons.add(sec.dataset.season);
+    if (sec.dataset.seasons) {
+      sec.dataset.seasons.split('|').forEach(season => seasons.add(season));
+    } else if (sec.dataset.season) {
+      seasons.add(sec.dataset.season);
+    }
     if (sec.dataset.typeBase) typesBase.add(sec.dataset.typeBase);
     if (sec.dataset.size) sizes.add(sec.dataset.size);
     if (sec.dataset.player) playersMap.set(sec.dataset.player, sec.dataset.playerLabel || sec.dataset.player);
@@ -85,7 +116,7 @@ function setupFiltering() {
 
   if (typeSel) {
     const TYPE_ORDER = ['home','away','third','fourth','gk'];
-    const LABELS = { home: 'Home', away: 'Away', third: 'Third', fourth: 'Fourth', gk: 'Goalkeeper' };
+    const LABELS = { home: 'Home', away: 'Away', third: 'Third', fourth: 'Fourth', gk: 'GK' };
     TYPE_ORDER.forEach(t => {
       if (!typesBase.has(t)) return;
       const opt = document.createElement('option');
@@ -160,7 +191,10 @@ function setupFiltering() {
     const playersSelected = playerSel ? getMultiSelectedValues(playerSel) : [];
 
     sections.forEach(sec => {
-      const okSeason = seasonsSelected.length === 0 || seasonsSelected.includes(sec.dataset.season || '');
+      const seasonValues = sec.dataset.seasons
+        ? sec.dataset.seasons.split('|').filter(Boolean)
+        : (sec.dataset.season ? [sec.dataset.season] : []);
+      const okSeason = seasonsSelected.length === 0 || seasonValues.some(v => seasonsSelected.includes(v));
       const okType = typesSelected.length === 0 || typesSelected.includes(sec.dataset.typeBase || '');
       const okSize = sizesSelected.length === 0 || sizesSelected.includes(sec.dataset.size || '');
       const okPlayer = playersSelected.length === 0 || playersSelected.includes(sec.dataset.player || '');
