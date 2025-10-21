@@ -36,6 +36,11 @@ section {
   margin: 14px 0 6px;
 }
 
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
 .filter-group label {
   display: block;
   font-weight: 600;
@@ -51,10 +56,19 @@ section {
   border-radius: 6px;
   background: #fff;
   font-size: 0.95rem;
+  min-height: 140px;
+}
+
+.filter-group--player select {
+  width: 360px;
 }
 
 @media (max-width: 600px) {
   .filter-group select {
+    width: 100%;
+  }
+
+  .filter-group--player select {
     width: 100%;
   }
 }
@@ -302,7 +316,7 @@ footer:hover {
 }
 
 /* Player/extra info (moved from inline) */
-.player-info, .extra-info {
+.player-info, .extra-info, .collectible-info {
   text-align: center;
   margin-top: 10px;
   font-weight: bold;
