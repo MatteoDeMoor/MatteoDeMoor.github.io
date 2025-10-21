@@ -48,11 +48,15 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
                     <label for="filter-type">Type</label>
                     <select id="filter-type" multiple size="5" aria-label="Filter by type"></select>
                   </div>
-                  <div class="filter-group">
+                <div class="filter-group">
                     <label for="filter-size">Size</label>
                     <select id="filter-size" multiple size="5" aria-label="Filter by size"></select>
                   </div>
                   <div class="filter-group">
+                    <label for="filter-collectible">Collectible</label>
+                    <select id="filter-collectible" multiple size="5" aria-label="Filter by collectible status"></select>
+                  </div>
+                  <div class="filter-group filter-group--player">
                     <label for="filter-player">Player</label>
                     <select id="filter-player" multiple size="5" aria-label="Filter by player"></select>
                   </div>
@@ -83,13 +87,16 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
         image3 = f"./shirtImages/{row['Foto3']}" if row['Foto3'] else ""
         
         # Start HTML for this shirt section
+        collectible_value = (shirt_extra or "").strip().lower()
+        collectible_attr = f' data-collectible="{collectible_value}"' if collectible_value else ""
+
         html_content += f"""
         <!-- Shirt {shirt_counter} (ID: {row['ID']}) -->
-        <div class="shirt-section">
+        <div class="shirt-section"{collectible_attr}>
             <h3>{shirt_team} {shirt_season} {shirt_type} - Size: {shirt_size}</h3>
             <div class="photo-row">
         """
-        
+
         # First photo
         if image1:
             html_content += f"""
@@ -118,9 +125,13 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
 
         # Display player information (if provided)
         if shirt_player and shirt_number.strip():
-            extra_text = " - Matchworn" if shirt_extra == "Matchworn" else ""
             html_content += f"""
-            <div class="player-info">Player: {shirt_player} - Number: {shirt_number}{extra_text}</div>
+            <div class="player-info">Player: {shirt_player} - Number: {shirt_number}</div>
+            """
+
+        if shirt_extra:
+            html_content += f"""
+            <div class="collectible-info">Status: {shirt_extra}</div>
             """
 
         # Close the shirt section
