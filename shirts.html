@@ -26,20 +26,24 @@
                 <p>Here you can find my unique Club Brugge shirts collection.</p>
                 <div class="filter-bar" aria-label="Filter shirts">
                   <div class="filter-group">
-                    <label for="filter-season">Season</label>
-                    <select id="filter-season" multiple size="5" aria-label="Filter by season"></select>
+                    <span class="filter-label" id="filter-season-label" data-base-label="Season">Season</span>
+                    <div class="filter-options" id="filter-season" role="group" aria-labelledby="filter-season-label"></div>
                   </div>
                   <div class="filter-group">
-                    <label for="filter-type">Type</label>
-                    <select id="filter-type" multiple size="5" aria-label="Filter by type"></select>
+                    <span class="filter-label" id="filter-type-label" data-base-label="Type">Type</span>
+                    <div class="filter-options" id="filter-type" role="group" aria-labelledby="filter-type-label"></div>
                   </div>
                   <div class="filter-group">
-                    <label for="filter-size">Size</label>
-                    <select id="filter-size" multiple size="5" aria-label="Filter by size"></select>
+                    <span class="filter-label" id="filter-size-label" data-base-label="Size">Size</span>
+                    <div class="filter-options" id="filter-size" role="group" aria-labelledby="filter-size-label"></div>
                   </div>
                   <div class="filter-group">
-                    <label for="filter-player">Player</label>
-                    <select id="filter-player" multiple size="5" aria-label="Filter by player"></select>
+                    <span class="filter-label" id="filter-collectible-label" data-base-label="Collectible">Collectible</span>
+                    <div class="filter-options" id="filter-collectible" role="group" aria-labelledby="filter-collectible-label"></div>
+                  </div>
+                  <div class="filter-group filter-group--player">
+                    <span class="filter-label" id="filter-player-label" data-base-label="Player">Player</span>
+                    <div class="filter-options" id="filter-player" role="group" aria-labelledby="filter-player-label"></div>
                   </div>
                   <div class="filter-actions">
                     <button id="filter-clear">Clear</button>
@@ -47,7 +51,7 @@
                 </div>
     
         <!-- Shirt 1 (ID: 107) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2024-2025 Home - Size: XXL</h3>
             <div class="photo-row">
         
@@ -61,10 +65,12 @@
             </div>
             <div class="player-info">Player: Christos Tzolis - Number: 8</div>
             
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 2 (ID: 106) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2024-2025 Home - Size: M</h3>
             <div class="photo-row">
         
@@ -76,10 +82,12 @@
                     <img src="./shirtImages/Shirt69.2.jpg" alt="Club Brugge 2024-2025 Home shirt" loading="lazy">
                 </div>
             </div>
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 3 (ID: 105) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="matchworn">
             <h3>Club Brugge 2024-2025 Home - Size: M</h3>
             <div class="photo-row">
         
@@ -95,12 +103,14 @@
                     <img src="./shirtImages/Shirt76.3.jpg" alt="Club Brugge 2024-2025 Home shirt" loading="lazy">
                 </div>
             </div>
-            <div class="player-info">Player: Chemsdine Talbi - Number: 68 - Matchworn</div>
+            <div class="player-info">Player: Chemsdine Talbi - Number: 68</div>
+            
+            <div class="collectible-info">Status: Matchworn</div>
             
         </div>
         
         <!-- Shirt 4 (ID: 104) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2024-2025 Home - Size: S</h3>
             <div class="photo-row">
         
@@ -114,10 +124,12 @@
             </div>
             <div class="player-info">Player: Brandon Mechele - Number: 44</div>
             
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 5 (ID: 103) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2024-2025 Away - Size: XL</h3>
             <div class="photo-row">
         
@@ -135,10 +147,12 @@
             </div>
             <div class="player-info">Player: Hans Vanaken - Number: 20</div>
             
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 6 (ID: 102) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2024-2025 Away - Size: XL</h3>
             <div class="photo-row">
         
@@ -156,10 +170,12 @@
             </div>
             <div class="player-info">Player: Ardon Jashari - Number: 30</div>
             
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 7 (ID: 101) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2024-2025 Third - Size: XL</h3>
             <div class="photo-row">
         
@@ -172,6 +188,8 @@
                 </div>
             </div>
             <div class="player-info">Player: Christos Tzolis - Number: 8</div>
+            
+            <div class="collectible-info">Status: Signed</div>
             
         </div>
         
@@ -200,7 +218,7 @@
         </div>
         
         <!-- Shirt 10 (ID: 98) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="matchworn">
             <h3>Club Brugge 2023-2024 Home - Size: M</h3>
             <div class="photo-row">
         
@@ -216,12 +234,14 @@
                     <img src="./shirtImages/Shirt77.3.jpg" alt="Club Brugge 2023-2024 Home shirt" loading="lazy">
                 </div>
             </div>
-            <div class="player-info">Player: Philip Zinckernagel - Number: 77 - Matchworn</div>
+            <div class="player-info">Player: Philip Zinckernagel - Number: 77</div>
+            
+            <div class="collectible-info">Status: Matchworn</div>
             
         </div>
         
         <!-- Shirt 11 (ID: 97) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2023-2024 Home - Size: XXL</h3>
             <div class="photo-row">
         
@@ -235,10 +255,12 @@
             </div>
             <div class="player-info">Player: Hans Vanaken - Number: 20</div>
             
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 12 (ID: 96) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2023-2024 Home - Size: M</h3>
             <div class="photo-row">
         
@@ -252,10 +274,12 @@
             </div>
             <div class="player-info">Player: Casper Nielsen - Number: 27</div>
             
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 13 (ID: 95) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2023-2024 Away - Size: XL</h3>
             <div class="photo-row">
         
@@ -269,10 +293,12 @@
             </div>
             <div class="player-info">Player: Brandon Mechele - Number: 44</div>
             
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 14 (ID: 94) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2023-2024 Third - Size: XL</h3>
             <div class="photo-row">
         
@@ -284,6 +310,8 @@
                     <img src="./shirtImages/Shirt65.2.jpg" alt="Club Brugge 2023-2024 Third shirt" loading="lazy">
                 </div>
             </div>
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 15 (ID: 93) -->
@@ -317,7 +345,7 @@
         </div>
         
         <!-- Shirt 17 (ID: 91) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2022-2023 Home - Size: XL</h3>
             <div class="photo-row">
         
@@ -335,10 +363,12 @@
             </div>
             <div class="player-info">Player: Mats Rits - Number: 26</div>
             
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 18 (ID: 90) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2022-2023 Home - Size: L</h3>
             <div class="photo-row">
         
@@ -355,6 +385,8 @@
                 </div>
             </div>
             <div class="player-info">Player: Jorne Spileers - Number: 27</div>
+            
+            <div class="collectible-info">Status: Signed</div>
             
         </div>
         
@@ -376,7 +408,7 @@
         </div>
         
         <!-- Shirt 20 (ID: 88) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2022-2023 Away - Size: L</h3>
             <div class="photo-row">
         
@@ -394,10 +426,12 @@
             </div>
             <div class="player-info">Player: Joel Ordóñez - Number: 4</div>
             
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 21 (ID: 87) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2022-2023 Third - Size: XL</h3>
             <div class="photo-row">
         
@@ -411,10 +445,12 @@
             </div>
             <div class="player-info">Player: Ferran Jutglà Blanch - Number: 9</div>
             
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 22 (ID: 86) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2022-2023 Third - Size: L</h3>
             <div class="photo-row">
         
@@ -428,10 +464,12 @@
             </div>
             <div class="player-info">Player: Casper Nielsen - Number: 27</div>
             
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 23 (ID: 85) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2022-2023 GK 1 - Size: XXL</h3>
             <div class="photo-row">
         
@@ -443,6 +481,8 @@
                     <img src="./shirtImages/Shirt60.2.jpg" alt="Club Brugge 2022-2023 GK 1 shirt" loading="lazy">
                 </div>
             </div>
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 24 (ID: 84) -->
@@ -461,7 +501,7 @@
         </div>
         
         <!-- Shirt 25 (ID: 83) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2021-2022 Home - Size: M</h3>
             <div class="photo-row">
         
@@ -473,6 +513,8 @@
                     <img src="./shirtImages/Shirt58.2.jpg" alt="Club Brugge 2021-2022 Home shirt" loading="lazy">
                 </div>
             </div>
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 26 (ID: 82) -->
@@ -510,7 +552,7 @@
         </div>
         
         <!-- Shirt 28 (ID: 80) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2021-2022 Away - Size: XXL</h3>
             <div class="photo-row">
         
@@ -522,6 +564,8 @@
                     <img src="./shirtImages/Shirt54.2.jpg" alt="Club Brugge 2021-2022 Away shirt" loading="lazy">
                 </div>
             </div>
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 29 (ID: 79) -->
@@ -549,7 +593,7 @@
         </div>
         
         <!-- Shirt 31 (ID: 77) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2021-2022 GK 1 - Size: XL</h3>
             <div class="photo-row">
         
@@ -563,10 +607,12 @@
             </div>
             <div class="player-info">Player: Simon Mignolet - Number: 22</div>
             
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 32 (ID: 76) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2020-2021 Home - Size: S</h3>
             <div class="photo-row">
         
@@ -582,6 +628,8 @@
                     <img src="./shirtImages/Shirt50.3.jpg" alt="Club Brugge 2020-2021 Home shirt" loading="lazy">
                 </div>
             </div>
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 33 (ID: 75) -->
@@ -603,7 +651,7 @@
         </div>
         
         <!-- Shirt 35 (ID: 73) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2020-2021 Away - Size: M</h3>
             <div class="photo-row">
         
@@ -615,6 +663,8 @@
                     <img src="./shirtImages/Shirt49.2.jpg" alt="Club Brugge 2020-2021 Away shirt" loading="lazy">
                 </div>
             </div>
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 36 (ID: 72) -->
@@ -635,7 +685,7 @@
         </div>
         
         <!-- Shirt 37 (ID: 71) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2020-2021 Third - Size: XXL</h3>
             <div class="photo-row">
         
@@ -651,6 +701,8 @@
                     <img src="./shirtImages/Shirt57.3.jpg" alt="Club Brugge 2020-2021 Third shirt" loading="lazy">
                 </div>
             </div>
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 38 (ID: 70) -->
@@ -707,7 +759,7 @@
         </div>
         
         <!-- Shirt 41 (ID: 67) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2019-2020 Away - Size: M</h3>
             <div class="photo-row">
         
@@ -719,6 +771,8 @@
                     <img src="./shirtImages/Shirt82.2.jpg" alt="Club Brugge 2019-2020 Away shirt" loading="lazy">
                 </div>
             </div>
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 42 (ID: 66) -->
@@ -860,7 +914,7 @@
         </div>
         
         <!-- Shirt 50 (ID: 58) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="framed">
             <h3>Club Brugge 2018-2019 Third - Size: XXL</h3>
             <div class="photo-row">
         
@@ -872,6 +926,8 @@
                     <img src="./shirtImages/Shirt38.2.jpg" alt="Club Brugge 2018-2019 Third shirt" loading="lazy">
                 </div>
             </div>
+            <div class="collectible-info">Status: Framed</div>
+            
         </div>
         
         <!-- Shirt 51 (ID: 57) -->
@@ -1175,7 +1231,7 @@
         </div>
         
         <!-- Shirt 69 (ID: 39) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2014-2015 Home - Size: XL</h3>
             <div class="photo-row">
         
@@ -1191,6 +1247,8 @@
                     <img src="./shirtImages/Shirt70.3.jpg" alt="Club Brugge 2014-2015 Home shirt" loading="lazy">
                 </div>
             </div>
+            <div class="collectible-info">Status: Signed</div>
+            
         </div>
         
         <!-- Shirt 70 (ID: 38) -->
@@ -1226,7 +1284,7 @@
         </div>
         
         <!-- Shirt 72 (ID: 36) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2013-2014 Home - Size: L</h3>
             <div class="photo-row">
         
@@ -1239,6 +1297,8 @@
                 </div>
             </div>
             <div class="player-info">Player: Tom De Sutter - Number: 9</div>
+            
+            <div class="collectible-info">Status: Signed</div>
             
         </div>
         
@@ -1514,7 +1574,7 @@
         </div>
         
         <!-- Shirt 90 (ID: 18) -->
-        <div class="shirt-section">
+        <div class="shirt-section" data-collectible="signed">
             <h3>Club Brugge 2008-2009 Home - Size: L</h3>
             <div class="photo-row">
         
@@ -1527,6 +1587,8 @@
                 </div>
             </div>
             <div class="player-info">Player: Jeroen Simaeys - Number: 14</div>
+            
+            <div class="collectible-info">Status: Signed</div>
             
         </div>
         

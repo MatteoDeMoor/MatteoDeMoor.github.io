@@ -7,7 +7,12 @@ function inferAttributes(section) {
   // Capture full size tokens like XS, S, M, L, XL, XXL, XXXL, XXXXL, ...
   const sizeMatch = title.match(/Size:\s*([A-Z]{1,5})/i);
   const playerMatch = playerText.match(/Player:\s*([^\-]+)/i);
-  const isMatchworn = /match[\s-]*worn/i.test(playerText);
+  const collectibleFromAttr = (section.dataset.collectible || '').trim().toLowerCase();
+  const extraText = section.querySelector('.collectible-info')?.textContent || '';
+  const collectibleFromText = /match[\s-]*worn/i.test(extraText) ? 'matchworn'
+    : (/signed/i.test(extraText) ? 'signed'
+      : (/framed/i.test(extraText) ? 'framed' : ''));
+  const collectible = collectibleFromAttr || collectibleFromText;
 
   if (seasonMatch) {
     const label = seasonMatch[1];
@@ -33,7 +38,9 @@ function inferAttributes(section) {
     section.dataset.player = label.toLowerCase();
     section.dataset.playerLabel = label; // preserve original casing for UI
   }
-  section.dataset.matchworn = isMatchworn ? 'yes' : 'no';
+  if (collectible) {
+    section.dataset.collectible = collectible;
+  }
 }
 
 function byAlpha(a, b) { return a.localeCompare(b, undefined, { sensitivity: 'base' }); }
@@ -77,11 +84,11 @@ function sortSizes(arr) {
 }
 
 function setupFiltering() {
-  const seasonSel = document.getElementById('filter-season');
-  const typeSel = document.getElementById('filter-type');
-  const sizeSel = document.getElementById('filter-size');
-  const playerSel = document.getElementById('filter-player');
-  const matchwornSel = document.getElementById('filter-matchworn');
+  const seasonGroup = document.getElementById('filter-season');
+  const typeGroup = document.getElementById('filter-type');
+  const sizeGroup = document.getElementById('filter-size');
+  const playerGroup = document.getElementById('filter-player');
+  const collectibleGroup = document.getElementById('filter-collectible');
   const clearBtn = document.getElementById('filter-clear');
   const sections = Array.from(document.querySelectorAll('.shirt-section'));
 
@@ -93,7 +100,6 @@ function setupFiltering() {
   const typesBase = new Set();
   const sizes = new Set();
   const playersMap = new Map(); // key: lower, val: label
-  const matchwornValues = new Set();
 
   sections.forEach(sec => {
     if (sec.dataset.seasons) {
@@ -104,108 +110,73 @@ function setupFiltering() {
     if (sec.dataset.typeBase) typesBase.add(sec.dataset.typeBase);
     if (sec.dataset.size) sizes.add(sec.dataset.size);
     if (sec.dataset.player) playersMap.set(sec.dataset.player, sec.dataset.playerLabel || sec.dataset.player);
-    if (sec.dataset.matchworn) matchwornValues.add(sec.dataset.matchworn);
+    if (sec.dataset.collectible) {
+      sec.dataset.collectible = sec.dataset.collectible.toLowerCase();
+    }
   });
 
-  // Populate selects
-  if (seasonSel) {
-    // Multi-select: no default selection -> show all
-    [...Array.from(seasons).sort((a,b)=>byAlpha(b,a))] // reverse alpha (newer first like 2024-2025)
-      .forEach(season => {
-        const opt = document.createElement('option');
-        opt.value = season;
-        opt.textContent = season;
-        seasonSel.appendChild(opt);
+  function buildChipGroup(container, items, onChange) {
+    if (!container) return null;
+    container.innerHTML = '';
+    const selected = new Set();
+
+    items.forEach(({ value, label }) => {
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'filter-chip';
+      chip.textContent = label;
+      chip.dataset.value = value;
+      chip.setAttribute('aria-pressed', 'false');
+      chip.addEventListener('click', () => {
+        const isActive = chip.classList.toggle('is-active');
+        chip.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        if (isActive) {
+          selected.add(value);
+        } else {
+          selected.delete(value);
+        }
+        onChange?.();
       });
-  }
-
-  if (typeSel) {
-    const TYPE_ORDER = ['home','away','third','fourth','gk'];
-    const LABELS = { home: 'Home', away: 'Away', third: 'Third', fourth: 'Fourth', gk: 'GK' };
-    TYPE_ORDER.forEach(t => {
-      if (!typesBase.has(t)) return;
-      const opt = document.createElement('option');
-      opt.value = t; // normalized base value
-      opt.textContent = LABELS[t] || (t.charAt(0).toUpperCase() + t.slice(1));
-      typeSel.appendChild(opt);
+      container.appendChild(chip);
     });
-  }
 
-  if (sizeSel) {
-    sortSizes(sizes).forEach(z => {
-      const opt = document.createElement('option');
-      opt.value = z;
-      opt.textContent = z;
-      sizeSel.appendChild(opt);
-    });
-  }
-
-  if (playerSel) {
-    Array.from(playersMap.entries())
-      .sort((a,b)=>byAlpha(a[1], b[1]))
-      .forEach(([key,label]) => {
-        const opt = document.createElement('option');
-        opt.value = key; // lower-case key
-        opt.textContent = label; // display label
-        playerSel.appendChild(opt);
-      });
-  }
-
-  if (matchwornSel) {
-    ['yes', 'no'].forEach(value => {
-      if (!matchwornValues.has(value)) return;
-      const opt = document.createElement('option');
-      opt.value = value;
-      opt.textContent = value === 'yes' ? 'Yes' : 'No';
-      matchwornSel.appendChild(opt);
-    });
-  }
-
-  function getMultiSelectedValues(selectEl) {
-    return Array.from(selectEl?.selectedOptions || []).map(o => o.value).filter(Boolean);
-  }
-
-  function updateCounts() {
-    const map = new Map([
-      [seasonSel, document.querySelector('label[for="filter-season"]')],
-      [typeSel, document.querySelector('label[for="filter-type"]')],
-      [sizeSel, document.querySelector('label[for="filter-size"]')],
-      [playerSel, document.querySelector('label[for="filter-player"]')],
-      [matchwornSel, document.querySelector('label[for="filter-matchworn"]')],
-    ]);
-    map.forEach((labelEl, sel) => {
-      if (!labelEl || !sel) return;
-      const base = labelEl.textContent.split(' (')[0];
-      const count = getMultiSelectedValues(sel).length;
-      labelEl.textContent = count ? `${base} (${count} selected)` : base;
-    });
-  }
-
-  function enableMultiSelectWithoutCtrl(selectEl) {
-    if (!selectEl) return;
-
-    // On touch devices the native picker already handles multi-select
-    // interactions. Intercepting the touch events prevents the menu
-    // from opening, so skip the custom logic on such devices.
-    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    if (isTouch) return;
-
-    const toggle = (e) => {
-      e.preventDefault();
-      const option = e.target;
-      option.selected = !option.selected;
-      selectEl.dispatchEvent(new Event('change'));
+    return {
+      getSelected: () => Array.from(selected),
+      clear: (silent = false) => {
+        if (!selected.size) return false;
+        selected.clear();
+        container.querySelectorAll('.filter-chip.is-active').forEach(chip => {
+          chip.classList.remove('is-active');
+          chip.setAttribute('aria-pressed', 'false');
+        });
+        if (!silent) onChange?.();
+        return true;
+      },
     };
-
-    selectEl.addEventListener('mousedown', toggle);
   }
+
+  const labelMap = {
+    season: document.getElementById('filter-season-label'),
+    type: document.getElementById('filter-type-label'),
+    size: document.getElementById('filter-size-label'),
+    collectible: document.getElementById('filter-collectible-label'),
+    player: document.getElementById('filter-player-label'),
+  };
+
+  Object.values(labelMap).forEach(labelEl => {
+    if (labelEl && !labelEl.dataset.baseLabel) {
+      labelEl.dataset.baseLabel = labelEl.textContent.trim();
+    }
+  });
+
+  const filters = {};
 
   function applyFilter() {
-    const seasonsSelected = seasonSel ? getMultiSelectedValues(seasonSel) : [];
-    const typesSelected = typeSel ? getMultiSelectedValues(typeSel).map(v => v.toLowerCase()) : [];
-    const sizesSelected = sizeSel ? getMultiSelectedValues(sizeSel).map(v => v.toUpperCase()) : [];
-    const playersSelected = playerSel ? getMultiSelectedValues(playerSel) : [];
-    const matchwornSelected = matchwornSel ? getMultiSelectedValues(matchwornSel).map(v => v.toLowerCase()) : [];
+    const seasonsSelected = filters.season ? filters.season.getSelected() : [];
+    const typesSelected = filters.type ? filters.type.getSelected().map(v => v.toLowerCase()) : [];
+    const sizesSelected = filters.size ? filters.size.getSelected().map(v => v.toUpperCase()) : [];
+    const playersSelected = filters.player ? filters.player.getSelected() : [];
+    const collectibleSelected = filters.collectible ? filters.collectible.getSelected().map(v => v.toLowerCase()) : [];
 
     sections.forEach(sec => {
       const seasonValues = sec.dataset.seasons
@@ -215,25 +186,77 @@ function setupFiltering() {
       const okType = typesSelected.length === 0 || typesSelected.includes(sec.dataset.typeBase || '');
       const okSize = sizesSelected.length === 0 || sizesSelected.includes(sec.dataset.size || '');
       const okPlayer = playersSelected.length === 0 || playersSelected.includes(sec.dataset.player || '');
-      const okMatchworn = matchwornSelected.length === 0 || matchwornSelected.includes(sec.dataset.matchworn || '');
-      sec.style.display = (okSeason && okType && okSize && okPlayer && okMatchworn) ? '' : 'none';
+      const collectibleValue = (sec.dataset.collectible || '').toLowerCase();
+      const okCollectible = collectibleSelected.length === 0 || collectibleSelected.includes(collectibleValue);
+      sec.style.display = (okSeason && okType && okSize && okPlayer && okCollectible) ? '' : 'none';
     });
   }
 
-  [seasonSel, typeSel, sizeSel, playerSel, matchwornSel].forEach(sel => {
-    enableMultiSelectWithoutCtrl(sel);
-    sel?.addEventListener('change', () => { applyFilter(); updateCounts(); });
-  });
+  function updateCounts() {
+    Object.entries(labelMap).forEach(([key, labelEl]) => {
+      if (!labelEl) return;
+      const base = labelEl.dataset.baseLabel || labelEl.textContent.split(' (')[0];
+      const count = filters[key]?.getSelected().length || 0;
+      labelEl.textContent = count ? `${base} (${count} selected)` : base;
+    });
+  }
+
+  const handleChange = () => {
+    applyFilter();
+    updateCounts();
+  };
+
+  filters.season = buildChipGroup(
+    seasonGroup,
+    Array.from(seasons).sort((a, b) => byAlpha(b, a)).map(value => ({ value, label: value })),
+    handleChange,
+  );
+
+  const TYPE_ORDER = ['home', 'away', 'third', 'fourth', 'gk'];
+  const TYPE_LABELS = { home: 'Home', away: 'Away', third: 'Third', fourth: 'Fourth', gk: 'GK' };
+  filters.type = buildChipGroup(
+    typeGroup,
+    TYPE_ORDER.filter(t => typesBase.has(t)).map(value => ({ value, label: TYPE_LABELS[value] || value })),
+    handleChange,
+  );
+
+  filters.size = buildChipGroup(
+    sizeGroup,
+    sortSizes(sizes).map(value => ({ value, label: value })),
+    handleChange,
+  );
+
+  filters.collectible = buildChipGroup(
+    collectibleGroup,
+    [
+      { value: 'matchworn', label: 'Matchworn' },
+      { value: 'signed', label: 'Signed' },
+      { value: 'framed', label: 'Framed' },
+    ],
+    handleChange,
+  );
+
+  filters.player = buildChipGroup(
+    playerGroup,
+    Array.from(playersMap.entries())
+      .sort((a, b) => byAlpha(a[1], b[1]))
+      .map(([value, label]) => ({ value, label })),
+    handleChange,
+  );
 
   clearBtn?.addEventListener('click', () => {
-    [seasonSel, typeSel, sizeSel, playerSel, matchwornSel].forEach(sel => {
-      if (sel) Array.from(sel.options).forEach(o => (o.selected = false));
+    let changed = false;
+    Object.values(filters).forEach(filterControl => {
+      if (filterControl) {
+        changed = filterControl.clear(true) || changed;
+      }
     });
-    applyFilter();
+    if (changed) {
+      applyFilter();
+    }
     updateCounts();
   });
 
-  // Initial apply to respect any default selections
   applyFilter();
   updateCounts();
 }
