@@ -76,7 +76,7 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handt
 75,2020-2021,Away,L,24,Stefano Denswil,,Shirt83.1.jpg,Shirt83.2.jpg,,,,
 76,2020-2021,Away,M,,,Signed,Shirt49.1.jpg,Shirt49.2.jpg,,,,"Lambert, Lang, De ketelaere, Mignolet, Odoi, Skov Olsen, Lammens, Mata, Buchanan, Balanta, Sobol, Otasowie"
 77,2020-2021,Home,XXL,25,Ruud Vormer,,Shirt109.1.jpg,Shirt109.2.jpg,,,,
-78,2020-2021,Home,XXL,77,Clinton Mata,,Shirt110.jpg,Shirt110.2.jpg,,,,
+78,2020-2021,Home,XXL,77,Clinton Mata,,Shirt110.1.jpg,Shirt110.2.jpg,,,,
 79,2020-2021,Home,S,,,Signed,Shirt50.1.jpg,Shirt50.2.jpg,Shirt50.3.jpg,,,De Ketelaere
 80,2021-2022,GK 1,XL,22,Simon Mignolet,Signed,Shirt39.1.jpg,Shirt39.2.jpg,,,,Mignolet
 81,2021-2022,Third,L,25,Ruud Vormer,,Shirt52.1.jpg,Shirt52.2.jpg,,x,,
@@ -100,7 +100,7 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handt
 99,2023-2024,Home,M,27,Casper Nielsen,Signed,Shirt102.1.jpg,Shirt102.2.jpg,,,,Nielsen
 100,2023-2024,Home,XXL,20,Hans Vanaken,Signed,Shirt43.1.jpg,Shirt43.2.jpg,,,,Vanaken
 101,2023-2024,Home,M,77,Philip Zinckernagel,Matchworn,Shirt77.1.jpg,Shirt77.2.jpg,Shirt77.3.jpg,x,,Zinckernagel
-102,2024-2025,GK 1,2XL,22,Simon Mignolet,,Shir51.1.jpg,Shirt51.2.jpg,,,Verkoop,
+102,2024-2025,GK 1,2XL,22,Simon Mignolet,,Shirt51.1.jpg,Shirt51.2.jpg,,,Verkoop,
 103,2024-2025,Third,XL,,,,Shirt98.1.jpg,Shirt98.2.jpg,,,Verkoop,
 104,2024-2025,Third,XL,8,Christos Tzolis,Signed,Shirt66.1.jpg,Shirt66.2.jpg,,x,,Tzolis
 105,2024-2025,Away,XL,30,Ardon Jashari,Signed,Shirt101.1.jpg,Shirt101.2.jpg,Shirt101.3.jpg,,,Jashari
