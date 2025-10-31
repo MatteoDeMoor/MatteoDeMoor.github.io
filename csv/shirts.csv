@@ -10,65 +10,65 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handt
 9,2004-2005,GK 1,XL,,,,Shirt6.1.jpg,Shirt6.2.jpg,,x,,
 10,2004-2006,Away,XXL,7,Gert Verheyen,,Shirt7.1.jpg,Shirt7.2.jpg,,,,
 11,2005-2007,Home,XL,24,Brian Priske,,Shirt9.1.jpg,Shirt9.2.jpg,,,,
-12,2006-2007,Away,XL,,,,Shirt8.1.jpg,Shirt8.2.jpg,,,,
-13,2007-2008,Away,S,23,François Sterchele,,Shirt10.1.jpg,Shirt10.2.jpg,,,,
-14,2007-2008,Home,XXXL,10,Wesley Sonck,,Shirt74.1.jpg,Shirt74.2.jpg,,,,
-15,2008-2009,Third,L,,,,Shirt11.1.jpg,Shirt11.2.jpg,,x,,
-16,2008-2009,Away,XXL,,,,Shirt12.1.jpg,Shirt12.2.jpg,,,,
-17,2008-2009,Home,XXXL,22,Karel Geraerts,,Shirt104.1.jpg,Shirt104.2.jpg,,,,
-18,2008-2009,Home,L,14,Jeroen Simaeys,Signed,Shirt75.1.jpg,Shirt75.2.jpg,,,,Squad signed
-19,2009-2010,GK 2,S,1,Stijn Stijnen,,Shirt13.1.jpg,Shirt13.2.jpg,,,,
-20,2009-2010,Away,S,,,,Shirt14.1.jpg,Shirt14.2.jpg,,,,
-21,2009-2010,Home,M,,,,Shirt67.1.jpg,Shirt67.2.jpg,,,Verkoop,
-22,2009-2010,Home,L,,,,Shirt15.1.jpg,Shirt15.2.jpg,,x,,
-23,2010-2011,GK 1,XL,,,,Shirt103.1.jpg,Shirt103.2.jpg,,,,
-24,2010-2011,Away,L,,,,Shirt16.1.jpg,Shirt16.2.jpg,,,,
-25,2010-2011,Home,XL,44,Ivan Perišić,,Shirt17.1.jpg,Shirt17.2.jpg,Shirt17.3.jpg,x,,
-26,2010-2011,Home,XXXL,15,Joseph Akpala,,Shirt90.1.jpg,Shirt90.2.jpg,,,,
-27,2011-2012,Away,L,,,,Shirt4.1.jpg,Shirt4.2.jpg,,,,
-28,2012-2013,GK 2,L,39,Bojan Jorgačević,,Shirt19.1.jpg,Shirt19.2.jpg,,,,
-29,2012-2013,Away,L,4,Carl Hoefkens,,Shirt20.1.jpg,Shirt20.2.jpg,Shirt20.3.jpg,x,,
-30,2012-2013,Home,XL,,,,Shirt91.1.jpg,Shirt91.2.jpg,,,,
-31,2013-2014,Third,XL,,,,Shirt92.1.jpg,Shirt92.2.jpg,,,Verkoop,
-32,2013-2014,Third,L,,,,Shirt93.1.jpg,Shirt93.2.jpg,,,Verkoop,
-33,2013-2014,Third,XXL,30,Nicolás Castillo,,Shirt94.1.jpg,Shirt94.2.jpg,,,,
-34,2013-2014,Away,L,17,Waldemar Sobota,,Shirt24.1.jpg,Shirt24.2.jpg,,x,,
-35,2013-2014,Home,XL,9,Tom De Sutter,,Shirt95.1.jpg,Shirt95.2.jpg,,,,
-36,2013-2014,Home,L,9,Tom De Sutter,Signed,Shirt25.1.jpg,Shirt25.2.jpg,,,,De Sutter
-37,2014-2015,Away,L,,,,Shirt96.1.jpg,Shirt96.2.jpg,,,,
-38,2014-2015,Home,L,2,Davy De Fauw,,Shirt26.1.jpg,Shirt26.2.jpg,,,,
-39,2014-2015,Home,XL,12,,Signed,Shirt70.1.jpg,Shirt70.2.jpg,Shirt70.3.jpg,,,Squad signed
-40,2014-2015,Home,M,42,Nikola Storm,,Shirt97.1.jpg,Shirt97.2.jpg,,x,,
-41,2015-2016,Away,L,21,Dion Cools,,Shirt21.1.jpg,Shirt21.2.jpg,,x,,
-42,2016-2017,GK 2,XL,,,,Shirt22.1.jpg,Shirt22.2.jpg,,,,
-43,2016-2017,Third,XL,25,Ruud Vormer,,Shirt28.1.jpg,Shirt28.2.jpg,,,,
-44,2016-2017,Away,XXL,3,Timmy Simons,,Shirt23.1.jpg,Shirt23.2.jpg,,x,,
-45,2016-2017,Home,XXL,3,Timmy Simons,,Shirt37.1.jpg,Shirt37.2.jpg,,,,
-46,2016-2017,Home,XL,25,Ruud Vormer,,Shirt29.1.jpg,Shirt29.2.jpg,,,,
-47,2016-2017,Home,XL,11,José Izquierdo,,Shirt30.1.jpg,Shirt30.2.jpg,Shirt30.3.jpg,x,,
-48,2017-2018,GK 1,L,,,,Shirt32.1.jpg,Shirt32.2.jpg,,,,
-49,2017-2018,Fourth,XXL,,,,Shirt31.1.jpg,Shirt31.2.jpg,,,,
-50,2017-2018,Third,XL,30,Marvelous Nakamba,,Shirt33.1.jpg,Shirt33.2.jpg,,x,,Nakamba
-51,2017-2018,Away,L,42,Emmanuel Dennis Bonaventure,,Shirt34.1.jpg,Shirt34.2.jpg,,x,,
-52,2017-2018,Away,XL,30,Marvelous Nakamba,,Shirt35.1.jpg,Shirt35.2.jpg,,,,Nakamba
-53,2017-2018,Home,XXXL,,,,Shirt42.1.jpg,Shirt42.2.jpg,,,Verkoop,
-54,2017-2018,Home,XL,12,Jupiler,,Shirt105.1.jpg,Shirt105.2.jpg,,,Verkoop,
-55,2017-2018,Home,XXXL,3,Timmy Simons,,Shirt44.1.jpg,Shirt44.2.jpg,,,,
-56,2017-2018,Home,XXL,20,Hans Vanaken,,Shirt36.1.jpg,Shirt36.2.jpg,,,,
-57,2017-2018,Home,L,24,Stefano Denswil,Matchworn,Shirt106.1.jpg,Shirt106.2.jpg,Shirt106.3.jpg,,,
-58,2017-2018,Home,XL,7,Wesley Moraes,Matchworn,Shirt107.1.jpg,Shirt107.2.jpg,Shirt107.3.jpg,,,
-59,2018-2019,Third,XXXL,,,,Shirt53.1.jpg,Shirt53.2.jpg,,,Verkoop,
-60,2018-2019,Third,XXL,,Ruud Vormer,Framed,Shirt38.1.jpg,Shirt38.2.jpg,,,,Vormer
-61,2018-2019,Third,M,42,Emmanuel Dennis Bonaventure,,Shirt55.1.jpg,Shirt55.2.jpg,,,,
-62,2018-2019,Third,XXXL,11,Krépin Diatta,,Shirt62.1.jpg,Shirt62.2.jpg,,,,
-63,2018-2019,Away,XXL,25,Ruud Vormer,,Shirt1.1.jpg,Shirt1.2.jpg,,,,
-64,2018-2019,Away,L,80,Loïs Openda,,Shirt87.1.jpg,Shirt87.2.jpg,,x,,
-65,2018-2019,Away,XL,9,Jelle Vossen,,Shirt40.1.jpg,Shirt40.2.jpg,Shirt40.3.jpg,,,Vossen
-66,2018-2019,Home,M,6,Sofyan Amrabat,,Shirt41.1.jpg,Shirt41.2.jpg,,,,
-67,2018-2019,Home,M,47,Arnaut Danjuma,Matchworn,Shirt108.1.jpg,Shirt108.2.jpg,Shirt108.3.jpg,,,
-68,2019-2020,Third,XXXL,,,,Shirt86.1.jpg,Shirt86.2.jpg,,,Verkoop,
-69,2019-2020,Third,M,90,Charles De Ketelaere,,Shirt85.1.jpg,Shirt85.2.jpg,,,,
-70,2019-2020,Away,M,,,Signed,Shirt82.1.jpg,Shirt82.2.jpg,,,Verkoop,"Siquet, Osuji, Campbell, Sabbe, Onyedika, Jashari, Skoras, Nilsson, Vermant"
+12,2006-2007,GK 2,L,23,,,Shirt51.1.jpg,Shirt51.2.jpg,,,,
+13,2006-2007,Away,XL,,,,Shirt8.1.jpg,Shirt8.2.jpg,,,,
+14,2007-2008,Away,S,23,François Sterchele,,Shirt10.1.jpg,Shirt10.2.jpg,,,,
+15,2007-2008,Home,XXXL,10,Wesley Sonck,,Shirt74.1.jpg,Shirt74.2.jpg,,,,
+16,2008-2009,Third,L,,,,Shirt11.1.jpg,Shirt11.2.jpg,,x,,
+17,2008-2009,Away,XXL,,,,Shirt12.1.jpg,Shirt12.2.jpg,,,,
+18,2008-2009,Home,XXXL,22,Karel Geraerts,,Shirt104.1.jpg,Shirt104.2.jpg,,,,
+19,2008-2009,Home,L,14,Jeroen Simaeys,Signed,Shirt75.1.jpg,Shirt75.2.jpg,,,,Squad signed
+20,2009-2010,GK 2,S,1,Stijn Stijnen,,Shirt13.1.jpg,Shirt13.2.jpg,,,,
+21,2009-2010,Away,S,,,,Shirt14.1.jpg,Shirt14.2.jpg,,,,
+22,2009-2010,Home,M,,,,Shirt67.1.jpg,Shirt67.2.jpg,,,Verkoop,
+23,2009-2010,Home,L,,,,Shirt15.1.jpg,Shirt15.2.jpg,,x,,
+24,2010-2011,GK 1,XL,,,,Shirt103.1.jpg,Shirt103.2.jpg,,,,
+25,2010-2011,Away,L,,,,Shirt16.1.jpg,Shirt16.2.jpg,,,,
+26,2010-2011,Home,XL,44,Ivan Perišić,,Shirt17.1.jpg,Shirt17.2.jpg,Shirt17.3.jpg,x,,
+27,2010-2011,Home,XXXL,15,Joseph Akpala,,Shirt90.1.jpg,Shirt90.2.jpg,,,,
+28,2011-2012,Away,L,,,,Shirt4.1.jpg,Shirt4.2.jpg,,,,
+29,2012-2013,GK 2,L,39,Bojan Jorgačević,,Shirt19.1.jpg,Shirt19.2.jpg,,,,
+30,2012-2013,Away,L,4,Carl Hoefkens,,Shirt20.1.jpg,Shirt20.2.jpg,Shirt20.3.jpg,x,,
+31,2012-2013,Home,XL,,,,Shirt91.1.jpg,Shirt91.2.jpg,,,,
+32,2013-2014,Third,XL,,,,Shirt92.1.jpg,Shirt92.2.jpg,,,Verkoop,
+33,2013-2014,Third,L,,,,Shirt93.1.jpg,Shirt93.2.jpg,,,Verkoop,
+34,2013-2014,Third,XXL,30,Nicolás Castillo,,Shirt94.1.jpg,Shirt94.2.jpg,,,,
+35,2013-2014,Away,L,17,Waldemar Sobota,,Shirt24.1.jpg,Shirt24.2.jpg,,x,,
+36,2013-2014,Home,XL,9,Tom De Sutter,,Shirt95.1.jpg,Shirt95.2.jpg,,,,
+37,2013-2014,Home,L,9,Tom De Sutter,Signed,Shirt25.1.jpg,Shirt25.2.jpg,,,,De Sutter
+38,2014-2015,Away,L,,,,Shirt96.1.jpg,Shirt96.2.jpg,,,,
+39,2014-2015,Home,L,2,Davy De Fauw,,Shirt26.1.jpg,Shirt26.2.jpg,,,,
+40,2014-2015,Home,XL,12,,Signed,Shirt70.1.jpg,Shirt70.2.jpg,Shirt70.3.jpg,,,Squad signed
+41,2014-2015,Home,M,42,Nikola Storm,,Shirt97.1.jpg,Shirt97.2.jpg,,x,,
+42,2015-2016,Away,L,21,Dion Cools,,Shirt21.1.jpg,Shirt21.2.jpg,,x,,
+43,2016-2017,GK 2,XL,,,,Shirt22.1.jpg,Shirt22.2.jpg,,,,
+44,2016-2017,Third,XL,25,Ruud Vormer,,Shirt28.1.jpg,Shirt28.2.jpg,,,,
+45,2016-2017,Away,XXL,3,Timmy Simons,,Shirt23.1.jpg,Shirt23.2.jpg,,x,,
+46,2016-2017,Home,XXL,3,Timmy Simons,,Shirt37.1.jpg,Shirt37.2.jpg,,,,
+47,2016-2017,Home,XL,25,Ruud Vormer,,Shirt29.1.jpg,Shirt29.2.jpg,,,,
+48,2016-2017,Home,XL,11,José Izquierdo,,Shirt30.1.jpg,Shirt30.2.jpg,Shirt30.3.jpg,x,,
+49,2017-2018,GK 1,L,,,,Shirt32.1.jpg,Shirt32.2.jpg,,,,
+50,2017-2018,Fourth,XXL,,,,Shirt31.1.jpg,Shirt31.2.jpg,,,,
+51,2017-2018,Third,XL,30,Marvelous Nakamba,,Shirt33.1.jpg,Shirt33.2.jpg,,x,,Nakamba
+52,2017-2018,Away,L,42,Emmanuel Dennis Bonaventure,,Shirt34.1.jpg,Shirt34.2.jpg,,x,,
+53,2017-2018,Away,XL,30,Marvelous Nakamba,,Shirt35.1.jpg,Shirt35.2.jpg,,,,Nakamba
+54,2017-2018,Home,XXXL,,,,Shirt42.1.jpg,Shirt42.2.jpg,,,Verkoop,
+55,2017-2018,Home,XL,12,Jupiler,,Shirt105.1.jpg,Shirt105.2.jpg,,,Verkoop,
+56,2017-2018,Home,XXXL,3,Timmy Simons,,Shirt44.1.jpg,Shirt44.2.jpg,,,,
+57,2017-2018,Home,XXL,20,Hans Vanaken,,Shirt36.1.jpg,Shirt36.2.jpg,,,,
+58,2017-2018,Home,L,24,Stefano Denswil,Matchworn,Shirt106.1.jpg,Shirt106.2.jpg,Shirt106.3.jpg,,,
+59,2017-2018,Home,XL,7,Wesley Moraes,Matchworn,Shirt107.1.jpg,Shirt107.2.jpg,Shirt107.3.jpg,,,
+60,2018-2019,Third,XXXL,,,,Shirt53.1.jpg,Shirt53.2.jpg,,,Verkoop,
+61,2018-2019,Third,XXL,,Ruud Vormer,Framed,Shirt38.1.jpg,Shirt38.2.jpg,,,,Vormer
+62,2018-2019,Third,M,42,Emmanuel Dennis Bonaventure,,Shirt55.1.jpg,Shirt55.2.jpg,,,,
+63,2018-2019,Third,XXXL,11,Krépin Diatta,,Shirt62.1.jpg,Shirt62.2.jpg,,,,
+64,2018-2019,Away,XXL,25,Ruud Vormer,,Shirt1.1.jpg,Shirt1.2.jpg,,,,
+65,2018-2019,Away,L,80,Loïs Openda,,Shirt87.1.jpg,Shirt87.2.jpg,,x,,
+66,2018-2019,Away,XL,9,Jelle Vossen,,Shirt40.1.jpg,Shirt40.2.jpg,Shirt40.3.jpg,,,Vossen
+67,2018-2019,Home,M,6,Sofyan Amrabat,,Shirt41.1.jpg,Shirt41.2.jpg,,,,
+68,2018-2019,Home,M,47,Arnaut Danjuma,Matchworn,Shirt108.1.jpg,Shirt108.2.jpg,Shirt108.3.jpg,,,
+69,2019-2020,Third,XXXL,,,,Shirt86.1.jpg,Shirt86.2.jpg,,,Verkoop,
+70,2019-2020,Third,M,90,Charles De Ketelaere,,Shirt85.1.jpg,Shirt85.2.jpg,,,,
 71,2019-2020,Away,XL,90,Charles De Ketelaere,,Shirt84.1.jpg,Shirt84.2.jpg,,x,,
 72,2019-2020,Home,XXL,2,Eduard Sobol,,Shirt45.1.jpg,Shirt45.2.jpg,Shirt45.3.jpg,,,
 73,2020-2021,GK 1,L,,,,Shirt46.1.jpg,Shirt46.2.jpg,,,,
@@ -100,12 +100,11 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handt
 99,2023-2024,Home,M,27,Casper Nielsen,Signed,Shirt102.1.jpg,Shirt102.2.jpg,,,,Nielsen
 100,2023-2024,Home,XXL,20,Hans Vanaken,Signed,Shirt43.1.jpg,Shirt43.2.jpg,,,,Vanaken
 101,2023-2024,Home,M,77,Philip Zinckernagel,Matchworn,Shirt77.1.jpg,Shirt77.2.jpg,Shirt77.3.jpg,x,,Zinckernagel
-102,2024-2025,GK 1,2XL,22,Simon Mignolet,,Shirt51.1.jpg,Shirt51.2.jpg,,,Verkoop,
-103,2024-2025,Third,XL,,,,Shirt98.1.jpg,Shirt98.2.jpg,,,Verkoop,
-104,2024-2025,Third,XL,8,Christos Tzolis,Signed,Shirt66.1.jpg,Shirt66.2.jpg,,x,,Tzolis
-105,2024-2025,Away,XL,30,Ardon Jashari,Signed,Shirt101.1.jpg,Shirt101.2.jpg,Shirt101.3.jpg,,,Jashari
-106,2024-2025,Away,XL,20,Hans Vanaken,Signed,Shirt5.1.jpg,Shirt5.2.jpg,Shirt5.3.jpg,,,Vanaken
-107,2024-2025,Home,S,44,Brandon Mechele,Signed,Shirt100.1.jpg,Shirt100.2.jpg,,,,Mechele
-108,2024-2025,Home,M,68,Chemsdine Talbi,Matchworn,Shirt76.1.jpg,Shirt76.2.jpg,Shirt76.3.jpg,x,,Talbi
-109,2024-2025,Home,M,,,Signed,Shirt69.1.jpg,Shirt69.2.jpg,,,,Squad signed
-110,2024-2025,Home,XXL,8,Christos Tzolis,Signed,Shirt47.1.jpg,Shirt47.2.jpg,,,,Tzolis
+102,2024-2025,Third,XL,,,,Shirt98.1.jpg,Shirt98.2.jpg,,,Verkoop,
+103,2024-2025,Third,XL,8,Christos Tzolis,Signed,Shirt66.1.jpg,Shirt66.2.jpg,,x,,Tzolis
+104,2024-2025,Away,XL,30,Ardon Jashari,Signed,Shirt101.1.jpg,Shirt101.2.jpg,Shirt101.3.jpg,,,Jashari
+105,2024-2025,Away,XL,20,Hans Vanaken,Signed,Shirt5.1.jpg,Shirt5.2.jpg,Shirt5.3.jpg,,,Vanaken
+106,2024-2025,Home,S,44,Brandon Mechele,Signed,Shirt100.1.jpg,Shirt100.2.jpg,,,,Mechele
+107,2024-2025,Home,M,68,Chemsdine Talbi,Matchworn,Shirt76.1.jpg,Shirt76.2.jpg,Shirt76.3.jpg,x,,Talbi
+108,2024-2025,Home,M,,,Signed,Shirt69.1.jpg,Shirt69.2.jpg,,,,Squad signed
+109,2024-2025,Home,XXL,8,Christos Tzolis,Signed,Shirt47.1.jpg,Shirt47.2.jpg,,,,Tzolis
