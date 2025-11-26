@@ -1,11 +1,26 @@
 // Utility: infer attributes from a shirt section
+function normalizeSize(raw) {
+  const cleaned = (raw || '').toUpperCase().replace(/\s+/g, '');
+  const digitMatch = cleaned.match(/^(\d+)XL$/); // e.g. 2XL, 3XL ...
+  if (digitMatch) {
+    const count = parseInt(digitMatch[1], 10);
+    if (Number.isFinite(count) && count > 0) {
+      return {
+        normalized: `${'X'.repeat(count)}L`, // 2XL -> XXL, 3XL -> XXXL, etc.
+        label: `${count}XL`,
+      };
+    }
+  }
+  return { normalized: cleaned, label: cleaned };
+}
+
 function inferAttributes(section) {
   const title = section.querySelector('h3')?.textContent || '';
   const playerText = section.querySelector('.player-info')?.textContent || '';
   const seasonMatch = title.match(/(\d{4}-\d{4})/);
   const typeMatch = title.match(/Home|Away|Third|Fourth|GK ?\d?|Goalkeeper/i);
-  // Capture full size tokens like XS, S, M, L, XL, XXL, XXXL, XXXXL, ...
-  const sizeMatch = title.match(/Size:\s*([A-Z]{1,5})/i);
+  // Capture size tokens like XS, S, M, L, XL, 2XL, 3XL, 4XL...
+  const sizeMatch = title.match(/Size:\s*([0-9]+XL|[A-Z]{1,6})/i);
   const playerMatch = playerText.match(/Player:\s*([^\-]+)/i);
   const collectibleFromAttr = (section.dataset.collectible || '').trim().toLowerCase();
   const extraText = section.querySelector('.collectible-info')?.textContent || '';
@@ -32,7 +47,11 @@ function inferAttributes(section) {
     section.dataset.type = raw;
     section.dataset.typeBase = base;
   }
-  if (sizeMatch) section.dataset.size = sizeMatch[1].toUpperCase();
+  if (sizeMatch) {
+    const { normalized, label } = normalizeSize(sizeMatch[1]);
+    section.dataset.size = normalized;
+    section.dataset.sizeLabel = label;
+  }
   if (playerMatch) {
     const label = playerMatch[1].trim();
     section.dataset.player = label.toLowerCase();
@@ -64,7 +83,7 @@ function expandSeasonLabel(label) {
 
 function sortSizes(arr) {
   function rankSize(s) {
-    const z = (s || '').toUpperCase();
+    const z = normalizeSize(s).normalized;
     if (z === 'XS') return 0;
     if (z === 'S') return 1;
     if (z === 'M') return 2;
@@ -98,7 +117,7 @@ function setupFiltering() {
   // Build unique option sets from DOM
   const seasons = new Set();
   const typesBase = new Set();
-  const sizes = new Set();
+  const sizesMap = new Map(); // key: normalized, val: label for UI
   const playersMap = new Map(); // key: lower, val: label
 
   sections.forEach(sec => {
@@ -108,7 +127,7 @@ function setupFiltering() {
       seasons.add(sec.dataset.season);
     }
     if (sec.dataset.typeBase) typesBase.add(sec.dataset.typeBase);
-    if (sec.dataset.size) sizes.add(sec.dataset.size);
+    if (sec.dataset.size) sizesMap.set(sec.dataset.size, sec.dataset.sizeLabel || sec.dataset.size);
     if (sec.dataset.player) playersMap.set(sec.dataset.player, sec.dataset.playerLabel || sec.dataset.player);
     if (sec.dataset.collectible) {
       sec.dataset.collectible = sec.dataset.collectible.toLowerCase();
@@ -140,10 +159,10 @@ function setupFiltering() {
   }
 
   if (sizeSel) {
-    sortSizes(sizes).forEach(z => {
+    sortSizes(sizesMap.keys()).forEach(z => {
       const opt = document.createElement('option');
-      opt.value = z;
-      opt.textContent = z;
+      opt.value = z; // normalized for matching
+      opt.textContent = sizesMap.get(z) || z; // display original label when available (e.g., 2XL)
       sizeSel.appendChild(opt);
     });
   }
