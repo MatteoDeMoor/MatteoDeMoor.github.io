@@ -37,11 +37,11 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handt
 36,2013-2014,Home,XL,9,Tom De Sutter,,Shirt95.1.jpg,Shirt95.2.jpg,,,,
 37,2013-2014,Home,L,9,Tom De Sutter,Signed,Shirt25.1.jpg,Shirt25.2.jpg,,,,De Sutter
 38,2014-2015,Away,L,,,,Shirt96.1.jpg,Shirt96.2.jpg,,,Verkoop,
-39,2014-2015,Away,2XL,,,,,,,,,
+39,2014-2015,Away,2XL,,,,Shirt114.1.jpg,Shirt114.2.jpg,,,,
 40,2014-2015,Home,L,2,Davy De Fauw,,Shirt26.1.jpg,Shirt26.2.jpg,,,,
 41,2014-2015,Home,XL,12,,Signed,Shirt70.1.jpg,Shirt70.2.jpg,Shirt70.3.jpg,,,Squad signed
 42,2014-2015,Home,M,42,Nikola Storm,,Shirt97.1.jpg,Shirt97.2.jpg,,x,,
-43,2015-2016,GK 1,2XL,,,,,,,,,
+43,2015-2016,GK 1,2XL,,,,Shirt113.1.jpg,Shirt113.2.jpg,,,,
 44,2015-2016,Away,L,21,Dion Cools,,Shirt21.1.jpg,Shirt21.2.jpg,,x,,
 45,2016-2017,GK 2,XL,,,,Shirt22.1.jpg,Shirt22.2.jpg,,,,
 46,2016-2017,Third,XL,25,Ruud Vormer,,Shirt28.1.jpg,Shirt28.2.jpg,,,,
@@ -60,7 +60,7 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handt
 59,2017-2018,Home,2XL,20,Hans Vanaken,,Shirt36.1.jpg,Shirt36.2.jpg,,,,
 60,2017-2018,Home,L,24,Stefano Denswil,Matchworn,Shirt106.1.jpg,Shirt106.2.jpg,Shirt106.3.jpg,,,
 61,2017-2018,Home,XL,7,Wesley Moraes,Matchworn,Shirt107.1.jpg,Shirt107.2.jpg,Shirt107.3.jpg,,,
-62,2018-2019,GK 1,2XL,1,Ludovic Butelle,,,,,,,
+62,2018-2019,GK 1,2XL,1,Ludovic Butelle,,Shirt112.1.jpg,Shirt112.2.jpg,,,,
 63,2018-2019,Third,3XL,,,,Shirt53.1.jpg,Shirt53.2.jpg,,,Verkoop,
 64,2018-2019,Third,2XL,,Ruud Vormer,Framed,Shirt38.1.jpg,Shirt38.2.jpg,,,,Vormer
 65,2018-2019,Third,M,42,Emmanuel Dennis Bonaventure,,Shirt55.1.jpg,Shirt55.2.jpg,,,,
@@ -100,14 +100,15 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handt
 99,2023-2024,Fourth,L,,,,Shirt78.1.jpg,Shirt78.2.jpg,,x,,
 100,2023-2024,Third,XL,,,Signed,Shirt65.1.jpg,Shirt65.2.jpg,,x,,"Vetlesen, Skoras, Hayen, Seys, Mignolet, De Corte, Onyedika, Nielsen, De Cuyper, Meijer, Et Taïbi, Nilsson, Nusa, Talbi, Spileers, Jackers, Vermant, Boyata, Mechele, Tzolis, Zinckernagel"
 101,2023-2024,Away,XL,44,Brandon Mechele,Signed,Shirt61.1.jpg,Shirt61.2.jpg,,,,Mechele
-102,2023-2024,Home,M,27,Casper Nielsen,Signed,Shirt102.1.jpg,Shirt102.2.jpg,,,,Nielsen
-103,2023-2024,Home,2XL,20,Hans Vanaken,Signed,Shirt43.1.jpg,Shirt43.2.jpg,,,,Vanaken
-104,2023-2024,Home,M,77,Philip Zinckernagel,Matchworn,Shirt77.1.jpg,Shirt77.2.jpg,Shirt77.3.jpg,x,,Zinckernagel
-105,2024-2025,Third,XL,,,,Shirt98.1.jpg,Shirt98.2.jpg,,,Verkoop,
-106,2024-2025,Third,XL,8,Christos Tzolis,Signed,Shirt66.1.jpg,Shirt66.2.jpg,,x,,Tzolis
-107,2024-2025,Away,XL,30,Ardon Jashari,Signed,Shirt101.1.jpg,Shirt101.2.jpg,Shirt101.3.jpg,,,Jashari
-108,2024-2025,Away,XL,20,Hans Vanaken,Signed,Shirt5.1.jpg,Shirt5.2.jpg,Shirt5.3.jpg,,,Vanaken
-109,2024-2025,Home,S,44,Brandon Mechele,Signed,Shirt100.1.jpg,Shirt100.2.jpg,,,,Mechele
-110,2024-2025,Home,M,68,Chemsdine Talbi,Matchworn,Shirt76.1.jpg,Shirt76.2.jpg,Shirt76.3.jpg,x,,Talbi
-111,2024-2025,Home,M,,,Signed,Shirt69.1.jpg,Shirt69.2.jpg,,,,Squad signed
-112,2024-2025,Home,2XL,8,Christos Tzolis,Signed,Shirt47.1.jpg,Shirt47.2.jpg,,,,Tzolis
+102,2023-2024,Home,XL,99,Igor Thiago,,Shirt111.1.jpg,Shirt111.2.jpg,,,,
+103,2023-2024,Home,M,27,Casper Nielsen,Signed,Shirt102.1.jpg,Shirt102.2.jpg,,,,Nielsen
+104,2023-2024,Home,2XL,20,Hans Vanaken,Signed,Shirt43.1.jpg,Shirt43.2.jpg,,,,Vanaken
+105,2023-2024,Home,M,77,Philip Zinckernagel,Matchworn,Shirt77.1.jpg,Shirt77.2.jpg,Shirt77.3.jpg,x,,Zinckernagel
+106,2024-2025,Third,XL,,,,Shirt98.1.jpg,Shirt98.2.jpg,,,Verkoop,
+107,2024-2025,Third,XL,8,Christos Tzolis,Signed,Shirt66.1.jpg,Shirt66.2.jpg,,x,,Tzolis
+108,2024-2025,Away,XL,30,Ardon Jashari,Signed,Shirt101.1.jpg,Shirt101.2.jpg,Shirt101.3.jpg,,,Jashari
+109,2024-2025,Away,XL,20,Hans Vanaken,Signed,Shirt5.1.jpg,Shirt5.2.jpg,Shirt5.3.jpg,,,Vanaken
+110,2024-2025,Home,S,44,Brandon Mechele,Signed,Shirt100.1.jpg,Shirt100.2.jpg,,,,Mechele
+111,2024-2025,Home,M,68,Chemsdine Talbi,Matchworn,Shirt76.1.jpg,Shirt76.2.jpg,Shirt76.3.jpg,x,,Talbi
+112,2024-2025,Home,M,,,Signed,Shirt69.1.jpg,Shirt69.2.jpg,,,,Squad signed
+113,2024-2025,Home,2XL,8,Christos Tzolis,Signed,Shirt47.1.jpg,Shirt47.2.jpg,,,,Tzolis
