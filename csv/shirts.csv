@@ -1,7 +1,7 @@
 ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handtekeningen,Link
 1,1972-1973,Home,XL,,,Retro,Shirt105.1.jpg,Shirt105.2.jpg,,,,,
 2,1987-1988,Home,L,,,Copa,Shirt114.1.jpg,Shirt114.2.jpg,,,,,
-3,1992-1994,Home,M,,,,Shirt131.1.jpg,Shirt131.2.jpg,Shirt131.3.jpg,,,,
+3,1993-1994,Home,M,,,,Shirt131.1.jpg,Shirt131.2.jpg,Shirt131.3.jpg,,,,
 4,1996-1997,Away,2XL,,,,Shirt27.1.jpg,Shirt27.2.jpg,,,,,
 5,1996-1997,Home Youth,XL,4,,,Shirt71.2.jpg,Shirt71.1.jpg,,,,,
 6,1997-1998,Home,XL,23,,,Shirt2.1.jpg,Shirt2.2.jpg,,,,,
@@ -56,7 +56,8 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handt
 55,2016-2017,Home,2XL,3,Timmy Simons,,Shirt37.1.jpg,Shirt37.2.jpg,,,,,
 56,2016-2017,Home,XL,25,Ruud Vormer,,Shirt29.1.jpg,Shirt29.2.jpg,,,,,
 57,2016-2017,Home,XL,11,José Izquierdo,,Shirt30.1.jpg,Shirt30.2.jpg,Shirt30.3.jpg,x,,,
-58,2017-2018,GK 3,L,,,,Shirt32.1.jpg,Shirt32.2.jpg,,,,,
+58,2017-2018,GK 4,L,,,,Shirt32.1.jpg,Shirt32.2.jpg,,,,,
+67,2017-2018,GK 3,2XL,1,Ludovic Butelle,,Shirt112.1.jpg,Shirt112.2.jpg,,,,,
 59,2017-2018,Fourth,2XL,,,,Shirt31.1.jpg,Shirt31.2.jpg,,,,,
 60,2017-2018,Third,XL,30,Marvelous Nakamba,Signed,Shirt33.1.jpg,Shirt33.2.jpg,,x,,Nakamba,
 61,2017-2018,Away,L,42,Emmanuel Dennis Bonaventure,,Shirt34.1.jpg,Shirt34.2.jpg,,x,,,
@@ -65,7 +66,6 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handt
 64,2017-2018,Home,2XL,20,Hans Vanaken,,Shirt36.1.jpg,Shirt36.2.jpg,,,,,
 65,2017-2018,Home,L,24,Stefano Denswil,Matchworn,Shirt106.1.jpg,Shirt106.2.jpg,Shirt106.3.jpg,,,,
 66,2017-2018,Home,XL,7,Wesley Moraes,Matchworn,Shirt107.1.jpg,Shirt107.2.jpg,Shirt107.3.jpg,,,,
-67,2018-2019,GK 1,2XL,1,Ludovic Butelle,,Shirt112.1.jpg,Shirt112.2.jpg,,,,,
 68,2018-2019,Third,2XL,,Ruud Vormer,Framed,Shirt38.1.jpg,Shirt38.2.jpg,,,,Vormer,
 69,2018-2019,Third,M,42,Emmanuel Dennis Bonaventure,,Shirt55.1.jpg,Shirt55.2.jpg,,,,,
 70,2018-2019,Third,3XL,11,Krépin Diatta,,Shirt62.1.jpg,Shirt62.2.jpg,,,,,
@@ -128,5 +128,8 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,Handt
 127,2024-2025,Home,M,,,Signed,Shirt69.1.jpg,Shirt69.2.jpg,,,,Squad signed,
 128,2024-2025,Home,2XL,8,Christos Tzolis,Signed,Shirt47.1.jpg,Shirt47.2.jpg,,,,Tzolis,
 129,2025-2026,GK 2,L,29,Nordin Jackers,Matchworn,Shirt122.1.jpg,Shirt122.2.jpg,Shirt122.3.jpg,,,Jackers,https://mws.com/nl/product/nordin-jackers-mzWhARXEL0meEtUnYCPmKw
-130,2025-2026,Third,XL,7,Nicolò Tresoldi,,Shirt14.1.jpg,Shirt14.2.jpg,,,,,
-131,2025-2026,Home,L,14,Bjorn Meijer,Matchworn,Shirt121.1.jpg,Shirt121.2.jpg,Shirt121.3.jpg,,,Meijer,https://mws.com/nl/product/bjorn-meijer-zkbxYcIkg0aYoV4cBo0dqA
+130,2025-2026,Third,M,11,Romeo Vermant,,Shirt132.1.jpg,Shirt132.2.jpg,,,,,
+131,2025-2026,Third,XL,7,Nicolò Tresoldi,,Shirt14.1.jpg,Shirt14.2.jpg,,,,,
+132,2025-2026,Away,L,8,Christos Tzolis,,Shirt134.1.jpg,Shirt134.2.jpg,,,,,
+133,2025-2026,Home,L,14,Bjorn Meijer,Matchworn,Shirt121.1.jpg,Shirt121.2.jpg,Shirt121.3.jpg,,,Meijer,https://mws.com/nl/product/bjorn-meijer-zkbxYcIkg0aYoV4cBo0dqA
+134,2025-2026,Home,XL,15,Raphael Onyedika,Matchworn,Shirt133.1.jpg,Shirt133.2.jpg,Shirt133.3.jpg,,,Onyedika,https://mws.com/nl/product/raphael-onyedika-nwadike-t8e7o0Eam0OtPBN8ZvNLEA
