@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Matteo De Moor</title>
-  <meta name="description" content="Matteo De Moor – final-year Applied Informatics student specialized in Data Science & AI. Portfolio, projects, and football data work." />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="Matteo De Moor – Junior Data Engineer specialized in AI & Data Engineering, Microsoft Fabric, Power BI, and football analytics." />
+  <meta name="theme-color" content="#07111f" />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Matteo De Moor – Portfolio" />
-  <meta property="og:description" content="Turning data into insights. Final-year Applied Informatics student focused on Data Science & AI." />
+  <meta property="og:title" content="Matteo De Moor – Data Engineer Portfolio" />
+  <meta property="og:description" content="Building data-driven systems at the intersection of AI, analytics, and football." />
   <meta property="og:image" content="images/Matteo.jpg" />
   <meta property="og:url" content="https://matteodemoor.github.io/" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -19,76 +19,157 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
 </head>
-<body>
+<body class="home-page">
 
   <!-- Top bar (header) -->
-  <header class="top-bar">
+  <header class="top-bar command-nav">
     <nav>
       <a href="index.html">Homepage</a>
       <a href="shirts.html">Shirt Collection</a>
     </nav>
   </header>
 
-  <!-- Main section with photo and name -->
-  <main class="main-content">
-    <!-- Left side: Intro/text -->
-    <section class="intro-left fade-in">
-      <h3>I'm a Junior Data Engineer</h3>
-      <p>In the field of Data Science & AI</p>
-      <br><!-- Extra blank line -->
+  <main>
+    <section class="command-hero">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
 
-      <!-- Short info about your internship (1 sentence) -->
-      <p>
-      I graduated as a Bachelor in Computer Science, specializing in AI & Data Engineering. Currently, I am starting my professional journey at Agoria as a Junior Data & Engineer, where I am excited to apply my skills in data analysis, machine learning, and artificial intelligence to real-world challenges and contribute to innovative projects.
-      </p>
+      <div class="command-shell fade-in">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> Currently: Junior Data Engineer @ Agoria</p>
+          <h1>Data Engineer for AI, analytics &amp; football.</h1>
+          <p class="hero-lead">
+            I am Matteo De Moor, a <span id="age">22</span>-year-old Applied Computer Science graduate specialized in AI &amp; Data Engineering. I build scalable data pipelines, model datasets, and create clear reporting experiences with Microsoft Fabric, Power BI, Python, SQL, and modern analytics workflows.
+          </p>
 
-      <!-- Download link for your CV -->
-      <div class="download-cv">
-        <a href="file/CV_MatteoDeMoor.pdf" download>Download my CV here!</a>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button button-primary" href="file/CV_MatteoDeMoor.pdf" download>Download CV</a>
+          </div>
+
+          <div class="social-icons command-social" aria-label="Social links">
+            <a href="mailto:matteo.de.moor@skynet.be" aria-label="Email" target="_blank" rel="noopener noreferrer">
+              <img src="images/mail.svg" alt="Email icon">
+            </a>
+            <a href="https://www.linkedin.com/in/matteo-de-moor/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <img src="images/linkedin.svg" alt="LinkedIn icon">
+            </a>
+            <a href="https://github.com/MatteoDeMoor" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+              <img src="images/github.svg" alt="GitHub icon">
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Matteo De Moor profile visual">
+          <div class="profile-card">
+            <div class="card-topline">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="photo-wrapper command-photo">
+              <div class="shadow-shape"></div>
+              <img src="images/Matteo.jpg" alt="Matteo De Moor" class="profile-photo">
+            </div>
+            <div class="name-text command-name">
+              <p class="role-label">Bachelor's in Applied Computer Science</p>
+              <h2>Matteo<br>De Moor</h2>
+              <p class="subtext">Junior Data Engineer</p>
+            </div>
+          </div>
+        </div>
       </div>
-      
-      <!-- Social icons / links -->
-      <div class="social-icons">
-        <!-- Email -->
-        <a href="mailto:matteo.de.moor@skynet.be"
-           aria-label="Email"
-           target="_blank" rel="noopener noreferrer">
-          <img src="images/mail.svg" alt="Email icon">
-        </a>
-        <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/in/matteo-de-moor/"
-           aria-label="LinkedIn"
-           target="_blank" rel="noopener noreferrer">
-          <img src="images/linkedin.svg" alt="LinkedIn icon">
-        </a>
-        <!-- GitHub -->
-        <a href="https://github.com/MatteoDeMoor"
-           aria-label="GitHub"
-           target="_blank" rel="noopener noreferrer">
-          <img src="images/github.svg" alt="GitHub icon">
-        </a>
+
+      <div class="stats-bar fade-in" aria-label="Profile highlights">
+        <span>Junior Data Engineer @ Agoria</span>
+        <span>Bachelor AI &amp; Data Engineering</span>
+        <span>Football Data Scientist Intern @ Club Brugge</span>
+        <span>Microsoft Fabric · Power BI · Python</span>
       </div>
     </section>
 
-    <!-- Right side: Circular photo with "shadow shape" and name -->
-    <section class="intro-right fade-in">
-      <div class="photo-wrapper">
-        <div class="shadow-shape"></div>
-        <img src="images/Matteo.jpg" alt="Matteo De Moor" class="profile-photo">
+    <section class="command-panels fade-in" aria-label="Professional focus areas">
+      <article class="info-panel">
+        <span class="panel-kicker">01 / Data Engineering</span>
+        <h3>Scalable data foundations</h3>
+        <p>At Agoria, I support scalable data solutions with Microsoft Fabric by building data pipelines, modelling datasets, optimizing analytical workloads, and improving data quality.</p>
+      </article>
+      <article class="info-panel">
+        <span class="panel-kicker">02 / Analytics</span>
+        <h3>Dashboards that explain</h3>
+        <p>I translate complex information into clear dashboards and reports using Power BI, SQL, data warehousing concepts, and structured communication.</p>
+      </article>
+      <article class="info-panel">
+        <span class="panel-kicker">03 / AI &amp; Football</span>
+        <h3>Models with personality</h3>
+        <p>My thesis and Club Brugge internship focused on football analytics, StatsBomb event data, interactive dashboards, and Transformer-based match outcome prediction.</p>
+      </article>
+    </section>
+
+    <section class="cv-highlights fade-in" aria-label="Career path and certifications">
+      <div class="section-heading">
+        <span class="panel-kicker">CV Snapshot</span>
+        <h2>Career path &amp; certifications</h2>
+        <p>A clearer overview of my professional path, bachelor education, and verified certification links.</p>
       </div>
-      <div class="name-text">
-        <h1>Matteo<br>De Moor</h1>
-        <!-- One-liner under your name -->
-        <p class="subtext">Turning data into insights, one model at a time.</p>
+
+      <div class="cv-snapshot-layout">
+        <div class="career-column">
+          <span class="panel-kicker">Career path</span>
+
+          <article class="career-card">
+            <span class="timeline-date">September 2025 · Now</span>
+            <h3>Junior Data Engineer · Agoria</h3>
+            <p>I support the development of scalable data solutions within the Agoria ecosystem, working with Microsoft Fabric to build data pipelines, model datasets, and optimize analytical workloads. I also use Microsoft Power BI to create insightful reports and improve data-driven decision-making.</p>
+          </article>
+
+          <article class="career-card">
+            <span class="timeline-date">August 2025 · September 2025</span>
+            <h3>Junior Data Engineer Student Role · Multiminds</h3>
+            <p>Contributed to the proof of concept of an AI-powered chatbot for the MultiMinds website, focusing on data collection, Q&amp;A generation, and NLP model fine-tuning with Python, Azure Functions, and vector databases.</p>
+          </article>
+
+          <article class="career-card">
+            <span class="timeline-date">February 2025 · May 2025</span>
+            <h3>Football Data Scientist Intern · Club Brugge</h3>
+            <p>Conducted exploratory analyses on StatsBomb event data using Polars, Pandas and MPLSoccer. Built interactive visualizations and a Squad Stability dashboard in Plotly Dash via the SCOUTASTIC API, and validated insights with Hudl Wyscout.</p>
+            <p class="skill-note">Technical skills: Python, Polars, Pandas, Matplotlib, Plotly, Plotly Dash, API integration, Hudl Wyscout workflows and Git.</p>
+          </article>
+
+          <article class="career-card education-card">
+            <span class="timeline-date">September 2022 · June 2025</span>
+            <h3>Bachelor's in Applied Computer Science · HOGENT</h3>
+            <p>Specialisation in AI &amp; Data Engineering. Bachelor thesis: implementation, optimisation and comparative evaluation of a Transformer model to predict the outcome of football matches.</p>
+          </article>
+        </div>
+
+        <aside class="certification-column" aria-label="Certifications">
+          <span class="panel-kicker">Certifications</span>
+          <div class="certification-list">
+            <a class="certification-card" href="https://learn.microsoft.com/en-us/users/matteodemoor-0708/credentials/5c075e7858c80f7f?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank" rel="noopener noreferrer">
+              <span>Microsoft Certified</span>
+              <strong>Azure Data Fundamentals (DP-900)</strong>
+            </a>
+            <a class="certification-card" href="https://learn.microsoft.com/en-gb/users/matteodemoor-0708/credentials/67142d900bebf76c" target="_blank" rel="noopener noreferrer">
+              <span>Microsoft Certified</span>
+              <strong>Azure AI Fundamentals (AI-900)</strong>
+            </a>
+            <a class="certification-card" href="https://learn.microsoft.com/en-gb/users/matteodemoor-0708/credentials/92d663214876e4ca?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank" rel="noopener noreferrer">
+              <span>Microsoft Certified</span>
+              <strong>Azure Fundamentals (AZ-900)</strong>
+            </a>
+            <a class="certification-card" href="https://www.credly.com/badges/e9dfcaac-6b64-46dc-8721-d2163f02fa0b" target="_blank" rel="noopener noreferrer">
+              <span>Credly</span>
+              <strong>Artificial Intelligence Fundamentals</strong>
+            </a>
+          </div>
+        </aside>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer">
+  <footer class="site-footer command-footer">
     <p>&copy; <span id="jaar"></span> Matteo De Moor</p>
   </footer>
 
-  <!-- JS loaded via js/main.js -->
 </body>
 </html>
