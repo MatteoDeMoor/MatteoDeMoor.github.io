@@ -878,9 +878,9 @@ body.scrolled .top-bar{
   gap: 14px;
   margin: 22px 0 28px;
   padding: 18px;
-  border-color: var(--border);
+  border-color: rgba(141, 197, 255, 0.34);
   border-radius: 24px;
-  background: rgba(7, 17, 31, 0.48);
+  background: rgba(238, 247, 255, 0.12);
 }
 
 .collection-page .filter-group label{
@@ -889,9 +889,9 @@ body.scrolled .top-bar{
 
 .collection-page .filter-group select{
   min-height: 140px;
-  color: var(--text);
-  border-color: rgba(141, 197, 255, 0.22);
-  background: rgba(255, 255, 255, 0.08);
+  color: #f4f9ff;
+  border-color: rgba(170, 216, 255, 0.42);
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .collection-page .filter-group select option{
