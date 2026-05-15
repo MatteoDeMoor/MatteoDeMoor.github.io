@@ -78,7 +78,6 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
         shirt_player     = row['Speler']
         shirt_number     = row['Nummer']
         shirt_extra      = row['Extra']
-        shirt_future     = row['Toekomst']
         shirt_signatures = row['Handtekeningen']
 
         # Construct paths for the photos (if present)
