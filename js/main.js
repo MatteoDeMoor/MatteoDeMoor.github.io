@@ -3,6 +3,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.getElementById('jaar');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+
+  // Dynamically calculate age from date of birth (16 April 2004)
+  const ageEl = document.getElementById('age');
+  if (ageEl) {
+    const today = new Date();
+    let age = today.getFullYear() - 2004;
+    const birthdayThisYear = new Date(today.getFullYear(), 3, 16);
+    if (today < birthdayThisYear) age -= 1;
+    ageEl.textContent = age;
+  }
+
   // Sticky header shadow on scroll
   const onScroll = () => {
     if (window.scrollY > 8) document.body.classList.add('scrolled');
