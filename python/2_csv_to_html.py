@@ -19,16 +19,60 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Shirt Collection - Matteo De Moor</title>
-        <meta name="description" content="Browse Matteo De Moor’s unique Club Brugge football shirt collection with photos, seasons, sizes, and players." />
-        <link rel="stylesheet" href="css/style.css">
+
+        <title>Club Brugge Shirt Collection – Matteo De Moor</title>
+
+        <meta name="description" content="Browse Matteo De Moor’s Club Brugge football shirt collection with photos, seasons, sizes, players, matchworn shirts, and signed shirts." />
+
+        <meta name="robots" content="index, follow" />
+
+        <link rel="canonical" href="https://matteodemoor.github.io/shirts.html" />
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Club Brugge Shirt Collection – Matteo De Moor" />
+        <meta property="og:description" content="A personal archive of Club Brugge football shirts, including seasons, players, sizes, matchworn shirts, and signed shirts." />
+        <meta property="og:image" content="https://matteodemoor.github.io/images/Matteo.jpg" />
+        <meta property="og:url" content="https://matteodemoor.github.io/shirts.html" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Club Brugge Shirt Collection – Matteo De Moor" />
+        <meta name="twitter:description" content="A personal archive of Club Brugge football shirts, including seasons, players, sizes, matchworn shirts, and signed shirts." />
+        <meta name="twitter:image" content="https://matteodemoor.github.io/images/Matteo.jpg" />
+
         <link rel="stylesheet" href="css/style2.css">
+        <link rel="stylesheet" href="css/style.css">
+
         <link rel="icon" href="./images/ai2.png" type="image/x-icon">
+
         <script src="js/main.js" defer></script>
         <script src="js/shirts.js" defer></script>
+
+        <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+            "@type": "CollectionPage",
+            "@id": "https://matteodemoor.github.io/shirts.html#collection",
+            "url": "https://matteodemoor.github.io/shirts.html",
+            "name": "Club Brugge Shirt Collection – Matteo De Moor",
+            "description": "A personal archive of Club Brugge football shirts with photos, seasons, sizes, players, matchworn shirts, and signed shirts.",
+            "about": [
+                "Club Brugge",
+                "Football shirts",
+                "Matchworn shirts",
+                "Signed shirts"
+            ],
+            "inLanguage": "en"
+            }
+        ]
+        }
+        </script>
     </head>
-    <body>
-        <header class="top-bar">
+    <body class="home-page collection-page">
+        <header class="top-bar command-nav">
           <nav>
             <a href="index.html">Homepage</a>
             <a href="shirts.html">Shirt Collection</a>
@@ -36,9 +80,12 @@ with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
         </header>
 
         <main>
-            <section>
-                <h2>My personal shirt collection</h2>
-                <p>Here you can find my unique Club Brugge shirts collection.</p>
+            <section class="collection-shell">
+                <div class="collection-intro">
+                    <span class="panel-kicker">Club Brugge archive</span>
+                    <h1>My personal shirt collection</h1>
+                    <p>Here you can find my unique Club Brugge shirts collection.</p>
+                </div>
                 <div class="filter-bar" aria-label="Filter shirts">
                   <div class="filter-group">
                     <label for="filter-season">Season</label>
