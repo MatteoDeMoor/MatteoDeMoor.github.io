@@ -269,9 +269,8 @@ html_content = f"""
         <section class="collection-shell" itemscope itemtype="https://schema.org/CollectionPage">
             <div class="collection-intro">
                 <span class="panel-kicker">Club Brugge archive</span>
-                <h1 itemprop="name">My personal Club Brugge shirt collection</h1>
-                <p itemprop="description">Here you can find my unique, searchable Club Brugge shirts collection with player names, shirt numbers, seasons, sizes, matchworn shirts and signed shirts.</p>
-                <p class="collection-meta">This archive contains {len(rows)} Club Brugge shirts across {len(seasons)} seasons and {len(players)} named players, including {esc(player_keyword_preview)}.</p>
+                <h1 itemprop="name">My personal shirt collection</h1>
+                <p itemprop="description">Here you can find my unique Club Brugge shirts collection.</p>
             </div>
             <div class="filter-bar" aria-label="Filter shirts">
               <div class="filter-group">
@@ -323,7 +322,7 @@ for row in rows:
     player_attr = f' data-player="{esc(shirt_player.lower())}"' if shirt_player else ""
     section_id = f"shirt-{esc(shirt_id)}"
     title = shirt_name(row)
-    title_with_size = f"{title} - Size: {shirt_size}" if shirt_size else title
+    visible_title = f"{shirt_team} {shirt_season} {shirt_type} - Size: {shirt_size}"
     article_keywords = ", ".join(filter(None, [shirt_team, shirt_season, shirt_type, shirt_player, shirt_number, shirt_extra]))
 
     html_content += f"""
@@ -333,7 +332,7 @@ for row in rows:
             <meta itemprop="description" content="{esc(shirt_description(row))}">
             <meta itemprop="category" content="Football shirt">
             <meta itemprop="keywords" content="{esc(article_keywords)}">
-            <h3>{esc(title_with_size)}</h3>
+            <h3>{esc(visible_title)}</h3>
             <div class="photo-row">
     """
 
@@ -347,10 +346,10 @@ for row in rows:
             alt_parts.append(shirt_extra)
         alt_text = " ".join(alt_parts)
         html_content += f"""
-                <figure class="photo" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                <div class="photo" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                     <img src="{esc(image)}" alt="{esc(alt_text)}" title="{esc(title)} photo {image_index}" loading="lazy" itemprop="contentUrl">
                     <meta itemprop="caption" content="{esc(alt_text)}">
-                </figure>
+                </div>
         """
 
     html_content += "\n            </div>"
@@ -366,29 +365,10 @@ for row in rows:
             <div class="player-info">{esc(player_text)}</div>
         """
 
-    detail_items = [
-        ("Season", shirt_season),
-        ("Type", shirt_type),
-        ("Size", shirt_size),
-    ]
-    if shirt_player:
-        detail_items.append(("Player", shirt_player))
-    if shirt_number:
-        detail_items.append(("Number", shirt_number))
-    if shirt_extra:
-        detail_items.append(("Status", shirt_extra))
-    if shirt_signatures:
-        detail_items.append(("Signatures", shirt_signatures))
-
     if shirt_extra:
         html_content += f"""
             <div class="collectible-info">Status: {esc(shirt_extra)}</div>
         """
-
-    html_content += "\n            <dl class=\"shirt-metadata\" aria-label=\"Shirt metadata\">"
-    for label, value in detail_items:
-        html_content += f"<dt>{esc(label)}</dt><dd>{esc(value)}</dd>"
-    html_content += "</dl>"
 
     html_content += """
         </article>
