@@ -6,7 +6,7 @@ This repository contains the source code for my personal website, showcasing my 
 ## Technologies
 - HTML
 - CSS
-- Javascript
+- JavaScript
 - Python
 - Hosting: Github Pages
 
