@@ -9,6 +9,10 @@ COLLECTION_URL = f"{BASE_URL}/shirts.html"
 DEFAULT_IMAGE = f"{BASE_URL}/images/Matteo.jpg"
 TEAM_NAME = "Club Brugge"
 TEAM_SAME_AS = "https://www.clubbrugge.be/"
+OFFER_PRICE = "0.00"
+OFFER_PRICE_CURRENCY = "EUR"
+OFFER_AVAILABILITY = "https://schema.org/OutOfStock"
+OFFER_ITEM_CONDITION = "https://schema.org/UsedCondition"
 
 base_dir = Path(__file__).resolve().parents[1]
 csv_file_path = base_dir / "csv" / "shirts.csv"
@@ -79,6 +83,18 @@ def shirt_description(row):
     return ", ".join(parts) + "."
 
 
+def product_offer(item_url):
+    return {
+        "@type": "Offer",
+        "url": item_url,
+        "price": OFFER_PRICE,
+        "priceCurrency": OFFER_PRICE_CURRENCY,
+        "availability": OFFER_AVAILABILITY,
+        "itemCondition": OFFER_ITEM_CONDITION,
+        "name": "Personal collection item (not for sale)",
+    }
+
+
 def build_schema(rows, players, seasons, shirt_types):
     item_list = []
     for position, row in enumerate(rows, start=1):
@@ -103,6 +119,7 @@ def build_schema(rows, players, seasons, shirt_types):
                     "sameAs": TEAM_SAME_AS,
                 },
                 "image": images or [DEFAULT_IMAGE],
+                "offers": product_offer(item_url),
                 "additionalProperty": [
                     {"@type": "PropertyValue", "name": "Season", "value": clean(row.get("Seizoen"))},
                     {"@type": "PropertyValue", "name": "Shirt type", "value": clean(row.get("Shirt"))},
@@ -332,6 +349,14 @@ for row in rows:
             <meta itemprop="description" content="{esc(shirt_description(row))}">
             <meta itemprop="category" content="Football shirt">
             <meta itemprop="keywords" content="{esc(article_keywords)}">
+            <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <meta itemprop="name" content="Personal collection item (not for sale)">
+                <meta itemprop="price" content="{OFFER_PRICE}">
+                <meta itemprop="priceCurrency" content="{OFFER_PRICE_CURRENCY}">
+                <link itemprop="availability" href="{OFFER_AVAILABILITY}">
+                <link itemprop="itemCondition" href="{OFFER_ITEM_CONDITION}">
+                <link itemprop="url" href="{esc(f'{COLLECTION_URL}#shirt-{shirt_id}')}">
+            </div>
             <h3>{esc(visible_title)}</h3>
             <div class="photo-row">
     """
