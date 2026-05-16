@@ -7820,6 +7820,44 @@
                 <h1 itemprop="name">My personal shirt collection</h1>
                 <p itemprop="description">Here you can find my unique Club Brugge shirts collection.</p>
             </div>
+            <section class="collection-insights" aria-label="Collection statistics and charts">
+              <div id="collection-stats" class="collection-stats" aria-live="polite"></div>
+              <div class="collection-charts" aria-label="Collection charts">
+                <article class="chart-card">
+                  <div class="chart-heading">
+                    <span class="panel-kicker">By type</span>
+                    <strong>Shirt types</strong>
+                  </div>
+                  <div id="chart-type" class="chart-bars"></div>
+                </article>
+                <article class="chart-card">
+                  <div class="chart-heading">
+                    <span class="panel-kicker">By status</span>
+                    <strong>Collectibles</strong>
+                  </div>
+                  <div id="chart-collectible" class="chart-bars"></div>
+                </article>
+                <article class="chart-card chart-card-wide">
+                  <div class="chart-heading">
+                    <span class="panel-kicker">Top seasons</span>
+                    <strong>Most represented seasons</strong>
+                  </div>
+                  <div id="chart-season" class="chart-bars chart-bars-compact"></div>
+                </article>
+              </div>
+            </section>
+
+            <div class="collection-toolbar" aria-label="Search and view options">
+              <div class="search-control">
+                <label for="filter-search">Search collection</label>
+                <input id="filter-search" type="search" placeholder="Search by player, season, number, status..." autocomplete="off">
+              </div>
+              <div class="view-toggle" aria-label="Choose collection layout">
+                <button type="button" id="view-list" class="active" aria-pressed="true">List view</button>
+                <button type="button" id="view-gallery" aria-pressed="false">Gallery view</button>
+              </div>
+            </div>
+
             <div class="filter-bar" aria-label="Filter shirts">
               <div class="filter-group">
                 <label for="filter-season">Season</label>
@@ -7845,6 +7883,8 @@
                 <button id="filter-clear">Clear</button>
               </div>
             </div>
+            <p id="filter-results" class="filter-results" aria-live="polite"></p>
+            <p id="filter-empty" class="filter-empty" hidden>No shirts match these filters yet. Try clearing the search or selecting fewer filters.</p>
 
         <!-- Shirt 1 (ID: 135) -->
         <article id="shirt-135" class="shirt-section" data-collectible="matchworn" data-player="raphael onyedika" itemscope itemtype="https://schema.org/Product" itemprop="hasPart">

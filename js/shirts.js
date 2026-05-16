@@ -102,17 +102,52 @@ function sortSizes(arr) {
   });
 }
 
+function labelForType(value) {
+  const labels = { home: 'Home', away: 'Away', third: 'Third', fourth: 'Fourth', gk: 'GK' };
+  return labels[value] || (value ? value.charAt(0).toUpperCase() + value.slice(1) : 'Unknown');
+}
+
+function labelForCollectible(value) {
+  const labels = { matchworn: 'Matchworn', signed: 'Signed', framed: 'Framed' };
+  return labels[value] || 'Regular';
+}
+
+function incrementMap(map, key, amount = 1) {
+  if (!key) return;
+  map.set(key, (map.get(key) || 0) + amount);
+}
+
+function getTopEntries(map, limit = 8) {
+  return Array.from(map.entries())
+    .sort((a, b) => (b[1] - a[1]) || byAlpha(a[0], b[0]))
+    .slice(0, limit);
+}
+
 function setupFiltering() {
   const seasonSel = document.getElementById('filter-season');
   const typeSel = document.getElementById('filter-type');
   const sizeSel = document.getElementById('filter-size');
   const playerSel = document.getElementById('filter-player');
   const collectibleSel = document.getElementById('filter-collectible');
+  const searchInput = document.getElementById('filter-search');
   const clearBtn = document.getElementById('filter-clear');
+  const resultsEl = document.getElementById('filter-results');
+  const emptyEl = document.getElementById('filter-empty');
+  const statsEl = document.getElementById('collection-stats');
+  const typeChartEl = document.getElementById('chart-type');
+  const collectibleChartEl = document.getElementById('chart-collectible');
+  const seasonChartEl = document.getElementById('chart-season');
+  const listViewBtn = document.getElementById('view-list');
+  const galleryViewBtn = document.getElementById('view-gallery');
   const sections = Array.from(document.querySelectorAll('.shirt-section'));
 
-  // Initialize data attributes
-  sections.forEach(inferAttributes);
+  // Initialize data attributes and searchable text
+  sections.forEach(section => {
+    inferAttributes(section);
+    const metaText = Array.from(section.querySelectorAll('meta[content]')).map(meta => meta.content).join(' ');
+    const imageText = Array.from(section.querySelectorAll('img')).map(img => `${img.alt || ''} ${img.title || ''}`).join(' ');
+    section.dataset.searchText = `${section.textContent} ${metaText} ${imageText}`.toLowerCase();
+  });
 
   // Build unique option sets from DOM
   const seasons = new Set();
@@ -148,12 +183,11 @@ function setupFiltering() {
 
   if (typeSel) {
     const TYPE_ORDER = ['home','away','third','fourth','gk'];
-    const LABELS = { home: 'Home', away: 'Away', third: 'Third', fourth: 'Fourth', gk: 'GK' };
     TYPE_ORDER.forEach(t => {
       if (!typesBase.has(t)) return;
       const opt = document.createElement('option');
       opt.value = t; // normalized base value
-      opt.textContent = LABELS[t] || (t.charAt(0).toUpperCase() + t.slice(1));
+      opt.textContent = labelForType(t);
       typeSel.appendChild(opt);
     });
   }
@@ -230,12 +264,95 @@ function setupFiltering() {
     selectEl.addEventListener('mousedown', toggle);
   }
 
+  function setViewMode(mode) {
+    const isGallery = mode === 'gallery';
+    document.body.classList.toggle('gallery-view', isGallery);
+    listViewBtn?.classList.toggle('active', !isGallery);
+    galleryViewBtn?.classList.toggle('active', isGallery);
+    listViewBtn?.setAttribute('aria-pressed', String(!isGallery));
+    galleryViewBtn?.setAttribute('aria-pressed', String(isGallery));
+  }
+
+  function renderStat(label, value, helper) {
+    return `
+      <article class="stat-card">
+        <span>${label}</span>
+        <strong>${value}</strong>
+        <small>${helper}</small>
+      </article>
+    `;
+  }
+
+  function renderStats(visibleSections) {
+    if (!statsEl) return;
+    const matchwornCount = visibleSections.filter(sec => sec.dataset.collectible === 'matchworn').length;
+    const signedCount = visibleSections.filter(sec => sec.dataset.collectible === 'signed').length;
+    const playerCount = new Set(visibleSections.map(sec => sec.dataset.player).filter(Boolean)).size;
+    const seasonCount = new Set(visibleSections.flatMap(sec => (sec.dataset.seasons || sec.dataset.season || '').split('|').filter(Boolean))).size;
+
+    statsEl.innerHTML = [
+      renderStat('Visible shirts', visibleSections.length, `${sections.length} total in the archive`),
+      renderStat('Matchworn', matchwornCount, 'Filtered by current view'),
+      renderStat('Signed', signedCount, 'Autographs and squad-signed shirts'),
+      renderStat('Players', playerCount, 'Unique named players shown'),
+      renderStat('Seasons', seasonCount, 'Unique seasons represented'),
+    ].join('');
+  }
+
+  function renderChart(target, entries, formatter = value => value) {
+    if (!target) return;
+    const max = Math.max(...entries.map(([, count]) => count), 1);
+    if (!entries.length) {
+      target.innerHTML = '<p class="chart-empty">No data for this selection.</p>';
+      return;
+    }
+
+    target.innerHTML = entries.map(([key, count]) => {
+      const width = Math.max((count / max) * 100, 8);
+      return `
+        <div class="chart-row">
+          <div class="chart-label">
+            <span>${formatter(key)}</span>
+            <strong>${count}</strong>
+          </div>
+          <div class="chart-track" aria-hidden="true">
+            <span style="width: ${width}%"></span>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function renderCharts(visibleSections) {
+    const typeMap = new Map();
+    const collectibleMap = new Map();
+    const seasonMap = new Map();
+
+    visibleSections.forEach(sec => {
+      incrementMap(typeMap, sec.dataset.typeBase || 'unknown');
+      incrementMap(collectibleMap, sec.dataset.collectible || 'regular');
+      const seasonValues = (sec.dataset.seasons || sec.dataset.season || '').split('|').filter(Boolean);
+      seasonValues.forEach(season => incrementMap(seasonMap, season));
+    });
+
+    const typeOrder = ['home', 'away', 'third', 'fourth', 'gk', 'unknown'];
+    const typeEntries = Array.from(typeMap.entries()).sort((a, b) => typeOrder.indexOf(a[0]) - typeOrder.indexOf(b[0]));
+    const collectibleEntries = getTopEntries(collectibleMap, 6);
+    const seasonEntries = getTopEntries(seasonMap, 8);
+
+    renderChart(typeChartEl, typeEntries, labelForType);
+    renderChart(collectibleChartEl, collectibleEntries, labelForCollectible);
+    renderChart(seasonChartEl, seasonEntries);
+  }
+
   function applyFilter() {
     const seasonsSelected = seasonSel ? getMultiSelectedValues(seasonSel) : [];
     const typesSelected = typeSel ? getMultiSelectedValues(typeSel).map(v => v.toLowerCase()) : [];
     const sizesSelected = sizeSel ? getMultiSelectedValues(sizeSel).map(v => v.toUpperCase()) : [];
     const playersSelected = playerSel ? getMultiSelectedValues(playerSel) : [];
     const collectibleSelected = collectibleSel ? getMultiSelectedValues(collectibleSel).map(v => v.toLowerCase()) : [];
+    const searchTerms = (searchInput?.value || '').trim().toLowerCase().split(/\s+/).filter(Boolean);
+    const visibleSections = [];
 
     sections.forEach(sec => {
       const seasonValues = sec.dataset.seasons
@@ -247,8 +364,19 @@ function setupFiltering() {
       const okPlayer = playersSelected.length === 0 || playersSelected.includes(sec.dataset.player || '');
       const collectibleValue = (sec.dataset.collectible || '').toLowerCase();
       const okCollectible = collectibleSelected.length === 0 || collectibleSelected.includes(collectibleValue);
-      sec.style.display = (okSeason && okType && okSize && okPlayer && okCollectible) ? '' : 'none';
+      const okSearch = searchTerms.length === 0 || searchTerms.every(term => sec.dataset.searchText.includes(term));
+      const isVisible = okSeason && okType && okSize && okPlayer && okCollectible && okSearch;
+      sec.style.display = isVisible ? '' : 'none';
+      if (isVisible) visibleSections.push(sec);
     });
+
+    if (resultsEl) {
+      const searchLabel = searchTerms.length ? ` for “${searchInput.value.trim()}”` : '';
+      resultsEl.textContent = `Showing ${visibleSections.length} of ${sections.length} shirts${searchLabel}.`;
+    }
+    if (emptyEl) emptyEl.hidden = visibleSections.length !== 0;
+    renderStats(visibleSections);
+    renderCharts(visibleSections);
   }
 
   [seasonSel, typeSel, sizeSel, collectibleSel, playerSel].forEach(sel => {
@@ -256,15 +384,21 @@ function setupFiltering() {
     sel?.addEventListener('change', () => { applyFilter(); updateCounts(); });
   });
 
+  searchInput?.addEventListener('input', applyFilter);
+  listViewBtn?.addEventListener('click', () => setViewMode('list'));
+  galleryViewBtn?.addEventListener('click', () => setViewMode('gallery'));
+
   clearBtn?.addEventListener('click', () => {
     [seasonSel, typeSel, sizeSel, collectibleSel, playerSel].forEach(sel => {
       if (sel) Array.from(sel.options).forEach(o => (o.selected = false));
     });
+    if (searchInput) searchInput.value = '';
     applyFilter();
     updateCounts();
   });
 
   // Initial apply to respect any default selections
+  setViewMode('list');
   applyFilter();
   updateCounts();
 }
