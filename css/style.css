@@ -873,6 +873,12 @@ body.scrolled .top-bar{
   font-size: 1.08rem;
 }
 
+.collection-page .collection-meta{
+  margin-top: 14px;
+  color: #cfe7ff;
+  font-size: 0.98rem;
+}
+
 .collection-page .filter-bar{
   align-items: stretch;
   gap: 14px;
@@ -954,6 +960,25 @@ body.scrolled .top-bar{
 .collection-page .collectible-info,
 .collection-page .shirt-details{
   color: #cfe7ff;
+}
+
+.collection-page .shirt-metadata{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 14px;
+  margin: 16px 0 0;
+  color: #cfe7ff;
+  font-size: 0.9rem;
+}
+
+.collection-page .shirt-metadata dt{
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.collection-page .shirt-metadata dd{
+  margin: 0;
 }
 
 @media (max-width: 980px){
