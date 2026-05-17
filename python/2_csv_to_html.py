@@ -95,7 +95,7 @@ def product_offer(item_url):
     }
 
 
-def build_schema(rows, players, seasons, shirt_types):
+def build_schema(rows, players, seasons, shirt_types, brands):
     item_list = []
     for position, row in enumerate(rows, start=1):
         row_id = clean(row.get("ID"))
@@ -127,6 +127,10 @@ def build_schema(rows, players, seasons, shirt_types):
                 ],
             },
         }
+        if clean(row.get("Merk")):
+            item["item"]["additionalProperty"].append(
+                {"@type": "PropertyValue", "name": "Brand", "value": clean(row.get("Merk"))}
+            )
         if player:
             item["item"]["about"] = {"@type": "Person", "name": player}
         if clean(row.get("Nummer")):
@@ -169,6 +173,7 @@ def build_schema(rows, players, seasons, shirt_types):
                 *players,
                 *seasons,
                 *shirt_types,
+                *brands,
             ],
             "primaryImageOfPage": {"@type": "ImageObject", "url": first_image(rows[0]) if rows else DEFAULT_IMAGE},
             "inLanguage": "en",
@@ -202,6 +207,7 @@ players = unique_case_insensitive(row.get("Speler", "") for row in rows)
 seasons = unique_case_insensitive(row.get("Seizoen", "") for row in rows)
 shirt_types = unique_case_insensitive(row.get("Shirt", "") for row in rows)
 collectible_statuses = unique_case_insensitive(row.get("Extra", "") for row in rows)
+brands = unique_case_insensitive(row.get("Merk", "") for row in rows)
 
 player_keyword_preview = ", ".join(players[:18])
 keyword_content = ", ".join(
@@ -214,6 +220,7 @@ keyword_content = ", ".join(
         *players,
         *seasons,
         *shirt_types,
+        *brands,
         *collectible_statuses,
     ]
 )
@@ -225,7 +232,7 @@ social_description = (
     "A searchable personal archive of Club Brugge football shirts with photos, seasons, shirt numbers, "
     "player names, matchworn shirts and signed shirts."
 )
-schema_json = json.dumps(build_schema(rows, players, seasons, shirt_types), ensure_ascii=False, indent=8)
+schema_json = json.dumps(build_schema(rows, players, seasons, shirt_types, brands), ensure_ascii=False, indent=8)
 page_image = first_image(rows[0]) if rows else DEFAULT_IMAGE
 
 html_content = f"""
@@ -284,11 +291,52 @@ html_content = f"""
 
     <main>
         <section class="collection-shell" itemscope itemtype="https://schema.org/CollectionPage">
-            <div class="collection-intro">
-                <span class="panel-kicker">Club Brugge archive</span>
-                <h1 itemprop="name">My personal shirt collection</h1>
-                <p itemprop="description">Here you can find my unique Club Brugge shirts collection.</p>
+            <div class="collection-heading">
+              <div class="collection-intro">
+                  <span class="panel-kicker">Club Brugge archive</span>
+                  <h1 itemprop="name">My personal shirt collection</h1>
+                  <p itemprop="description">Here you can find my unique Club Brugge shirts collection.</p>
+              </div>
+              <div class="view-toggle collection-view-toggle" aria-label="Choose collection layout">
+                <span>View</span>
+                <button type="button" id="view-list" class="active" aria-pressed="true">List</button>
+                <button type="button" id="view-gallery" aria-pressed="false">Gallery</button>
+              </div>
             </div>
+            <section class="collection-insights" aria-label="Collection statistics and charts">
+              <div id="collection-stats" class="collection-stats" aria-live="polite"></div>
+              <div class="collection-charts" aria-label="Collection charts">
+                <article class="chart-card">
+                  <div class="chart-heading">
+                    <span class="panel-kicker">By type</span>
+                    <strong>Shirt types</strong>
+                  </div>
+                  <div id="chart-type" class="chart-bars"></div>
+                </article>
+                <article class="chart-card">
+                  <div class="chart-heading">
+                    <span class="panel-kicker">By status</span>
+                    <strong>Collectibles</strong>
+                  </div>
+                  <div id="chart-collectible" class="chart-bars"></div>
+                </article>
+                <article class="chart-card">
+                  <div class="chart-heading">
+                    <span class="panel-kicker">By brand</span>
+                    <strong>Shirt brands</strong>
+                  </div>
+                  <div id="chart-brand" class="chart-bars"></div>
+                </article>
+                <article class="chart-card chart-card-wide">
+                  <div class="chart-heading">
+                    <span class="panel-kicker">Top seasons</span>
+                    <strong>Most represented seasons</strong>
+                  </div>
+                  <div id="chart-season" class="chart-bars chart-bars-compact"></div>
+                </article>
+              </div>
+            </section>
+
             <div class="filter-bar" aria-label="Filter shirts">
               <div class="filter-group">
                 <label for="filter-season">Season</label>
@@ -314,6 +362,8 @@ html_content = f"""
                 <button id="filter-clear">Clear</button>
               </div>
             </div>
+            <p id="filter-results" class="filter-results" aria-live="polite"></p>
+            <p id="filter-empty" class="filter-empty" hidden>No shirts match these filters yet. Try clearing the filters or selecting fewer options.</p>
 """
 
 shirt_counter = 1
@@ -327,6 +377,7 @@ for row in rows:
     shirt_player = clean(row["Speler"])
     shirt_number = clean(row["Nummer"])
     shirt_extra = clean(row["Extra"])
+    shirt_brand = clean(row.get("Merk"))
     shirt_signatures = clean(row["Handtekeningen"])
 
     image1 = local_image(row["Foto1"])
@@ -336,15 +387,16 @@ for row in rows:
 
     collectible_value = shirt_extra.lower()
     collectible_attr = f' data-collectible="{esc(collectible_value)}"' if collectible_value else ""
+    brand_attr = f' data-brand="{esc(shirt_brand.lower())}" data-brand-label="{esc(shirt_brand)}"' if shirt_brand else ""
     player_attr = f' data-player="{esc(shirt_player.lower())}"' if shirt_player else ""
     section_id = f"shirt-{esc(shirt_id)}"
     title = shirt_name(row)
     visible_title = f"{shirt_team} {shirt_season} {shirt_type} - Size: {shirt_size}"
-    article_keywords = ", ".join(filter(None, [shirt_team, shirt_season, shirt_type, shirt_player, shirt_number, shirt_extra]))
+    article_keywords = ", ".join(filter(None, [shirt_team, shirt_season, shirt_type, shirt_brand, shirt_player, shirt_number, shirt_extra]))
 
     html_content += f"""
         <!-- Shirt {shirt_counter} (ID: {esc(shirt_id)}) -->
-        <article id="{section_id}" class="shirt-section"{collectible_attr}{player_attr} itemscope itemtype="https://schema.org/Product" itemprop="hasPart">
+        <article id="{section_id}" class="shirt-section"{collectible_attr}{brand_attr}{player_attr} itemscope itemtype="https://schema.org/Product" itemprop="hasPart">
             <meta itemprop="name" content="{esc(title)}">
             <meta itemprop="description" content="{esc(shirt_description(row))}">
             <meta itemprop="category" content="Football shirt">
@@ -388,6 +440,11 @@ for row in rows:
             player_text = f"Number: {shirt_number}"
         html_content += f"""
             <div class="player-info">{esc(player_text)}</div>
+        """
+
+    if shirt_brand:
+        html_content += f"""
+            <div class="brand-info">Brand: {esc(shirt_brand)}</div>
         """
 
     if shirt_extra:

@@ -22,11 +22,13 @@ function normalizeCollectibleValue(value) {
 function inferAttributes(section) {
   const title = section.querySelector('h3')?.textContent || '';
   const playerText = section.querySelector('.player-info')?.textContent || '';
+  const brandText = section.querySelector('.brand-info')?.textContent || '';
   const seasonMatch = title.match(/(\d{4}-\d{4})/);
   const typeMatch = title.match(/Home|Away|Third|Fourth|GK ?\d?|Goalkeeper/i);
   // Capture size tokens like XS, S, M, L, XL, 2XL, 3XL, 4XL...
   const sizeMatch = title.match(/Size:\s*([0-9]+XL|[A-Z]{1,6})/i);
   const playerMatch = playerText.match(/Player:\s*([^\-]+)/i);
+  const brandMatch = brandText.match(/Brand:\s*(.+)/i);
   const collectibleFromAttr = (section.dataset.collectible || '').trim().toLowerCase();
   const extraText = section.querySelector('.collectible-info')?.textContent || '';
   const collectibleFromText = /match[\s-]*worn/i.test(extraText) ? 'matchworn'
@@ -62,6 +64,11 @@ function inferAttributes(section) {
     const label = playerMatch[1].trim();
     section.dataset.player = label.toLowerCase();
     section.dataset.playerLabel = label; // preserve original casing for UI
+  }
+  if (brandMatch || section.dataset.brand) {
+    const label = (brandMatch?.[1] || section.dataset.brandLabel || section.dataset.brand).trim();
+    section.dataset.brand = label.toLowerCase();
+    section.dataset.brandLabel = label;
   }
   section.dataset.collectible = normalizeCollectibleValue(collectible);
 }
@@ -139,6 +146,7 @@ function setupFiltering() {
   const statsEl = document.getElementById('collection-stats');
   const typeChartEl = document.getElementById('chart-type');
   const collectibleChartEl = document.getElementById('chart-collectible');
+  const brandChartEl = document.getElementById('chart-brand');
   const seasonChartEl = document.getElementById('chart-season');
   const listViewBtn = document.getElementById('view-list');
   const galleryViewBtn = document.getElementById('view-gallery');
@@ -324,11 +332,13 @@ function setupFiltering() {
   function renderCharts(visibleSections) {
     const typeMap = new Map();
     const collectibleMap = new Map();
+    const brandMap = new Map();
     const seasonMap = new Map();
 
     visibleSections.forEach(sec => {
       incrementMap(typeMap, sec.dataset.typeBase || 'unknown');
       incrementMap(collectibleMap, normalizeCollectibleValue(sec.dataset.collectible));
+      if (sec.dataset.brandLabel) incrementMap(brandMap, sec.dataset.brandLabel);
       const seasonValues = (sec.dataset.seasons || sec.dataset.season || '').split('|').filter(Boolean);
       seasonValues.forEach(season => incrementMap(seasonMap, season));
     });
@@ -336,10 +346,12 @@ function setupFiltering() {
     const typeOrder = ['home', 'away', 'third', 'fourth', 'gk', 'unknown'];
     const typeEntries = Array.from(typeMap.entries()).sort((a, b) => typeOrder.indexOf(a[0]) - typeOrder.indexOf(b[0]));
     const collectibleEntries = getTopEntries(collectibleMap, 6);
+    const brandEntries = getTopEntries(brandMap, 6);
     const seasonEntries = getTopEntries(seasonMap, 8);
 
     renderChart(typeChartEl, typeEntries, labelForType);
     renderChart(collectibleChartEl, collectibleEntries, labelForCollectible);
+    renderChart(brandChartEl, brandEntries);
     renderChart(seasonChartEl, seasonEntries);
   }
 
