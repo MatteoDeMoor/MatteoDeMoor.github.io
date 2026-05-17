@@ -16,7 +16,7 @@ function normalizeSize(raw) {
 
 function normalizeCollectibleValue(value) {
   const normalized = (value || '').trim().toLowerCase();
-  return ['matchworn', 'signed', 'framed'].includes(normalized) ? normalized : 'regular';
+  return ['matchworn', 'signed', 'framed', 'retro'].includes(normalized) ? normalized : 'regular';
 }
 
 function inferAttributes(section) {
@@ -31,7 +31,8 @@ function inferAttributes(section) {
   const extraText = section.querySelector('.collectible-info')?.textContent || '';
   const collectibleFromText = /match[\s-]*worn/i.test(extraText) ? 'matchworn'
     : (/signed/i.test(extraText) ? 'signed'
-      : (/framed/i.test(extraText) ? 'framed' : ''));
+      : (/framed/i.test(extraText) ? 'framed'
+        : (/retro/i.test(extraText) ? 'retro' : '')));
   const collectible = collectibleFromAttr || collectibleFromText;
 
   if (seasonMatch) {
@@ -111,7 +112,7 @@ function labelForType(value) {
 }
 
 function labelForCollectible(value) {
-  const labels = { matchworn: 'Matchworn', signed: 'Signed', framed: 'Framed', regular: 'Regular' };
+  const labels = { matchworn: 'Matchworn', signed: 'Signed', framed: 'Framed', retro: 'Retro', regular: 'Regular' };
   return labels[normalizeCollectibleValue(value)];
 }
 
@@ -212,6 +213,7 @@ function setupFiltering() {
       { value: 'matchworn', label: 'Matchworn' },
       { value: 'signed', label: 'Signed' },
       { value: 'framed', label: 'Framed' },
+      { value: 'retro', label: 'Retro' },
       { value: 'regular', label: 'Regular' },
     ].forEach(({ value, label }) => {
       const opt = document.createElement('option');
