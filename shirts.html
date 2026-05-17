@@ -7847,16 +7847,6 @@
               </div>
             </section>
 
-            <div class="collection-toolbar" aria-label="Search and view options">
-              <div class="search-control">
-                <label for="filter-search">Search collection</label>
-                <input id="filter-search" type="search" placeholder="Search by player, season, number, status..." autocomplete="off">
-              </div>
-              <div class="view-toggle" aria-label="Choose collection layout">
-                <button type="button" id="view-list" class="active" aria-pressed="true">List view</button>
-                <button type="button" id="view-gallery" aria-pressed="false">Gallery view</button>
-              </div>
-            </div>
 
             <div class="filter-bar" aria-label="Filter shirts">
               <div class="filter-group">
@@ -7881,10 +7871,15 @@
               </div>
               <div class="filter-actions">
                 <button id="filter-clear">Clear</button>
+                <div class="view-toggle" aria-label="Choose collection layout">
+                  <span>View</span>
+                  <button type="button" id="view-list" class="active" aria-pressed="true">List</button>
+                  <button type="button" id="view-gallery" aria-pressed="false">Gallery</button>
+                </div>
               </div>
             </div>
             <p id="filter-results" class="filter-results" aria-live="polite"></p>
-            <p id="filter-empty" class="filter-empty" hidden>No shirts match these filters yet. Try clearing the search or selecting fewer filters.</p>
+            <p id="filter-empty" class="filter-empty" hidden>No shirts match these filters yet. Try clearing the filters or selecting fewer options.</p>
 
         <!-- Shirt 1 (ID: 135) -->
         <article id="shirt-135" class="shirt-section" data-collectible="matchworn" data-player="raphael onyedika" itemscope itemtype="https://schema.org/Product" itemprop="hasPart">

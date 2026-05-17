@@ -14,6 +14,11 @@ function normalizeSize(raw) {
   return { normalized: cleaned, label: cleaned };
 }
 
+function normalizeCollectibleValue(value) {
+  const normalized = (value || '').trim().toLowerCase();
+  return ['matchworn', 'signed', 'framed'].includes(normalized) ? normalized : 'regular';
+}
+
 function inferAttributes(section) {
   const title = section.querySelector('h3')?.textContent || '';
   const playerText = section.querySelector('.player-info')?.textContent || '';
@@ -57,9 +62,7 @@ function inferAttributes(section) {
     section.dataset.player = label.toLowerCase();
     section.dataset.playerLabel = label; // preserve original casing for UI
   }
-  if (collectible) {
-    section.dataset.collectible = collectible;
-  }
+  section.dataset.collectible = normalizeCollectibleValue(collectible);
 }
 
 function byAlpha(a, b) { return a.localeCompare(b, undefined, { sensitivity: 'base' }); }
@@ -108,8 +111,8 @@ function labelForType(value) {
 }
 
 function labelForCollectible(value) {
-  const labels = { matchworn: 'Matchworn', signed: 'Signed', framed: 'Framed' };
-  return labels[value] || 'Regular';
+  const labels = { matchworn: 'Matchworn', signed: 'Signed', framed: 'Framed', regular: 'Regular' };
+  return labels[normalizeCollectibleValue(value)];
 }
 
 function incrementMap(map, key, amount = 1) {
@@ -129,7 +132,6 @@ function setupFiltering() {
   const sizeSel = document.getElementById('filter-size');
   const playerSel = document.getElementById('filter-player');
   const collectibleSel = document.getElementById('filter-collectible');
-  const searchInput = document.getElementById('filter-search');
   const clearBtn = document.getElementById('filter-clear');
   const resultsEl = document.getElementById('filter-results');
   const emptyEl = document.getElementById('filter-empty');
@@ -141,13 +143,8 @@ function setupFiltering() {
   const galleryViewBtn = document.getElementById('view-gallery');
   const sections = Array.from(document.querySelectorAll('.shirt-section'));
 
-  // Initialize data attributes and searchable text
-  sections.forEach(section => {
-    inferAttributes(section);
-    const metaText = Array.from(section.querySelectorAll('meta[content]')).map(meta => meta.content).join(' ');
-    const imageText = Array.from(section.querySelectorAll('img')).map(img => `${img.alt || ''} ${img.title || ''}`).join(' ');
-    section.dataset.searchText = `${section.textContent} ${metaText} ${imageText}`.toLowerCase();
-  });
+  // Initialize data attributes
+  sections.forEach(inferAttributes);
 
   // Build unique option sets from DOM
   const seasons = new Set();
@@ -164,9 +161,7 @@ function setupFiltering() {
     if (sec.dataset.typeBase) typesBase.add(sec.dataset.typeBase);
     if (sec.dataset.size) sizesMap.set(sec.dataset.size, sec.dataset.sizeLabel || sec.dataset.size);
     if (sec.dataset.player) playersMap.set(sec.dataset.player, sec.dataset.playerLabel || sec.dataset.player);
-    if (sec.dataset.collectible) {
-      sec.dataset.collectible = sec.dataset.collectible.toLowerCase();
-    }
+    sec.dataset.collectible = normalizeCollectibleValue(sec.dataset.collectible);
   });
 
   // Populate selects
@@ -217,6 +212,7 @@ function setupFiltering() {
       { value: 'matchworn', label: 'Matchworn' },
       { value: 'signed', label: 'Signed' },
       { value: 'framed', label: 'Framed' },
+      { value: 'regular', label: 'Regular' },
     ].forEach(({ value, label }) => {
       const opt = document.createElement('option');
       opt.value = value;
@@ -330,7 +326,7 @@ function setupFiltering() {
 
     visibleSections.forEach(sec => {
       incrementMap(typeMap, sec.dataset.typeBase || 'unknown');
-      incrementMap(collectibleMap, sec.dataset.collectible || 'regular');
+      incrementMap(collectibleMap, normalizeCollectibleValue(sec.dataset.collectible));
       const seasonValues = (sec.dataset.seasons || sec.dataset.season || '').split('|').filter(Boolean);
       seasonValues.forEach(season => incrementMap(seasonMap, season));
     });
@@ -351,7 +347,6 @@ function setupFiltering() {
     const sizesSelected = sizeSel ? getMultiSelectedValues(sizeSel).map(v => v.toUpperCase()) : [];
     const playersSelected = playerSel ? getMultiSelectedValues(playerSel) : [];
     const collectibleSelected = collectibleSel ? getMultiSelectedValues(collectibleSel).map(v => v.toLowerCase()) : [];
-    const searchTerms = (searchInput?.value || '').trim().toLowerCase().split(/\s+/).filter(Boolean);
     const visibleSections = [];
 
     sections.forEach(sec => {
@@ -364,15 +359,13 @@ function setupFiltering() {
       const okPlayer = playersSelected.length === 0 || playersSelected.includes(sec.dataset.player || '');
       const collectibleValue = (sec.dataset.collectible || '').toLowerCase();
       const okCollectible = collectibleSelected.length === 0 || collectibleSelected.includes(collectibleValue);
-      const okSearch = searchTerms.length === 0 || searchTerms.every(term => sec.dataset.searchText.includes(term));
-      const isVisible = okSeason && okType && okSize && okPlayer && okCollectible && okSearch;
+      const isVisible = okSeason && okType && okSize && okPlayer && okCollectible;
       sec.style.display = isVisible ? '' : 'none';
       if (isVisible) visibleSections.push(sec);
     });
 
     if (resultsEl) {
-      const searchLabel = searchTerms.length ? ` for “${searchInput.value.trim()}”` : '';
-      resultsEl.textContent = `Showing ${visibleSections.length} of ${sections.length} shirts${searchLabel}.`;
+      resultsEl.textContent = `Showing ${visibleSections.length} of ${sections.length} shirts.`;
     }
     if (emptyEl) emptyEl.hidden = visibleSections.length !== 0;
     renderStats(visibleSections);
@@ -384,7 +377,6 @@ function setupFiltering() {
     sel?.addEventListener('change', () => { applyFilter(); updateCounts(); });
   });
 
-  searchInput?.addEventListener('input', applyFilter);
   listViewBtn?.addEventListener('click', () => setViewMode('list'));
   galleryViewBtn?.addEventListener('click', () => setViewMode('gallery'));
 
@@ -392,7 +384,6 @@ function setupFiltering() {
     [seasonSel, typeSel, sizeSel, collectibleSel, playerSel].forEach(sel => {
       if (sel) Array.from(sel.options).forEach(o => (o.selected = false));
     });
-    if (searchInput) searchInput.value = '';
     applyFilter();
     updateCounts();
   });
