@@ -442,11 +442,6 @@ for row in rows:
             <div class="player-info">{esc(player_text)}</div>
         """
 
-    if shirt_brand:
-        html_content += f"""
-            <div class="brand-info">Brand: {esc(shirt_brand)}</div>
-        """
-
     if shirt_extra:
         html_content += f"""
             <div class="collectible-info">Status: {esc(shirt_extra)}</div>
