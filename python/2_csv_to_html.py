@@ -27,6 +27,19 @@ def esc(value):
     return html.escape(clean(value), quote=True)
 
 
+COLLECTIBLE_VALUES = {"matchworn", "signed", "framed", "retro"}
+
+
+def collectible_values(value):
+    """Return canonical statuses from an ampersand-separated Extra value."""
+    statuses = []
+    for part in clean(value).replace("|", "&").replace(",", "&").split("&"):
+        normalized = "".join(part.lower().replace("-", "").split())
+        if normalized in COLLECTIBLE_VALUES and normalized not in statuses:
+            statuses.append(normalized)
+    return statuses or ["regular"]
+
+
 def absolute_image(filename):
     filename = clean(filename)
     return f"{BASE_URL}/shirtImages/{filename}" if filename else ""
@@ -385,8 +398,8 @@ for row in rows:
     image3 = local_image(row["Foto3"])
     images = [image for image in (image1, image2, image3) if image]
 
-    collectible_value = shirt_extra.lower()
-    collectible_attr = f' data-collectible="{esc(collectible_value)}"' if collectible_value else ""
+    collectible_value = "|".join(collectible_values(shirt_extra))
+    collectible_attr = f' data-collectible="{esc(collectible_value)}"' if shirt_extra else ""
     brand_attr = f' data-brand="{esc(shirt_brand.lower())}" data-brand-label="{esc(shirt_brand)}"' if shirt_brand else ""
     player_attr = f' data-player="{esc(shirt_player.lower())}"' if shirt_player else ""
     section_id = f"shirt-{esc(shirt_id)}"

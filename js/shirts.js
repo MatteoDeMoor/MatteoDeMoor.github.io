@@ -14,9 +14,16 @@ function normalizeSize(raw) {
   return { normalized: cleaned, label: cleaned };
 }
 
-function normalizeCollectibleValue(value) {
-  const normalized = (value || '').trim().toLowerCase();
-  return ['matchworn', 'signed', 'framed', 'retro'].includes(normalized) ? normalized : 'regular';
+const COLLECTIBLE_VALUES = ['matchworn', 'signed', 'framed', 'retro'];
+
+function normalizeCollectibleValues(value) {
+  const values = (value || '')
+    .split(/[&|,]/)
+    .map(part => part.trim().toLowerCase().replace(/[\s-]+/g, ''))
+    .filter(part => COLLECTIBLE_VALUES.includes(part));
+
+  const uniqueValues = [...new Set(values)];
+  return uniqueValues.length ? uniqueValues : ['regular'];
 }
 
 function inferAttributes(section) {
@@ -29,12 +36,14 @@ function inferAttributes(section) {
   const sizeMatch = title.match(/Size:\s*([0-9]+XL|[A-Z]{1,6})/i);
   const playerMatch = playerText.match(/Player:\s*([^\-]+)/i);
   const brandMatch = brandText.match(/Brand:\s*(.+)/i);
-  const collectibleFromAttr = (section.dataset.collectible || '').trim().toLowerCase();
+  const collectibleFromAttr = section.dataset.collectible || '';
   const extraText = section.querySelector('.collectible-info')?.textContent || '';
-  const collectibleFromText = /match[\s-]*worn/i.test(extraText) ? 'matchworn'
-    : (/signed/i.test(extraText) ? 'signed'
-      : (/framed/i.test(extraText) ? 'framed'
-        : (/retro/i.test(extraText) ? 'retro' : '')));
+  const collectibleFromText = COLLECTIBLE_VALUES
+    .filter(value => {
+      const pattern = value === 'matchworn' ? /match[\s-]*worn/i : new RegExp(`\\b${value}\\b`, 'i');
+      return pattern.test(extraText);
+    })
+    .join('|');
   const collectible = collectibleFromAttr || collectibleFromText;
 
   if (seasonMatch) {
@@ -70,7 +79,7 @@ function inferAttributes(section) {
     section.dataset.brand = label.toLowerCase();
     section.dataset.brandLabel = label;
   }
-  section.dataset.collectible = normalizeCollectibleValue(collectible);
+  section.dataset.collectible = normalizeCollectibleValues(collectible).join('|');
 }
 
 function byAlpha(a, b) { return a.localeCompare(b, undefined, { sensitivity: 'base' }); }
@@ -120,7 +129,7 @@ function labelForType(value) {
 
 function labelForCollectible(value) {
   const labels = { matchworn: 'Matchworn', signed: 'Signed', framed: 'Framed', retro: 'Retro', regular: 'Regular' };
-  return labels[normalizeCollectibleValue(value)];
+  return labels[normalizeCollectibleValues(value)[0]];
 }
 
 function incrementMap(map, key, amount = 1) {
@@ -170,7 +179,7 @@ function setupFiltering() {
     if (sec.dataset.typeBase) typesBase.add(sec.dataset.typeBase);
     if (sec.dataset.size) sizesMap.set(sec.dataset.size, sec.dataset.sizeLabel || sec.dataset.size);
     if (sec.dataset.player) playersMap.set(sec.dataset.player, sec.dataset.playerLabel || sec.dataset.player);
-    sec.dataset.collectible = normalizeCollectibleValue(sec.dataset.collectible);
+    sec.dataset.collectible = normalizeCollectibleValues(sec.dataset.collectible).join('|');
   });
 
   // Populate selects
@@ -291,8 +300,8 @@ function setupFiltering() {
 
   function renderStats(visibleSections) {
     if (!statsEl) return;
-    const matchwornCount = visibleSections.filter(sec => sec.dataset.collectible === 'matchworn').length;
-    const signedCount = visibleSections.filter(sec => sec.dataset.collectible === 'signed').length;
+    const matchwornCount = visibleSections.filter(sec => sec.dataset.collectible.split('|').includes('matchworn')).length;
+    const signedCount = visibleSections.filter(sec => sec.dataset.collectible.split('|').includes('signed')).length;
     const playerCount = new Set(visibleSections.map(sec => sec.dataset.player).filter(Boolean)).size;
     const seasonCount = new Set(visibleSections.flatMap(sec => (sec.dataset.seasons || sec.dataset.season || '').split('|').filter(Boolean))).size;
 
@@ -337,7 +346,7 @@ function setupFiltering() {
 
     visibleSections.forEach(sec => {
       incrementMap(typeMap, sec.dataset.typeBase || 'unknown');
-      incrementMap(collectibleMap, normalizeCollectibleValue(sec.dataset.collectible));
+      normalizeCollectibleValues(sec.dataset.collectible).forEach(value => incrementMap(collectibleMap, value));
       if (sec.dataset.brandLabel) incrementMap(brandMap, sec.dataset.brandLabel);
       const seasonValues = (sec.dataset.seasons || sec.dataset.season || '').split('|').filter(Boolean);
       seasonValues.forEach(season => incrementMap(seasonMap, season));
@@ -371,8 +380,9 @@ function setupFiltering() {
       const okType = typesSelected.length === 0 || typesSelected.includes(sec.dataset.typeBase || '');
       const okSize = sizesSelected.length === 0 || sizesSelected.includes(sec.dataset.size || '');
       const okPlayer = playersSelected.length === 0 || playersSelected.includes(sec.dataset.player || '');
-      const collectibleValue = (sec.dataset.collectible || '').toLowerCase();
-      const okCollectible = collectibleSelected.length === 0 || collectibleSelected.includes(collectibleValue);
+      const collectibleValues = normalizeCollectibleValues(sec.dataset.collectible);
+      const okCollectible = collectibleSelected.length === 0
+        || collectibleValues.some(value => collectibleSelected.includes(value));
       const isVisible = okSeason && okType && okSize && okPlayer && okCollectible;
       sec.style.display = isVisible ? '' : 'none';
       if (isVisible) visibleSections.push(sec);
