@@ -82,7 +82,7 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Merk,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,
 81,2018-2019,GK 3,M,22,Ethan Horvath,Macron,,Shirt150.1.jpg,Shirt150.2.jpg,,,,,
 82,2018-2019,GK 3,2XL,1,Ludovic Butelle,Macron,,Shirt112.1.jpg,Shirt112.2.jpg,,,,,
 83,2018-2019,GK 1 Youth,L,1,,Macron,,Shirt144.1.jpg,Shirt144.2.jpg,,,,,
-84,2018-2019,Third,2XL,25,Ruud Vormer,Macron,Framed,Shirt38.1.jpg,Shirt38.2.jpg,,,,Ruud Vormer,
+84,2018-2019,Third,2XL,25,Ruud Vormer,Macron,Framed & Signed,Shirt38.1.jpg,Shirt38.2.jpg,,,,Ruud Vormer,
 85,2018-2019,Third,M,42,Emmanuel Dennis Bonaventure,Macron,,Shirt55.1.jpg,Shirt55.2.jpg,,,,,
 86,2018-2019,Third,3XL,11,Krépin Diatta,Macron,,Shirt62.1.jpg,Shirt62.2.jpg,,,,,
 87,2018-2019,Away,4XL,47,Arnaut Danjuma,Macron,,Shirt115.1.jpg,Shirt115.2.jpg,,,,,
@@ -122,7 +122,7 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Merk,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,
 121,2022-2023,GK 1,2XL,,,Macron,Signed,Shirt60.1.jpg,Shirt60.2.jpg,,,,Mignolet,
 122,2022-2023,Third,L,27,Casper Nielsen,Macron,Signed,Shirt99.1.jpg,Shirt99.2.jpg,,,,Casper Nielsen,
 123,2022-2023,Third,XL,9,Ferran Jutglà Blanch,Macron,Signed,Shirt81.1.jpg,Shirt81.2.jpg,,,,Ferran Jutglà Blanch,
-124,2022-2023,Third,M,19,Kamal Sowah,Macron,Matchworn,Shirt125.1.jpg,Shirt125.2.jpg,Shirt125.3.jpg,,,Kamal Sowah,https://mws.com/nl/product/kamal-sowah-Keuxo3-GwEmR83Ch9myVCQ
+124,2022-2023,Third,M,19,Kamal Sowah,Macron,Matchworn & Signed,Shirt125.1.jpg,Shirt125.2.jpg,Shirt125.3.jpg,,,Kamal Sowah,https://mws.com/nl/product/kamal-sowah-Keuxo3-GwEmR83Ch9myVCQ
 125,2022-2023,Away,L,4,Joel Ordóñez,Macron,Signed,Shirt63.1.jpg,Shirt63.2.jpg,Shirt63.3.jpg,x,,Joel Ordóñez,
 126,2022-2023,Away,L,94,Abakar Sylla,Macron,,Shirt80.1.jpg,Shirt80.2.jpg,,,,,
 127,2022-2023,Home,L,27,Jorne Spileers,Macron,Signed,Shirt79.1.jpg,Shirt79.2.jpg,Shirt79.3.jpg,,,Spileers,
@@ -136,8 +136,8 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Merk,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,
 135,2023-2024,Home,XL,99,Igor Thiago,Macron,,Shirt111.1.jpg,Shirt111.2.jpg,,,,,
 136,2023-2024,Home,M,27,Casper Nielsen,Macron,Signed,Shirt102.1.jpg,Shirt102.2.jpg,,,,Casper Nielsen,
 137,2023-2024,Home,2XL,20,Hans Vanaken,Macron,Signed,Shirt43.1.jpg,Shirt43.2.jpg,,,,Hans Vanaken,
-138,2023-2024,Home,M,77,Philip Zinckernagel,Macron,Matchworn,Shirt77.1.jpg,Shirt77.2.jpg,Shirt77.3.jpg,x,,Philip Zinckernagel,https://mws.com/nl/product/philip-zinckernagel-A-y_hKAxf0SoZ-72WvhrDg
-139,2023-2024,Home,M,6,Denis Odoi,Macron,Matchworn,Shirt147.1.jpg,Shirt147.2.jpg,Shirt147.3.jpg,,,Denis Odoi,https://mws.com/nl/product/denis-odoi-ppmusxLVwEyqBgs6zRpPTA
+138,2023-2024,Home,M,77,Philip Zinckernagel,Macron,Matchworn & Signed,Shirt77.1.jpg,Shirt77.2.jpg,Shirt77.3.jpg,x,,Philip Zinckernagel,https://mws.com/nl/product/philip-zinckernagel-A-y_hKAxf0SoZ-72WvhrDg
+139,2023-2024,Home,M,6,Denis Odoi,Macron,Matchworn & Signed,Shirt147.1.jpg,Shirt147.2.jpg,Shirt147.3.jpg,,,Denis Odoi,https://mws.com/nl/product/denis-odoi-ppmusxLVwEyqBgs6zRpPTA
 140,2024-2025,GK 3,M,,,Castore,,Shirt124.1.jpg,Shirt124.2.jpg,,,,,
 141,2024-2025,GK 2,M,,,Castore,,Shirt123.1.jpg,Shirt123.2.jpg,,,,,
 142,2024-2025,GK 1,L,,,Castore,,Shirt146.1.jpg,Shirt146.2.jpg,,,,,
@@ -145,17 +145,17 @@ ID,Seizoen,Shirt,Maat,Nummer,Speler,Merk,Extra,Foto1,Foto2,Foto3,Insta,Toekomst,
 144,2024-2025,Third,XL,8,Christos Tzolis,Castore,Signed,Shirt66.1.jpg,Shirt66.2.jpg,,x,,Christos Tzolis,
 145,2024-2025,Away,XL,30,Ardon Jashari,Castore,Signed,Shirt101.1.jpg,Shirt101.2.jpg,Shirt101.3.jpg,,,Ardon Jashari,
 146,2024-2025,Away,XL,20,Hans Vanaken,Castore,Signed,Shirt5.1.jpg,Shirt5.2.jpg,Shirt5.3.jpg,,,Hans Vanaken,
-147,2024-2025,Home,M,68,Chemsdine Talbi,Castore,Matchworn,Shirt76.1.jpg,Shirt76.2.jpg,Shirt76.3.jpg,x,,Chemsdine Talbi,https://mws.com/nl/product/chemsdine-talbi--bKdNRz0z0uEpoXQo-RTmQ
+147,2024-2025,Home,M,68,Chemsdine Talbi,Castore,Matchworn & Signed,Shirt76.1.jpg,Shirt76.2.jpg,Shirt76.3.jpg,x,,Chemsdine Talbi,https://mws.com/nl/product/chemsdine-talbi--bKdNRz0z0uEpoXQo-RTmQ
 148,2024-2025,Home,M,,,Castore,Signed,Shirt69.1.jpg,Shirt69.2.jpg,,,,Squad signed,
 149,2024-2025,Home,2XL,8,Christos Tzolis,Castore,Signed,Shirt47.1.jpg,Shirt47.2.jpg,,,,Christos Tzolis,
-150,2025-2026,GK 2,L,29,Nordin Jackers,Castore,Matchworn,Shirt122.1.jpg,Shirt122.2.jpg,Shirt122.3.jpg,,,Nordin Jackers,https://mws.com/nl/product/nordin-jackers-mzWhARXEL0meEtUnYCPmKw
+150,2025-2026,GK 2,L,29,Nordin Jackers,Castore,Matchworn & Signed,Shirt122.1.jpg,Shirt122.2.jpg,Shirt122.3.jpg,,,Nordin Jackers,https://mws.com/nl/product/nordin-jackers-mzWhARXEL0meEtUnYCPmKw
 151,2025-2026,Third,M,11,Romeo Vermant,Castore,,Shirt132.1.jpg,Shirt132.2.jpg,,,,,
 152,2025-2026,Third,XL,7,Nicolò Tresoldi,Castore,Signed,Shirt14.1.jpg,Shirt14.2.jpg,,,,Nicolò Tresoldi,
 153,2025-2026,Away,M,20,,Castore,,Shirt160.1.jpg,Shirt160.2.jpg,,,,,
 154,2025-2026,Away,L,8,Christos Tzolis,Castore,Signed,Shirt134.1.jpg,Shirt134.2.jpg,,,,Christos Tzolis,
 155,2025-2026,Home,M,9,Carlos Forbs,Castore,Signed,Shirt138.1.jpg,Shirt138.2.jpg,Shirt138.3.jpg,,,Carlos Forbs,
 156,2025-2026,Home,3XL,,,Castore,Signed,Shirt159.1.jpg,Shirt159.2.jpg,Shirt159.3.jpg,,,Squad signed,https://mws.com/nl/product/squad-signed-shirt-1-g2D7N4eK8kWrbPnxWHAnWQ
-157,2025-2026,Home,M,62,Lynnt Audoor,Castore,Matchworn,Shirt145.1.jpg,Shirt145.2.jpg,Shirt145.3.jpg,,,Lynnt Audoor,https://mws.com/nl/product/lynnt-audoor-3JKEkHnojkeRBGwNgebg-w
-158,2025-2026,Home,L,14,Bjorn Meijer,Castore,Matchworn,Shirt121.1.jpg,Shirt121.2.jpg,Shirt121.3.jpg,,,Bjorn Meijer,https://mws.com/nl/product/bjorn-meijer-zkbxYcIkg0aYoV4cBo0dqA
-159,2025-2026,Home,XL,15,Raphael Onyedika,Castore,Matchworn,Shirt133.1.jpg,Shirt133.2.jpg,Shirt133.3.jpg,,,Raphael Onyedika,https://mws.com/nl/product/raphael-onyedika-nwadike-t8e7o0Eam0OtPBN8ZvNLEA
+157,2025-2026,Home,M,62,Lynnt Audoor,Castore,Matchworn & Signed,Shirt145.1.jpg,Shirt145.2.jpg,Shirt145.3.jpg,,,Lynnt Audoor,https://mws.com/nl/product/lynnt-audoor-3JKEkHnojkeRBGwNgebg-w
+158,2025-2026,Home,L,14,Bjorn Meijer,Castore,Matchworn & Signed,Shirt121.1.jpg,Shirt121.2.jpg,Shirt121.3.jpg,,,Bjorn Meijer,https://mws.com/nl/product/bjorn-meijer-zkbxYcIkg0aYoV4cBo0dqA
+159,2025-2026,Home,XL,15,Raphael Onyedika,Castore,Matchworn & Signed,Shirt133.1.jpg,Shirt133.2.jpg,Shirt133.3.jpg,,,Raphael Onyedika,https://mws.com/nl/product/raphael-onyedika-nwadike-t8e7o0Eam0OtPBN8ZvNLEA
 160,2026-2027,Home,XL,11,Jan Virgili,Castore,,Shirt143.1.jpg,Shirt143.2.jpg,,,,,
