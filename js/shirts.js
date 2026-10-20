@@ -270,10 +270,16 @@ function setupFiltering() {
     if (isTouch) return;
 
     const toggle = (e) => {
-      e.preventDefault();
       const option = e.target;
+      if (!(option instanceof HTMLOptionElement) || option.disabled) return;
+      e.preventDefault();
+      const scrollTop = selectEl.scrollTop;
       option.selected = !option.selected;
       selectEl.dispatchEvent(new Event('change'));
+      // Flush the native selection layout before restoring the list position.
+      option.getBoundingClientRect();
+      selectEl.scrollTop = scrollTop;
+      setTimeout(() => { selectEl.scrollTop = scrollTop; }, 0);
     };
 
     selectEl.addEventListener('mousedown', toggle);
@@ -364,7 +370,22 @@ function setupFiltering() {
     renderChart(seasonChartEl, seasonEntries);
   }
 
-  function applyFilter() {
+  function applyFilter(preservePosition = false) {
+    // Charts above the controls change height with the results. Keep the
+    // controls under the pointer, including when the result list becomes empty.
+    const insights = document.querySelector('.collection-insights');
+    if (preservePosition && insights) {
+      // Reserve the existing chart space even for a single or zero results.
+      insights.style.minHeight = `${insights.getBoundingClientRect().height}px`;
+    }
+    const filterBar = document.querySelector('.filter-bar');
+    const filterTop = filterBar?.getBoundingClientRect().top;
+    const shouldPreservePosition = preservePosition && filterBar && filterTop < window.innerHeight
+      && filterBar.getBoundingClientRect().bottom > 0;
+    if (shouldPreservePosition) {
+      // An empty result must still leave enough page below the controls.
+      document.body.style.minHeight = `${window.scrollY + window.innerHeight}px`;
+    }
     const seasonsSelected = seasonSel ? getMultiSelectedValues(seasonSel) : [];
     const typesSelected = typeSel ? getMultiSelectedValues(typeSel).map(v => v.toLowerCase()) : [];
     const sizesSelected = sizeSel ? getMultiSelectedValues(sizeSel).map(v => v.toUpperCase()) : [];
@@ -394,11 +415,17 @@ function setupFiltering() {
     if (emptyEl) emptyEl.hidden = visibleSections.length !== 0;
     renderStats(visibleSections);
     renderCharts(visibleSections);
+    if (shouldPreservePosition) {
+      window.scrollBy({
+        top: filterBar.getBoundingClientRect().top - filterTop,
+        behavior: 'instant',
+      });
+    }
   }
 
   [seasonSel, typeSel, sizeSel, collectibleSel, playerSel].forEach(sel => {
     enableMultiSelectWithoutCtrl(sel);
-    sel?.addEventListener('change', () => { applyFilter(); updateCounts(); });
+    sel?.addEventListener('change', () => { applyFilter(true); updateCounts(); });
   });
 
   listViewBtn?.addEventListener('click', () => setViewMode('list'));
@@ -408,7 +435,7 @@ function setupFiltering() {
     [seasonSel, typeSel, sizeSel, collectibleSel, playerSel].forEach(sel => {
       if (sel) Array.from(sel.options).forEach(o => (o.selected = false));
     });
-    applyFilter();
+    applyFilter(true);
     updateCounts();
   });
 
