@@ -357,3 +357,8 @@ footer:hover {
   .lightbox-prev { left: 10px; }
   .lightbox-next { right: 10px; }
 }
+
+/* Filtering manages its own viewport position while cards and charts update. */
+.collection-page {
+  overflow-anchor: none;
+}
